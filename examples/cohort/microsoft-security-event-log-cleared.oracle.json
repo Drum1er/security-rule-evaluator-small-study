@@ -1,0 +1,24 @@
+{
+  "eligible": true,
+  "reason": "First IR step exactly preserves the source compound filter; four steps total and matching/nonmatching rows available.",
+  "expected_first_step_indices": [
+    0
+  ],
+  "source_full_filter_indices": [
+    0
+  ],
+  "scope": "EventID==1102 AND case-sensitive EventSourceName==Microsoft-Windows-Eventlog",
+  "row_reasons": [
+    "Both conditions true",
+    "EventID4624 differs",
+    "AD FS Auditing differs",
+    "Lowercase source differs under case-sensitive equality"
+  ],
+  "ir_fidelity": {
+    "first_step": "matches source predicate",
+    "later_steps": "not executed or certified; aggregate/group_by splitting is outside this test"
+  },
+  "reference_kind": "hand-reviewed synthetic expectation; not native execution",
+  "frozen_ir_sha256": "1cde3a844b5efc8746743a1fe0f0c4bd6d0619e5dd918ee614a2388f611a9a11",
+  "analysis_stratum": "primary_discriminating_first_step"
+}

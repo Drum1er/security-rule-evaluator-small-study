@@ -1,0 +1,1 @@
+{"verdict": "not_equivalent", "reason": "The SPL query includes a row with EventCode=3 and CallTrace=\"C:\\\\Windows\\\\System32\\\\dbghelp.dll+0x10\" which is not included in the KQL query, and the KQL query excludes this row."}

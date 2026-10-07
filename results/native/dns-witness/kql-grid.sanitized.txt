@@ -1,0 +1,39 @@
+SANITIZED DERIVATIVE: result-region excerpt only; account, cluster and editor UI omitted.
+- region "Query results":
+  - toolbar:
+    - button "Table 1":
+      - text: Table 1
+    - button "2026-10-01 13:57 (UTC)":
+      - text: 2026-10-01 13:57 (UTC)
+    - generic "Done (0.602 s)":
+    - button "Copy request ID":
+    - button "Hide editor":
+  - generic: No Rows To Show
+  - grid:
+    - rowgroup:
+      - row "Computer TimeGenerated qps sld_cnt sld_set":
+        - columnheader
+        - columnheader "Computer":
+          - generic: Computer
+        - columnheader "TimeGenerated":
+          - generic: TimeGenerated
+        - columnheader "qps":
+          - generic: qps
+        - columnheader "sld_cnt":
+          - generic: sld_cnt
+        - columnheader "sld_set":
+          - generic: sld_set
+    - rowgroup
+    - rowgroup
+    - rowgroup
+    - rowgroup
+    - generic: No Rows To Show
+  - tablist:
+    - tab "Columns":
+      - generic: Columns
+  - status
+  - status
+  - status:
+    - status
+  - status:
+    - generic: Query finished running. 1 datasets returned.

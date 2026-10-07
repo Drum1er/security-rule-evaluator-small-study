@@ -1,0 +1,31 @@
+[
+  {
+    "RecordId": "r1",
+    "index": "__your_sysmon_index__",
+    "Image": "C:\\Windows\\System32\\at.exe",
+    "CommandLine": "at.exe 10:00 calc.exe",
+    "ComputerName": "ws01.example.test"
+  },
+  {
+    "RecordId": "r2",
+    "index": "__your_sysmon_index__",
+    "Image": "C:\\Windows\\SysWOW64\\at.exe",
+    "CommandLine": "at.exe",
+    "ComputerName": "ws02.example.test"
+  },
+  {
+    "RecordId": "r3",
+    "index": "__your_sysmon_index__",
+    "Image": "C:\\Tools\\at.exe",
+    "CommandLine": "at.exe",
+    "ComputerName": "ws03.example.test"
+  },
+  {
+    "RecordId": "r4",
+    "index": "__your_sysmon_index__",
+    "Image": "C:\\Windows\\System32\\schtasks.exe",
+    "CommandLine": "schtasks.exe /query",
+    "ComputerName": "ws04.example.test"
+  }
+]
+

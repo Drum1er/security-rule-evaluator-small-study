@@ -1,0 +1,9 @@
+{
+  "source_protocol_and_execution_controller": "Frozen before first IR call in selection-freeze.json",
+  "data_only_assessor": "Implemented during the IR stage and before all code-arm generation; endpoint text unchanged",
+  "assessor_sha256": "e93812d3c604b462676247f69e34fdf1f0336983b74f3e14ad538deababad242",
+  "oracle_freeze": "Will bind own-reference decisions and assessor before either code arm; no native first-step oracle claimed",
+  "chronology_note_written_utc": "2026-10-01T17:21:13.580142+00:00",
+  "assessor_finalized_utc": "2026-10-01T17:26:48.956342+00:00",
+  "finalization_note": "Added analysis_stratum reporting before any code-arm model call; structural and selection predicates unchanged"
+}

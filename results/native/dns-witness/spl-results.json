@@ -1,0 +1,1 @@
+{"preview":false,"init_offset":0,"messages":[],"fields":[{"name":"host","type":"str","groupby_rank":"0"},{"name":"_time","type":"num","groupby_rank":"1"},{"name":"qps"},{"name":"sld_cnt"},{"name":"sld_set"}],"results":[{"host":"host-a","_time":"2025-01-01T05:00:00.000+05:00","qps":"100","sld_cnt":"3","sld_set":["alpha.xyz","beta.xyz","gamma.xyz"]}], "highlighted":{}}

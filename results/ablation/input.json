@@ -1,0 +1,39 @@
+{
+  "mode": "first_step",
+  "ir": {
+    "rule_name": "lsass_call_trace_detection",
+    "description": "Detect suspicious call traces involving lsass.exe in sysmon events",
+    "data_source": "sysmon",
+    "event_type": "process_call_trace",
+    "steps": [
+      {
+        "action": "filter",
+        "params": "EventCode=10 AND (TargetImage=lsass.exe OR SourceImage=lsass.exe)",
+        "explanation": "Filter for sysmon events with EventCode 10 and lsass.exe involvement"
+      },
+      {
+        "action": "aggregate",
+        "params": "count, min(_time) as firstTime, max(_time) as lastTime",
+        "explanation": "Calculate count and time ranges for each event group"
+      },
+      {
+        "action": "group_by",
+        "params": "Computer, TargetImage, TargetProcessId, SourceImage, SourceProcessId",
+        "explanation": "Group results by relevant process and system information"
+      },
+      {
+        "action": "rename",
+        "params": "Computer as dest",
+        "explanation": "Rename the Computer field to 'dest' as specified"
+      }
+    ]
+  },
+  "rule_type": "Splunk",
+  "rows": [
+    "{\"EventCode\": 10, \"_time\": 1735689660, \"Computer\": \"host-a\", \"TargetImage\": \"C:\\\\Windows\\\\System32\\\\lsass.exe\", \"TargetProcessId\": 500, \"SourceImage\": \"C:\\\\Tools\\\\diagnostic.exe\", \"SourceProcessId\": 100, \"CallTrace\": \"C:\\\\Windows\\\\System32\\\\dbghelp.dll+0x10\"}",
+    "{\"EventCode\": 10, \"_time\": 1735689720, \"Computer\": \"host-a\", \"TargetImage\": \"C:\\\\Windows\\\\System32\\\\lsass.exe\", \"TargetProcessId\": 500, \"SourceImage\": \"C:\\\\Tools\\\\diagnostic.exe\", \"SourceProcessId\": 100, \"CallTrace\": \"C:\\\\Windows\\\\System32\\\\dbgcore.dll+0x20\"}",
+    "{\"EventCode\": 3, \"_time\": 1735689660, \"Computer\": \"host-a\", \"TargetImage\": \"C:\\\\Windows\\\\System32\\\\lsass.exe\", \"TargetProcessId\": 500, \"SourceImage\": \"C:\\\\Tools\\\\diagnostic.exe\", \"SourceProcessId\": 100, \"CallTrace\": \"C:\\\\Windows\\\\System32\\\\dbghelp.dll+0x10\"}",
+    "{\"EventCode\": 10, \"_time\": 1735689660, \"Computer\": \"host-a\", \"TargetImage\": \"C:\\\\Windows\\\\System32\\\\lsass.exe\", \"TargetProcessId\": 500, \"SourceImage\": \"C:\\\\Tools\\\\diagnostic.exe\", \"SourceProcessId\": 100, \"CallTrace\": \"C:\\\\Windows\\\\System32\\\\kernel32.dll+0x10\"}"
+  ],
+  "tape": []
+}

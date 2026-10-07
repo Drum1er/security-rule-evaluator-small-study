@@ -1,0 +1,1942 @@
+class SemanticRuleOptimizer:
+    """Semantic rule optimizer that ensures converted rules maintain the same semantic meaning as original rules."""
+
+    def __init__(self, model: str = "gpt-4o-mini"):
+        """
+        Initialize the Semantic Rule Optimizer.
+
+        Args:
+            model: OpenAI model to use for optimization
+        """
+        self.model = model
+        self.client = client
+        self.logger = logging.getLogger(__name__)
+
+        if not self.client:
+            self.logger.warning(
+                "OpenAI client not available. Please check your API key."
+            )
+
+    def optimize_rule_semantics(
+        self,
+        original_rule: str,
+        converted_rule: str,
+        original_ir: dict,
+        converted_ir: dict,
+        source_rule_type: str,
+        target_rule_type: str,
+    ) -> dict:
+        """
+        Optimize the converted rule to ensure semantic equivalence with the original rule.
+
+        Args:
+            original_rule: The original rule content
+            converted_rule: The converted rule content
+            original_ir: The original rule's IR
+            converted_ir: The converted rule's IR
+            source_rule_type: Source rule type
+            target_rule_type: Target rule type
+
+        Returns:
+            Dictionary containing optimization results
+        """
+        try:
+            self.logger.info("Starting semantic rule optimization")
+
+            # Step 1: Generate test log data
+            test_log_data = self._generate_test_log_data(original_ir, source_rule_type)
+
+            # Step 2: Generate and execute Python code blocks for original rule
+            self.logger.info("Generating and executing code blocks for original rule")
+            original_code_blocks, source_execution_context, original_results = (
+                self._generate_code_blocks(original_ir, source_rule_type, test_log_data)
+            )
+            self.logger.info(
+                f"Generated {len(original_code_blocks)} code blocks for original rule"
+            )
+
+            # Step 3: Generate and execute Python code blocks for converted rule
+            self.logger.info("Generating and executing code blocks for converted rule")
+            converted_code_blocks, target_execution_context, converted_results = (
+                self._generate_code_blocks(
+                    converted_ir, target_rule_type, test_log_data
+                )
+            )
+            self.logger.info(
+                f"Generated {len(converted_code_blocks)} code blocks for converted rule"
+            )
+
+            # Step 4: Build comparison results from execution data obtained during generation
+            comparison_results = self._build_comparison_results(
+                test_log_data, original_results, converted_results
+            )
+
+            # Log semantic optimization step
+            from src.utils.conversion_logger import conversion_logger
+
+            conversion_logger.log_semantic_optimization_step(
+                step_name="semantic_equivalence_analysis",
+                test_log_data=test_log_data,
+                source_code_blocks=original_code_blocks,
+                target_code_blocks=converted_code_blocks,
+                source_execution_context=source_execution_context,
+                target_execution_context=target_execution_context,
+                source_execution_results=original_results,
+                target_execution_results=converted_results,
+                matches_count=comparison_results.get("matches", 0),
+                total_tests=comparison_results.get("total_tests", 0),
+                equivalence_score=comparison_results.get("equivalence_score", 0.0),
+                metadata={
+                    "source_rule_type": source_rule_type,
+                    "target_rule_type": target_rule_type,
+                    "original_rule_length": len(original_rule),
+                    "converted_rule_length": len(converted_rule),
+                },
+            )
+
+            # Step 4: Generate semantic optimization suggestions
+            optimization_suggestions = self._generate_optimization_suggestions(
+                comparison_results,
+                original_rule,
+                converted_rule,
+                original_ir,
+                converted_ir,
+            )
+
+            # Step 5: Apply optimizations and generate improved rule
+            optimized_rule = self._apply_optimizations(
+                converted_rule,
+                optimization_suggestions,
+                comparison_results,
+                target_rule_type,
+            )
+
+            # Step 6: Final LLM optimization to ensure semantic equivalence
+            final_optimized_rule = self._final_semantic_optimization(
+                original_rule,
+                optimized_rule,
+                original_ir,
+                converted_ir,
+                source_rule_type,
+                target_rule_type,
+                comparison_results,
+            )
+
+            # Step 7: Log the optimization results
+            conversion_logger.log_rule_optimization(
+                original_rule=converted_rule,
+                optimized_rule=optimized_rule,
+                optimization_suggestions=optimization_suggestions,
+                equivalence_score=comparison_results.get("equivalence_score", 0.0),
+                metadata={
+                    "source_rule_type": source_rule_type,
+                    "target_rule_type": target_rule_type,
+                    "comparison_method": comparison_results.get(
+                        "comparison_method", "unknown"
+                    ),
+                    "llm_analysis": comparison_results.get("llm_analysis", ""),
+                    "llm_reasoning": comparison_results.get("llm_reasoning", ""),
+                },
+            )
+
+            result = {
+                "success": True,
+                "test_log_data": test_log_data,
+                "original_code_blocks": original_code_blocks,
+                "converted_code_blocks": converted_code_blocks,
+                "original_results": original_results,
+                "converted_results": converted_results,
+                "source_execution_context": source_execution_context,
+                "target_execution_context": target_execution_context,
+                "comparison_results": comparison_results,
+                "optimization_suggestions": optimization_suggestions,
+                "optimized_rule": final_optimized_rule,  # Use final optimized rule
+                "intermediate_optimized_rule": optimized_rule,  # Keep intermediate for reference
+                "semantic_equivalence_score": comparison_results.get(
+                    "equivalence_score", 0.0
+                ),
+            }
+
+            self.logger.info(
+                f"Semantic optimization completed. Score: {result['semantic_equivalence_score']}"
+            )
+            self.logger.info(f"Result structure: {list(result.keys())}")
+            self.logger.info(f"Original code blocks count: {len(original_code_blocks)}")
+            self.logger.info(
+                f"Converted code blocks count: {len(converted_code_blocks)}"
+            )
+            self.logger.info(f"Test log data count: {len(test_log_data)}")
+
+            # Log sample code blocks for debugging
+            if original_code_blocks:
+                self.logger.info(
+                    f"Sample original code block: {original_code_blocks[0][:100]}..."
+                )
+            if converted_code_blocks:
+                self.logger.info(
+                    f"Sample converted code block: {converted_code_blocks[0][:100]}..."
+                )
+
+            return result
+
+        except Exception as e:
+            self.logger.error(f"Semantic optimization failed: {e}")
+            return {
+                "success": False,
+                "error": str(e),
+                "semantic_equivalence_score": 0.0,
+            }
+
+    def _generate_test_log_data(self, ir: dict, rule_type: str) -> list:
+        """
+        Generate test log data based on the IR structure.
+
+        Args:
+            ir: The rule's IR
+            rule_type: The rule type
+
+        Returns:
+            List of test log entries as JSON strings
+        """
+        try:
+            prompt = f"""
+            Based on the following rule IR, generate realistic test log data that would trigger this rule.
+            
+            Rule IR:
+            {json.dumps(ir, indent=2)}
+            
+            Rule Type: {rule_type}
+            
+            CRITICAL REQUIREMENTS:
+            1. CAREFULLY analyze each step in the IR to understand what the rule is looking for
+            2. Extract the EXACT field names, values, and patterns from the rule's parameters
+            3. Generate log entries that contain the SPECIFIC data the rule searches for
+            4. Include the exact keywords, patterns, or values mentioned in the rule's filter conditions
+            5. Make sure the log format matches the rule's data source and event type
+            6. Include realistic attack scenarios that would trigger this specific rule
+            
+            Rule description:
+            {ir.get('description', 'No description')}
+            
+            STEPS TO MATCH:
+            {chr(10).join([f"- Step {i+1}: {step.get('action', 'unknown')} with params: {step.get('params', 'none')}" for i, step in enumerate(ir.get('steps', []))])}
+            
+            Generate 20 test log entries in JSON format. Create a MIXED dataset:
+            - 10 entries that SHOULD MATCH the rule (contain all required conditions)
+            - 10 entries that should NOT MATCH the rule (missing some conditions)
+            
+            This will help test both positive and negative cases for proper rule validation.
+            Return the result as a JSON array of log entries.
+            
+            IMPORTANT: The log entries must contain the exact field names and values that the rule searches for.
+            For MATCHING entries: include all required field values
+            For NON-MATCHING entries: deliberately omit or change some required values
+            For example, if the rule searches for "EventID=4104", include "EventID": "4104" in matching logs, but "EventID": "4105" or missing EventID in non-matching logs.
+            
+            Return ONLY a valid JSON array like this:
+            ```json
+            [
+            {{"timestamp": "2024-01-01T10:00:00Z", "field1": "value1", "field2": "value2", ...}},
+            {{"timestamp": "2024-01-01T10:01:00Z", "field1": "value3", "field2": "value4", ...}}
+            ...
+            ]
+            ```"""
+
+            response = self._call_openai_api(prompt)
+
+            if response:
+                # Clean the response and try to parse JSON
+                cleaned_response = response.strip()
+
+                # Remove any markdown code blocks if present
+                if "```json" in cleaned_response:
+                    import re
+
+                    json_match = re.search(
+                        r"```json\s*([\s\S]*?)\s*```", cleaned_response
+                    )
+                    if json_match:
+                        cleaned_response = json_match.group(1).strip()
+                elif "```" in cleaned_response:
+                    import re
+
+                    json_match = re.search(r"```\s*([\s\S]*?)\s*```", cleaned_response)
+                    if json_match:
+                        cleaned_response = json_match.group(1).strip()
+
+                try:
+                    test_data = json.loads(cleaned_response)
+                    if isinstance(test_data, list) and len(test_data) > 0:
+                        return [json.dumps(entry) for entry in test_data]
+                except json.JSONDecodeError as e:
+                    self.logger.warning(f"Failed to parse JSON response: {e}")
+
+            # Fallback: generate basic test data
+            return self._generate_fallback_test_data(ir, rule_type)
+
+        except Exception as e:
+            self.logger.warning(f"Failed to generate test log data: {e}")
+            return self._generate_fallback_test_data(ir, rule_type)
+
+    def _generate_fallback_test_data(self, ir: dict, rule_type: str) -> list:
+        """Generate basic fallback test data with randomness."""
+        import random
+        import time
+
+        # Use current time for more randomness
+        base_time = int(time.time())
+
+        test_entries = []
+        for i in range(10):  # Generate 10 entries instead of 5
+            entry = {
+                "timestamp": f"2024-01-{random.randint(1, 28):02d}T{random.randint(0, 23):02d}:{random.randint(0, 59):02d}:{random.randint(0, 59):02d}Z",
+                "source_ip": f"192.168.{random.randint(1, 255)}.{random.randint(1, 255)}",
+                "dest_ip": f"10.0.{random.randint(0, 255)}.{random.randint(1, 255)}",
+                "action": random.choice(["block", "allow", "deny", "permit"]),
+                "protocol": random.choice(["tcp", "udp", "icmp", "http", "https"]),
+                "port": random.randint(1, 65535),
+                "user": random.choice(["admin", "user", "guest", "root", "system"]),
+                "event_type": random.choice(
+                    ["firewall", "auth", "network", "system", "security"]
+                ),
+                "id": base_time + i,  # Unique ID
+            }
+            test_entries.append(json.dumps(entry))
+
+        return test_entries
+
+    def _generate_code_blocks(
+        self, ir: dict, rule_type: str, test_log_data: list = None
+    ) -> tuple:
+        """
+        Generate Python code blocks step by step with execution validation.
+        Each step is generated, executed, and validated before proceeding to the next.
+
+        Args:
+            ir: The rule's IR
+            rule_type: The rule type
+            test_log_data: List of test log entries to understand data format
+
+        Returns:
+            Tuple of (code_blocks, execution_context, execution_results)
+        """
+        try:
+            self.logger.info(f"Starting step-by-step code generation for {rule_type}")
+            self.logger.info(f"IR structure: {list(ir.keys())}")
+
+            steps = ir.get("steps", [])
+            self.logger.info(f"Found {len(steps)} steps in IR")
+
+            # Initialize conversation with system prompt
+            messages = [
+                {
+                    "role": "system",
+                    "content": self._get_code_generation_system_prompt(
+                        rule_type, test_log_data
+                    ),
+                }
+            ]
+
+            code_blocks = []
+            execution_context = {}  # Initialize execution context
+            for i, step in enumerate(steps):
+                self.logger.info(
+                    f"Processing step {i+1}: {step.get('action', 'unknown')}"
+                )
+
+                # Determine function input for this step
+                if i == 0:
+                    # First step: use test_log_data
+                    function_input = test_log_data
+                else:
+                    # Subsequent steps: use previous step's all results
+                    function_input = execution_context.get(
+                        f"step_{i}_all_results",
+                        execution_context.get(f"step_{i}_output", []),
+                    )
+
+                # Generate code block for current step with reflection
+                code_block = self._generate_and_validate_step(
+                    step, i, rule_type, function_input, messages, execution_context
+                )
+
+                if code_block:
+                    self.logger.info(
+                        f"Successfully generated and validated code block for step {i+1}"
+                    )
+                    code_blocks.append(code_block)
+
+                    # Add successful code to conversation history
+                    messages.append(
+                        {
+                            "role": "assistant",
+                            "content": f"Here's the validated code block for step {i+1}:\n```python\n{code_block}\n```",
+                        }
+                    )
+                else:
+                    self.logger.error(
+                        f"Failed to generate valid code block for step {i+1}"
+                    )
+                    # Use fallback code
+                    fallback_code = self._generate_fallback_code_block(
+                        step.get("action", ""), step.get("params", ""), i
+                    )
+                    code_blocks.append(fallback_code)
+                    messages.append(
+                        {
+                            "role": "assistant",
+                            "content": f"Here's the fallback code block for step {i+1}:\n```python\n{fallback_code}\n```",
+                        }
+                    )
+
+            # Extract final execution results from execution context
+            execution_results = self._extract_final_results_from_context(
+                execution_context, test_log_data
+            )
+
+            self.logger.info(
+                f"Generated {len(code_blocks)} total validated code blocks with {len(execution_results)} execution results"
+            )
+            return code_blocks, execution_context, execution_results
+
+        except Exception as e:
+            self.logger.error(f"Failed to generate code blocks: {e}")
+            return [], {}, []
+
+    def _generate_and_validate_step(
+        self,
+        step: dict,
+        step_index: int,
+        rule_type: str,
+        function_input: any,
+        messages: list,
+        execution_context: dict,
+        max_retries: int = 3,
+    ) -> str:
+        """
+        Generate and validate a single code step with reflection mechanism.
+
+        Args:
+            step: The rule step
+            step_index: The step index
+            rule_type: The rule type
+            function_input: Input data for this step (test_log_data for first step, previous output for others)
+            messages: Conversation history
+            execution_context: Context from previous steps
+            max_retries: Maximum number of retry attempts
+
+        Returns:
+            Validated code block or None if failed
+        """
+        for attempt in range(max_retries):
+            self.logger.info(f"Generating step {step_index + 1}, attempt {attempt + 1}")
+
+            # Build prompt with previous step context
+            user_prompt = self._build_step_prompt_with_context(
+                step, step_index, rule_type, function_input, execution_context
+            )
+
+            # Add user prompt to messages
+            current_messages = messages + [{"role": "user", "content": user_prompt}]
+
+            # Generate code block
+            code_block = self._generate_single_code_block_with_messages(
+                current_messages, step, step_index, rule_type
+            )
+
+            if not code_block:
+                self.logger.warning(
+                    f"No code block generated for step {step_index + 1}, attempt {attempt + 1}"
+                )
+                continue
+
+            # Execute and validate the code block
+            validation_result = self._validate_code_block(
+                code_block, step_index, function_input, execution_context
+            )
+
+            if validation_result["success"]:
+                self.logger.info(f"Step {step_index + 1} validation successful")
+                # Update execution context with this step's results
+                execution_context[f"step_{step_index + 1}_output"] = validation_result[
+                    "output"
+                ]
+                execution_context[f"step_{step_index + 1}_code"] = code_block
+
+                # Execute this step with all test data and record results
+                step_results = self._execute_single_step_with_all_data(
+                    code_block, step_index, function_input, execution_context
+                )
+                execution_context[f"step_{step_index + 1}_all_results"] = step_results
+
+                return code_block
+            else:
+                self.logger.warning(
+                    f"Step {step_index + 1} validation failed: {validation_result['error']}"
+                )
+
+                # Add reflection feedback to messages for next attempt
+                reflection_prompt = self._build_reflection_prompt(
+                    step, step_index, code_block, validation_result, execution_context
+                )
+                messages.append(
+                    {
+                        "role": "user",
+                        "content": f"Previous attempt failed. Here's the feedback:\n{reflection_prompt}",
+                    }
+                )
+
+                # Also add the reflection to execution context for better context in next attempt
+                execution_context[
+                    f"step_{step_index + 1}_reflection_attempt_{attempt + 1}"
+                ] = {
+                    "code_block": code_block,
+                    "error": validation_result["error"],
+                    "reflection": reflection_prompt,
+                }
+
+        self.logger.error(
+            f"Failed to generate valid code for step {step_index + 1} after {max_retries} attempts"
+        )
+        return None
+
+    def _build_step_prompt_with_context(
+        self,
+        step: dict,
+        step_index: int,
+        rule_type: str,
+        function_input: any,
+        execution_context: dict,
+    ) -> str:
+        """Build step prompt with context from previous steps."""
+        action = step.get("action", "")
+        params = step.get("params", "")
+        explanation = step.get("explanation", "")
+
+        # Analyze function input format
+        input_format_analysis = self._analyze_input_format(function_input, step_index)
+
+        # Build context information from previous steps
+        context_info = ""
+        if step_index > 0:
+            context_info = "\n\nPrevious Steps Context:\n"
+            for i in range(step_index):
+                prev_step_key = f"step_{i + 1}_output"
+                if prev_step_key in execution_context:
+                    context_info += (
+                        f"- Step {i + 1} output: {execution_context[prev_step_key]}\n"
+                    )
+
+        # Add reflection feedback from previous attempts for this step
+        reflection_info = ""
+        for key, value in execution_context.items():
+            if key.startswith(f"step_{step_index + 1}_reflection_attempt_"):
+                attempt_num = key.split("_")[-1]
+                reflection_info += f"\n\nPrevious Attempt {attempt_num} Feedback:\n"
+                reflection_info += (
+                    f"- Generated Code: {value.get('code_block', 'N/A')}\n"
+                )
+                reflection_info += f"- Error: {value.get('error', 'N/A')}\n"
+                reflection_info += f"- Reflection: {value.get('reflection', 'N/A')}\n"
+
+        # Determine input/output based on actual data analysis
+        total_steps = execution_context.get("total_steps", step_index + 1)
+        input_desc, output_desc = self._get_dynamic_input_output_desc(
+            function_input, step_index, total_steps
+        )
+
+        return f"""Generate the code block for step {step_index + 1} of the {rule_type} rule processing pipeline.
+
+Step Details:
+- Action: {action}
+- Parameters: {params}
+- Explanation: {explanation}
+- Step Position: {step_index + 1} of the processing chain
+
+Function Requirements:
+- Function name: step_{step_index + 1}
+- Input: {input_desc}
+- Output: {output_desc}
+- Purpose: {explanation}
+
+{input_format_analysis}
+
+{context_info}
+
+{reflection_info}
+
+Data Processing Chain Context:
+- This is step {step_index + 1} in a multi-step processing pipeline
+- Each step builds upon the previous step's output
+- The final step should return a boolean indicating rule match
+- Maintain consistency with other steps in the pipeline
+
+Generate a Python function that:
+1. Takes the appropriate input based on its position in the chain
+2. Applies the specific processing logic for this step
+3. Returns data in the correct format for the next step
+4. Handles errors gracefully
+5. Uses the exact field names from the input data format
+6. Includes clear comments explaining the logic
+
+Focus on creating a function that integrates seamlessly with the overall processing pipeline."""
+
+    def _get_dynamic_input_output_desc(
+        self, function_input: any, step_index: int, total_steps: int
+    ) -> tuple:
+        """
+        Dynamically determine input and output descriptions based on actual data analysis.
+
+        Args:
+            function_input: The actual input data for this step
+            step_index: Current step index (0-based)
+            total_steps: Total number of steps in the pipeline
+
+        Returns:
+            Tuple of (input_desc, output_desc)
+        """
+        # Analyze input format
+        if step_index == 0:
+            # First step: analyze the test data format
+            if isinstance(function_input, list) and len(function_input) > 0:
+                try:
+                    sample_item = (
+                        json.loads(function_input[0])
+                        if isinstance(function_input[0], str)
+                        else function_input[0]
+                    )
+                    if isinstance(sample_item, dict):
+                        input_desc = f"list of {len(function_input)} log entries (dictionaries with keys: {list(sample_item.keys())[:5]}{'...' if len(sample_item.keys()) > 5 else ''})"
+                    else:
+                        input_desc = f"list of {len(function_input)} {type(sample_item).__name__} items"
+                except:
+                    input_desc = f"list of {len(function_input)} log entries"
+            else:
+                input_desc = f"log data ({type(function_input).__name__})"
+        else:
+            # Subsequent steps: analyze previous step output
+            if isinstance(function_input, list) and len(function_input) > 0:
+                sample_item = function_input[0]
+                if isinstance(sample_item, dict):
+                    input_desc = f"list of {len(function_input)} processed items (dictionaries with keys: {list(sample_item.keys())[:5]}{'...' if len(sample_item.keys()) > 5 else ''})"
+                else:
+                    input_desc = f"list of {len(function_input)} {type(sample_item).__name__} items"
+            elif isinstance(function_input, dict):
+                input_desc = f"single dictionary with keys: {list(function_input.keys())[:5]}{'...' if len(function_input.keys()) > 5 else ''}"
+            else:
+                input_desc = f"processed data ({type(function_input).__name__})"
+
+        # Determine output format based on step position and action
+        if step_index == total_steps - 1:
+            # Final step: output should be appropriate for rule evaluation
+            output_desc = "final evaluation result (boolean, list of booleans, or filtered data matching the rule criteria)"
+        else:
+            # Intermediate step: output should be processable by next step
+            output_desc = (
+                "processed data in a format suitable for the next processing step"
+            )
+
+        return input_desc, output_desc
+
+    def _analyze_input_format(self, function_input: any, step_index: int) -> str:
+        """Analyze the input format for the current step based on actual data structure."""
+
+        # Analyze the actual input data structure
+        if isinstance(function_input, list) and len(function_input) > 0:
+            sample_item = function_input[0]
+            if isinstance(sample_item, dict):
+                keys = list(sample_item.keys())
+                return f"""
+Input Format Analysis (Step {step_index + 1}):
+- Input type: LIST of {len(function_input)} dictionaries
+- Sample item structure: {json.dumps(sample_item, indent=2)}
+- Available keys: {keys}
+- Your function should process the ENTIRE list
+- Function signature: def step_{step_index + 1}(input_list):
+- Access items: for item in input_list: item.get('key_name')
+- Each item is a dictionary, no JSON parsing needed
+"""
+            else:
+                return f"""
+Input Format Analysis (Step {step_index + 1}):
+- Input type: LIST of {len(function_input)} {type(sample_item).__name__} items
+- Sample item: {sample_item}
+- Your function should process the ENTIRE list
+- Function signature: def step_{step_index + 1}(input_list):
+- Access items: for item in input_list: # process item
+"""
+        elif isinstance(function_input, dict):
+            keys = list(function_input.keys())
+            return f"""
+Input Format Analysis (Step {step_index + 1}):
+- Input type: SINGLE DICTIONARY
+- Structure: {json.dumps(function_input, indent=2)}
+- Available keys: {keys}
+- Your function should process this dictionary
+- Function signature: def step_{step_index + 1}(input_dict):
+- Access data: input_dict.get('key_name')
+"""
+        else:
+            return f"""
+Input Format Analysis (Step {step_index + 1}):
+- Input type: {type(function_input).__name__}
+- Data content: {function_input}
+- Your function should process this data as provided
+- Function signature: def step_{step_index + 1}(input_data):
+- Handle the data structure appropriately
+"""
+
+    def _validate_code_block(
+        self,
+        code_block: str,
+        step_index: int,
+        function_input: any,
+        execution_context: dict,
+    ) -> dict:
+        """
+        Validate a code block by executing it with test data.
+
+        Returns:
+            dict with 'success', 'output', 'error' keys
+        """
+        try:
+            # Create execution environment
+            exec_globals = {
+                "json": json,
+                "re": __import__("re"),
+                "datetime": __import__("datetime"),
+                "time": __import__("time"),
+            }
+            exec_locals = {}
+
+            # Execute the code block
+            exec(code_block, exec_globals, exec_locals)
+            exec_globals.update(exec_locals)
+
+            # Get the function name
+            func_name = f"step_{step_index + 1}"
+            if func_name not in exec_locals:
+                return {
+                    "success": False,
+                    "output": None,
+                    "error": f"Function {func_name} not found in generated code",
+                }
+
+            func = exec_locals[func_name]
+
+            # Test with function input data
+            test_results = []
+
+            if step_index == 0:
+                # First step: convert JSON strings to dictionaries and pass to function
+                try:
+                    # Convert JSON strings to dictionaries if needed
+                    processed_input = []
+                    if isinstance(function_input, list):
+                        for item in function_input:
+                            if isinstance(item, str):
+                                try:
+                                    processed_input.append(json.loads(item))
+                                except json.JSONDecodeError:
+                                    # If not JSON, keep as is
+                                    processed_input.append(item)
+                            else:
+                                processed_input.append(item)
+                    else:
+                        processed_input = function_input
+
+                    result = func(processed_input)
+                    test_results.append(result)
+                except Exception as e:
+                    return {
+                        "success": False,
+                        "output": None,
+                        "error": f"Execution error: {str(e)}",
+                    }
+            else:
+                # Subsequent steps: use previous step output
+                prev_output = execution_context.get(f"step_{step_index}_output")
+                if prev_output is None:
+                    return {
+                        "success": False,
+                        "output": None,
+                        "error": f"No previous step output available for step {step_index + 1}",
+                    }
+
+                try:
+                    result = func(prev_output)
+                    test_results.append(result)
+                except Exception as e:
+                    return {
+                        "success": False,
+                        "output": None,
+                        "error": f"Execution error: {str(e)}",
+                    }
+
+            # Validate results
+            if not test_results:
+                return {
+                    "success": False,
+                    "output": None,
+                    "error": "No test results generated",
+                }
+
+            # Check if results are consistent (all same type)
+            result_types = [type(r) for r in test_results]
+            if len(set(str(t) for t in result_types)) > 1:
+                return {
+                    "success": False,
+                    "output": test_results,
+                    "error": f"Inconsistent return types: {result_types}",
+                }
+
+            # return {"success": True, "output": test_results, "error": None}
+            # Return the actual function result, not the test_results wrapper
+            actual_result = test_results[0] if test_results else None
+            return {"success": True, "output": actual_result, "error": None}
+
+        except Exception as e:
+            return {
+                "success": False,
+                "output": None,
+                "error": f"Code execution failed: {str(e)}",
+            }
+
+    def _build_reflection_prompt(
+        self,
+        step: dict,
+        step_index: int,
+        code_block: str,
+        validation_result: dict,
+        execution_context: dict,
+    ) -> str:
+        """Build reflection prompt for failed code generation."""
+        error = validation_result.get("error", "Unknown error")
+        output = validation_result.get("output", "No output")
+
+        return f"""The previous code generation for step {step_index + 1} failed validation.
+
+Generated Code:
+```python
+{code_block}
+```
+
+Validation Error:
+{error}
+
+Test Output:
+{output}
+
+Please analyze the issues and generate a corrected version that:
+1. Fixes the specific error mentioned above
+2. Maintains compatibility with the processing chain
+3. Handles edge cases properly
+4. Returns the expected data type for the next step
+
+Focus on the specific error and provide a robust solution."""
+
+    def _get_code_generation_system_prompt(
+        self, rule_type: str, test_log_data: list = None
+    ) -> str:
+        """Get the system prompt for code generation."""
+        log_format_info = ""
+        if test_log_data and len(test_log_data) > 0:
+            try:
+                sample_log = json.loads(test_log_data[0])
+                log_keys = list(sample_log.keys())
+                log_format_info = f"""
+                
+Test Log Data Format:
+- Available keys: {log_keys}
+- Sample log entry: {json.dumps(sample_log, indent=2)}
+- Your functions should work with log entries that have these exact key names and data types.
+"""
+            except (json.JSONDecodeError, IndexError):
+                log_format_info = f"""
+                
+Test Log Data Format:
+- {len(test_log_data)} test log entries available
+- Log entries are JSON strings that need to be parsed
+- Your functions should handle JSON parsing and work with the resulting dictionary
+"""
+        else:
+            log_format_info = """
+            
+Test Log Data Format:
+- No test log data provided
+- Your functions should work with generic log entry dictionaries
+- Use .get() method to safely access dictionary keys
+"""
+
+        return f"""You are an expert in security rule optimization and code generation for {rule_type} rules.
+
+Your task is to generate a chain of Python functions that process security log data step by step.
+
+CRITICAL REQUIREMENTS:
+1. Each function processes data and passes output to the next function
+2. The first function takes raw log data list as input (list of dictionaries)
+3. Each subsequent function takes the output of the previous function as input
+4. The final function should return filtered/processed data for comparison
+5. All functions must work together as a complete processing pipeline
+6. Use consistent data structures and parameter names across all functions
+7. Each function should be named step_1, step_2, step_3, etc.
+8. Functions should handle errors gracefully and return appropriate data types
+
+Data Flow:
+- step_1(log_entries_list) -> processed_data_list (list of processed entries)
+- step_2(processed_data_list) -> processed_data_2 (list of processed entries)
+- step_3(processed_data_list) -> final_boolean_result_list (list of True/False)
+
+IMPORTANT: 
+1. The first step takes processed log data list as input (list of dictionaries)
+2. Each step processes the ENTIRE list and returns a list
+3. The final step must return a list of boolean (True/False) indicating the matching results for the log entries
+
+{log_format_info}
+
+Function Requirements:
+- Each function should be self-contained and focused on one specific processing step
+- Use descriptive variable names and add comments explaining the logic
+- Handle edge cases and potential errors
+- Return data in a consistent format that the next function can process
+- The final function should return a list of boolean indicating the matching results for the log entries
+
+Example structure:
+```python
+def step_1(log_entries_list):
+    # Process the entire list of raw log data
+    # Return list of processed entries for next step
+    # Process the complete list of log entries
+    processed_entries = []
+    for log_entry in log_entries_list:
+        # Process log entry as needed
+        processed_entries.append(processed_log)
+    return processed_entries
+
+def step_2(processed_entries_list):
+    # Process the list from step_1
+    # Return list of processed entries for next step
+    pass
+
+def step_3(processed_entries_list):
+    # Final processing and filtering
+    # Return list of boolean results for the processed entries
+    pass
+```
+
+Remember: Each function processes the ENTIRE list and returns a list for the next step."""
+
+    def _build_step_prompt(
+        self,
+        step: dict,
+        step_index: int,
+        rule_type: str,
+        test_log_data: list = None,
+        total_steps: int = 1,
+    ) -> str:
+        """Build the user prompt for a specific step."""
+        action = step.get("action", "")
+        params = step.get("params", "")
+        explanation = step.get("explanation", "")
+
+        # Determine input/output description based on step position
+        if step_index == 0:
+            input_desc = "raw log entry (list of dictionaries)"
+            output_desc = "processed data for the next step"
+        else:
+            input_desc = "processed data from the previous step"
+            output_desc = (
+                "processed data for the next step"
+                if step_index < total_steps - 1
+                else "final boolean result list (list of True/False)"
+            )
+
+        return f"""Generate the code block for step {step_index + 1} of the {rule_type} rule processing pipeline.
+
+Step Details:
+- Action: {action}
+- Parameters: {params}
+- Explanation: {explanation}
+- Step Position: {step_index + 1} of the processing chain
+
+Function Requirements:
+- Function name: step_{step_index + 1}
+- Input: {input_desc}
+- Output: {output_desc}
+- Purpose: {explanation}
+
+Data Processing Chain Context:
+- This is step {step_index + 1} in a multi-step processing pipeline
+- Each step builds upon the previous step's output
+- The final step should return a list of boolean indicating rule match
+- Maintain consistency with other steps in the pipeline
+
+Generate a Python function that:
+1. Takes the appropriate input based on its position in the chain
+2. Applies the specific processing logic for this step
+3. Returns data in the correct format for the next step
+4. Handles errors gracefully
+5. Uses the exact field names from the test log data format
+6. Includes clear comments explaining the logic
+7. If the step needs some specific external data like files or databases, you can simulate the data by using a simple dictionary. DO NOT use any real external data.
+
+Focus on creating a function that integrates seamlessly with the overall processing pipeline."""
+
+    def _generate_single_code_block_with_messages(
+        self, messages: list, step: dict, step_index: int, rule_type: str
+    ) -> str:
+        """Generate a single code block using the conversation messages."""
+        try:
+            self.logger.info(f"Generating code block for step {step_index + 1}")
+
+            response = self._call_openai_api_with_messages(messages)
+
+            if response:
+                self.logger.info(
+                    f"Received response for step {step_index + 1} (length: {len(response)})"
+                )
+
+                # Extract code block
+                import re
+
+                code_match = re.search(r"```python\s*([\s\S]*?)\s*```", response)
+                if code_match:
+                    extracted_code = code_match.group(1).strip()
+                    self.logger.info(
+                        f"Extracted Python code block for step {step_index + 1} (length: {len(extracted_code)})"
+                    )
+                    return extracted_code
+                else:
+                    # Try to extract function definition
+                    func_match = re.search(
+                        r"def\s+\w+\([^)]*\):[\s\S]*?(?=\ndef|\Z)", response
+                    )
+                    if func_match:
+                        extracted_func = func_match.group(0).strip()
+                        self.logger.info(
+                            f"Extracted function definition for step {step_index + 1} (length: {len(extracted_func)})"
+                        )
+                        return extracted_func
+                    else:
+                        self.logger.warning(
+                            f"No code block found in response for step {step_index + 1}"
+                        )
+            else:
+                self.logger.warning(f"No response received for step {step_index + 1}")
+
+        except Exception as e:
+            self.logger.error(
+                f"Failed to generate code block for step {step_index + 1}: {e}"
+            )
+
+        return None
+
+    def _generate_fallback_code_block(
+        self, action: str, params: str, step_index: int
+    ) -> str:
+        """Generate a basic fallback code block."""
+        return f"""def step_{step_index + 1}(log_entry):
+    # Basic implementation for: {action}
+    # Parameters: {params}
+    try:
+        # Check if log entry matches basic criteria
+        if isinstance(log_entry, dict):
+            return True
+        return False
+    except Exception:
+        return False"""
+
+    def _execute_single_step_with_all_data(
+        self,
+        code_block: str,
+        step_index: int,
+        function_input: any,
+        execution_context: dict,
+    ) -> list:
+        """
+        Execute a single step with all test data and record results.
+
+        Args:
+            code_block: The code block to execute
+            step_index: The step index
+            function_input: Input data for this step
+            execution_context: Context from previous steps
+
+        Returns:
+            List of results for all test data entries
+        """
+        try:
+            # Create execution environment
+            exec_globals = {
+                "json": json,
+                "re": __import__("re"),
+                "datetime": __import__("datetime"),
+                "time": __import__("time"),
+            }
+            exec_locals = {}
+
+            # Execute the code block
+            exec(code_block, exec_globals, exec_locals)
+            exec_globals.update(exec_locals)
+
+            # Get the function name
+            func_name = f"step_{step_index + 1}"
+            if func_name not in exec_locals:
+                self.logger.error(f"Function {func_name} not found in generated code")
+                return []
+
+            func = exec_locals[func_name]
+            results = []
+
+            if step_index == 0:
+                # First step: process all test log data
+                if isinstance(function_input, list):
+                    # Parse all entries to dictionaries
+                    parsed_data = []
+                    for log_entry in function_input:
+                        try:
+                            if isinstance(log_entry, str):
+                                log_dict = json.loads(log_entry)
+                            else:
+                                log_dict = log_entry
+                            parsed_data.append(log_dict)
+                        except json.JSONDecodeError as e:
+                            self.logger.warning(f"Error parsing log entry: {e}")
+                            continue
+
+                    if parsed_data:
+                        # Execute function with all parsed data
+                        result = func(parsed_data)
+                        results = (
+                            result
+                            if isinstance(result, list)
+                            else [result] * len(parsed_data)
+                        )
+                    else:
+                        results = []
+                else:
+                    # Fallback: single entry
+                    try:
+                        if isinstance(function_input, str):
+                            log_dict = json.loads(function_input)
+                        else:
+                            log_dict = function_input
+                        result = func([log_dict])
+                        results = result if isinstance(result, list) else [result]
+                    except Exception as e:
+                        self.logger.error(f"Error executing first step: {e}")
+                        results = []
+            else:
+                # Subsequent steps: use results from previous step
+                prev_results = execution_context.get(
+                    f"step_{step_index}_all_results", []
+                )
+                if not prev_results:
+                    self.logger.warning(
+                        f"No previous results found for step {step_index + 1}"
+                    )
+                    return []
+
+                # Execute function with the complete list from previous step
+                try:
+                    result = func(
+                        prev_results
+                    )  # Pass the entire list, not individual items
+                    # Ensure result is a list for consistency
+                    results = (
+                        result
+                        if isinstance(result, list)
+                        else [result] * len(prev_results)
+                    )
+                except Exception as e:
+                    self.logger.warning(f"Error executing step {step_index + 1}: {e}")
+                    results = [False] * len(prev_results)
+
+            self.logger.info(
+                f"Step {step_index + 1} executed with {len(results)} results"
+            )
+            return results
+
+        except Exception as e:
+            self.logger.error(
+                f"Failed to execute step {step_index + 1} with all data: {e}"
+            )
+            return []
+
+    def _extract_final_results_from_context(
+        self, execution_context: dict, test_log_data: list
+    ) -> list:
+        """
+        Extract final execution results from execution context.
+
+        Args:
+            execution_context: Context containing step results
+            test_log_data: Original test log data
+
+        Returns:
+            List of final boolean results
+        """
+        try:
+            # Find the last step's results
+            last_step_index = 0
+            for key in execution_context.keys():
+                if key.startswith("step_") and key.endswith("_all_results"):
+                    step_num = int(key.split("_")[1])
+                    last_step_index = max(last_step_index, step_num)
+
+            if last_step_index == 0:
+                self.logger.warning("No step results found in execution context")
+                return [False] * len(test_log_data)
+
+            final_results_key = f"step_{last_step_index}_all_results"
+            final_results = execution_context.get(final_results_key, [])
+
+            # Ensure results are boolean
+            boolean_results = []
+            for result in final_results:
+                boolean_results.append(bool(result))
+
+            self.logger.info(
+                f"Extracted {len(boolean_results)} final results from step {last_step_index}"
+            )
+            return boolean_results
+
+        except Exception as e:
+            self.logger.error(f"Failed to extract final results: {e}")
+            return [False] * len(test_log_data)
+
+    def _build_comparison_results(
+        self,
+        test_log_data: list,
+        original_results: any,
+        converted_results: any,
+    ) -> dict:
+        """
+        Build comparison results using LLM to compare code block outputs.
+        Simplified logic that uses AI to determine semantic equivalence.
+
+        Args:
+            test_log_data: List of test log entries
+            original_results: Execution results from original rule (any format)
+            converted_results: Execution results from converted rule (any format)
+
+        Returns:
+            Comparison results dictionary
+        """
+        try:
+            # Use LLM to compare the results
+            comparison_result = self._compare_results_with_llm(
+                original_results, converted_results, test_log_data
+            )
+
+            results = {
+                "total_tests": len(test_log_data),
+                "original_results": original_results,
+                "converted_results": converted_results,
+                "matches": comparison_result.get("matches", 0),
+                "mismatches": comparison_result.get("mismatches", 0),
+                "equivalence_score": comparison_result.get("equivalence_score", 0.0),
+                "comparison_method": "llm_comparison",
+                "llm_analysis": comparison_result.get("analysis", ""),
+                "llm_reasoning": comparison_result.get("reasoning", ""),
+            }
+
+            self.logger.info(
+                f"LLM comparison completed: {results['matches']} matches, {results['mismatches']} mismatches, score: {results['equivalence_score']:.2f}"
+            )
+
+            return results
+
+        except Exception as e:
+            self.logger.error(f"Failed to build comparison results: {e}")
+            return {
+                "total_tests": len(test_log_data),
+                "original_results": original_results,
+                "converted_results": converted_results,
+                "matches": 0,
+                "mismatches": 0,
+                "equivalence_score": 0.0,
+                "comparison_method": "error",
+                "error": str(e),
+            }
+
+    def _compare_results_with_llm(
+        self, original_results: any, converted_results: any, test_log_data: list
+    ) -> dict:
+        """
+        Use LLM to compare execution results and determine semantic equivalence.
+
+        Args:
+            original_results: Results from original rule execution
+            converted_results: Results from converted rule execution
+            test_log_data: Test data used for execution
+
+        Returns:
+            Dictionary with comparison results
+        """
+        try:
+            # Prepare data for LLM comparison
+            comparison_prompt = self._build_llm_comparison_prompt(
+                original_results, converted_results, test_log_data
+            )
+
+            # Get LLM response
+            response = self._call_openai_api(comparison_prompt)
+
+            # Parse LLM response
+            return self._parse_llm_comparison_response(response)
+
+        except Exception as e:
+            self.logger.error(f"LLM comparison failed: {e}")
+            # Fallback to simple comparison
+            return self._fallback_comparison(original_results, converted_results)
+
+    def _build_llm_comparison_prompt(
+        self, original_results: any, converted_results: any, test_log_data: list
+    ) -> str:
+        """Build prompt for LLM to compare execution results."""
+        return f"""
+You are an expert in security rule analysis. Please compare the execution results of two security rules and determine their semantic equivalence.
+
+**Test Data Used:**
+{json.dumps(test_log_data[:3], indent=2)}  # Show first 3 test cases
+
+**Original Rule Results:**
+{json.dumps(original_results, indent=2)}
+
+**Converted Rule Results:**
+{json.dumps(converted_results, indent=2)}
+
+**Task:**
+Analyze these results and determine if the two rules are semantically equivalent. Consider:
+1. Do both rules produce the same logical outcomes?
+2. Are the results functionally equivalent even if format differs?
+3. Do both rules correctly identify the same security threats?
+
+**Response Format (JSON):**
+{{
+    "matches": <number of matching test cases>,
+    "mismatches": <number of non-matching test cases>,
+    "equivalence_score": <score from 0.0 to 1.0>,
+    "analysis": "<brief analysis of the comparison>",
+    "reasoning": "<detailed reasoning for the equivalence determination>"
+}}
+
+**Important:**
+- Focus on semantic equivalence, not exact format matching
+- Consider that different rule formats may produce different output structures
+- A score of 0.8+ indicates good semantic equivalence
+- Provide clear reasoning for your determination
+"""
+
+    def _parse_llm_comparison_response(self, response: str) -> dict:
+        """Parse LLM response for comparison results."""
+        try:
+            # Try to extract JSON from response
+            import re
+
+            json_match = re.search(r"\{.*\}", response, re.DOTALL)
+            if json_match:
+                json_str = json_match.group(0)
+                result = json.loads(json_str)
+
+                # Validate required fields
+                required_fields = ["matches", "mismatches", "equivalence_score"]
+                if all(field in result for field in required_fields):
+                    return result
+
+            # Fallback parsing
+            self.logger.warning("Could not parse LLM comparison response as JSON")
+            return {
+                "matches": 0,
+                "mismatches": 1,
+                "equivalence_score": 0.0,
+                "analysis": "Failed to parse LLM response",
+                "reasoning": (
+                    response[:200] + "..." if len(response) > 200 else response
+                ),
+            }
+
+        except Exception as e:
+            self.logger.error(f"Failed to parse LLM comparison response: {e}")
+            return {
+                "matches": 0,
+                "mismatches": 1,
+                "equivalence_score": 0.0,
+                "analysis": "Parse error",
+                "reasoning": str(e),
+            }
+
+    def _fallback_comparison(
+        self, original_results: any, converted_results: any
+    ) -> dict:
+        """Fallback comparison when LLM comparison fails."""
+        try:
+            # Simple equality check
+            if original_results == converted_results:
+                return {
+                    "matches": 1,
+                    "mismatches": 0,
+                    "equivalence_score": 1.0,
+                    "analysis": "Results are identical",
+                    "reasoning": "Direct equality comparison",
+                }
+            else:
+                return {
+                    "matches": 0,
+                    "mismatches": 1,
+                    "equivalence_score": 0.0,
+                    "analysis": "Results differ",
+                    "reasoning": "Direct equality comparison failed",
+                }
+        except Exception as e:
+            return {
+                "matches": 0,
+                "mismatches": 1,
+                "equivalence_score": 0.0,
+                "analysis": "Comparison failed",
+                "reasoning": str(e),
+            }
+
+    def _execute_code_blocks(self, test_log_data: list, code_blocks: list) -> list:
+        """
+        Execute the code blocks step by step with test log data.
+
+        Args:
+            test_log_data: List of test log entries
+            code_blocks: List of Python code blocks
+
+        Returns:
+            List of execution results
+        """
+        try:
+            if not code_blocks:
+                self.logger.warning("No code blocks to execute")
+                return [False] * len(test_log_data)
+
+            self.logger.info(f"Executing {len(code_blocks)} code blocks step by step")
+
+            # Execute each step sequentially with the entire dataset
+            try:
+                # Parse all log entries to dictionaries
+                parsed_data = []
+                for log_entry in test_log_data:
+                    try:
+                        if isinstance(log_entry, str):
+                            log_dict = json.loads(log_entry)
+                        else:
+                            log_dict = log_entry
+                        parsed_data.append(log_dict)
+                    except json.JSONDecodeError as e:
+                        self.logger.warning(f"Error parsing log entry: {e}")
+                        continue
+
+                if not parsed_data:
+                    self.logger.warning("No valid log entries to process")
+                    return []
+
+                current_data = parsed_data
+
+                # Execute each step in sequence
+                for i, code_block in enumerate(code_blocks):
+                    # Create execution environment for this step
+                    exec_globals = {
+                        "json": json,
+                        "re": __import__("re"),
+                        "datetime": __import__("datetime"),
+                        "time": __import__("time"),
+                    }
+                    exec_locals = {}
+
+                    # Execute the code block
+                    exec(code_block, exec_globals, exec_locals)
+                    exec_globals.update(exec_locals)
+
+                    # Get the function for this step
+                    func_name = f"step_{i + 1}"
+                    if func_name not in exec_locals:
+                        self.logger.error(
+                            f"Function {func_name} not found in step {i + 1}"
+                        )
+                        return []
+
+                    func = exec_locals[func_name]
+
+                    # Execute the function with current data
+                    current_data = func(current_data)
+
+                    # If any step returns None/False/empty, the rule doesn't match
+                    if current_data is None or current_data is False:
+                        self.logger.info(
+                            f"Step {i + 1} returned None/False, rule doesn't match"
+                        )
+                        return []
+
+                    # For debugging: log the data type and content
+                    self.logger.debug(
+                        f"Step {i + 1} output type: {type(current_data)}, content: {str(current_data)[:100]}..."
+                    )
+
+                # Return the final result as-is (no forced boolean conversion)
+                return current_data
+
+            except Exception as e:
+                self.logger.error(f"Execution error: {e}")
+                return []
+
+        except Exception as e:
+            self.logger.error(f"Failed to execute code blocks: {e}")
+            return [False] * len(test_log_data)
+
+    def _generate_optimization_suggestions(
+        self,
+        comparison_results: dict,
+        original_rule: str,
+        converted_rule: str,
+        original_ir: dict,
+        converted_ir: dict,
+    ) -> list:
+        """
+        Generate optimization suggestions based on comparison results.
+
+        Args:
+            comparison_results: Results from rule comparison
+            original_rule: Original rule content
+            converted_rule: Converted rule content
+            original_ir: Original rule IR
+            converted_ir: Converted rule IR
+
+        Returns:
+            List of optimization suggestions
+        """
+        try:
+            equivalence_score = comparison_results.get("equivalence_score", 0.0)
+
+            if equivalence_score >= 0.9:
+                return [
+                    "Rule semantic equivalence is good. No major optimizations needed."
+                ]
+
+            suggestions = []
+
+            if equivalence_score < 0.5:
+                suggestions.append(
+                    "CRITICAL: Significant semantic differences detected. Rule logic needs major revision."
+                )
+
+            if comparison_results.get("mismatches", 0) > 0:
+                suggestions.append(
+                    f"Found {comparison_results['mismatches']} mismatched test cases. Review rule logic."
+                )
+
+            # Generate specific suggestions based on IR differences
+            ir_suggestions = self._analyze_ir_differences(original_ir, converted_ir)
+            suggestions.extend(ir_suggestions)
+
+            return suggestions
+
+        except Exception as e:
+            self.logger.error(f"Failed to generate optimization suggestions: {e}")
+            return [f"Error generating suggestions: {str(e)}"]
+
+    def _apply_optimizations(
+        self,
+        converted_rule: str,
+        optimization_suggestions: list,
+        comparison_results: dict,
+        target_rule_type: str,
+    ) -> str:
+        """
+        Apply optimization suggestions to improve the converted rule.
+
+        Args:
+            converted_rule: The converted rule content
+            optimization_suggestions: List of optimization suggestions
+            comparison_results: Results from rule comparison
+            target_rule_type: Target rule type
+
+        Returns:
+            Optimized rule content
+        """
+        try:
+            # If equivalence score is high, return the original rule
+            equivalence_score = comparison_results.get("equivalence_score", 0.0)
+            if equivalence_score >= 0.9:
+                self.logger.info("High equivalence score, no optimizations needed")
+                return converted_rule
+
+            # If no suggestions or low score, return original
+            if not optimization_suggestions or equivalence_score < 0.1:
+                self.logger.warning(
+                    "Low equivalence score or no suggestions, returning original rule"
+                )
+                return converted_rule
+
+            # Create optimization prompt
+            optimization_prompt = f"""
+            You are optimizing a {target_rule_type} security rule based on analysis results.
+
+            Original Rule:
+            {converted_rule}
+
+            Analysis Results:
+            - Equivalence Score: {equivalence_score:.2f}
+            - Comparison Method: {comparison_results.get('comparison_method', 'unknown')}
+            - Matches: {comparison_results.get('matches', 0)}
+            - Mismatches: {comparison_results.get('mismatches', 0)}
+
+            Optimization Suggestions:
+            {chr(10).join(f"- {suggestion}" for suggestion in optimization_suggestions)}
+
+            Instructions:
+            1. Apply the optimization suggestions to improve the rule
+            2. Maintain the same detection logic and semantic meaning
+            3. Improve syntax, structure, and performance where possible
+            4. Ensure the rule remains functionally equivalent
+            5. Use {target_rule_type} best practices
+
+            Return the optimized rule in the same format as the original.
+            """
+
+            # Get optimized rule from LLM
+            response = self._call_openai_api(optimization_prompt)
+
+            if response:
+                # Extract the optimized rule from response
+                optimized_rule = self._extract_rule_from_response(
+                    response, target_rule_type
+                )
+                if optimized_rule:
+                    self.logger.info("Successfully generated optimized rule")
+                    return optimized_rule
+
+            # Fallback: return original rule
+            self.logger.warning("Failed to generate optimized rule, returning original")
+            return converted_rule
+
+        except Exception as e:
+            self.logger.error(f"Failed to apply optimizations: {e}")
+            return converted_rule
+
+    def _final_semantic_optimization(
+        self,
+        original_rule: str,
+        optimized_rule: str,
+        original_ir: dict,
+        converted_ir: dict,
+        source_rule_type: str,
+        target_rule_type: str,
+        comparison_results: dict,
+    ) -> str:
+        """
+        Perform final LLM optimization to ensure semantic equivalence between source and target rules.
+
+        Args:
+            original_rule: The original source rule
+            optimized_rule: The current optimized target rule
+            original_ir: Original rule's IR
+            converted_ir: Converted rule's IR
+            source_rule_type: Source rule type
+            target_rule_type: Target rule type
+            comparison_results: Results from comparison analysis
+
+        Returns:
+            Final optimized rule ensuring semantic equivalence
+        """
+        try:
+            self.logger.info(
+                "Starting final semantic optimization to ensure equivalence"
+            )
+
+            # Build final optimization prompt
+            final_prompt = self._build_final_semantic_optimization_prompt(
+                original_rule,
+                optimized_rule,
+                original_ir,
+                converted_ir,
+                source_rule_type,
+                target_rule_type,
+                comparison_results,
+            )
+
+            # Get final optimization from LLM
+            response = self._call_openai_api(final_prompt)
+
+            if response:
+                # Extract the final optimized rule
+                final_rule = self._extract_rule_from_response(
+                    response, target_rule_type
+                )
+                if final_rule:
+                    self.logger.info(
+                        "Successfully generated final semantically optimized rule"
+                    )
+                    return final_rule
+
+            # Fallback: return current optimized rule
+            self.logger.warning(
+                "Failed to generate final optimization, returning current optimized rule"
+            )
+            return optimized_rule
+
+        except Exception as e:
+            self.logger.error(f"Failed to perform final semantic optimization: {e}")
+            return optimized_rule
+
+    def _build_final_semantic_optimization_prompt(
+        self,
+        original_rule: str,
+        optimized_rule: str,
+        original_ir: dict,
+        converted_ir: dict,
+        source_rule_type: str,
+        target_rule_type: str,
+        comparison_results: dict,
+    ) -> str:
+        """Build prompt for final semantic optimization."""
+
+        # Extract key information from IRs
+        original_detection_logic = self._extract_detection_logic(original_ir)
+        converted_detection_logic = self._extract_detection_logic(converted_ir)
+
+        # Get comparison analysis
+        equivalence_score = comparison_results.get("equivalence_score", 0.0)
+        llm_analysis = comparison_results.get("llm_analysis", "")
+        llm_reasoning = comparison_results.get("llm_reasoning", "")
+
+        return f"""You are performing the FINAL semantic optimization to ensure complete equivalence between a {source_rule_type} rule and its {target_rule_type} conversion.
+
+CRITICAL MISSION: Ensure the {target_rule_type} rule detects EXACTLY the same threats/events as the original {source_rule_type} rule.
+
+ORIGINAL {source_rule_type.upper()} RULE:
+{original_rule}
+
+CURRENT {target_rule_type.upper()} RULE:
+{optimized_rule}
+
+DETECTION LOGIC COMPARISON:
+Original Detection Logic: {original_detection_logic}
+Converted Detection Logic: {converted_detection_logic}
+
+EQUIVALENCE ANALYSIS:
+- Current Equivalence Score: {equivalence_score:.2f}
+- Analysis: {llm_analysis}
+- Reasoning: {llm_reasoning}
+
+FINAL OPTIMIZATION REQUIREMENTS:
+🔒 SEMANTIC PRESERVATION (CRITICAL):
+- The final rule MUST detect exactly the same events as the original
+- All detection conditions, thresholds, and logic must be preserved
+- Field mappings must be accurate and complete
+- Time windows and aggregation logic must match
+- Threat coverage must be identical
+
+✅ OPTIMIZATION GOALS:
+- Improve {target_rule_type} syntax and structure
+- Use platform-specific best practices
+- Enhance readability and maintainability
+- Optimize performance where possible
+- Ensure proper field mappings and data types
+
+🚫 ABSOLUTELY FORBIDDEN:
+- Changing any detection logic or conditions
+- Modifying thresholds, timeframes, or numeric values
+- Altering field names that affect detection
+- Adding or removing threat detection criteria
+- Changing logical operators that affect scope
+
+INSTRUCTIONS:
+1. Analyze both rules to identify any remaining semantic gaps
+2. Optimize the {target_rule_type} rule to achieve perfect semantic equivalence
+3. Ensure all detection conditions from the original are properly translated
+4. Use {target_rule_type} best practices for syntax and structure
+5. Verify that the final rule will trigger on identical events
+
+Return the final optimized {target_rule_type} rule that is semantically equivalent to the original {source_rule_type} rule.
+
+Format: ```{target_rule_type.lower()}
+<final optimized rule>
+```"""
+
+    def _extract_detection_logic(self, ir_data: dict) -> str:
+        """Extract detection logic summary from IR data."""
+        try:
+            # Extract key detection elements
+            elements = []
+
+            if "search_query" in ir_data:
+                elements.append(f"Search: {ir_data['search_query'][:200]}...")
+
+            if "conditions" in ir_data:
+                elements.append(f"Conditions: {ir_data['conditions']}")
+
+            if "time_window" in ir_data:
+                elements.append(f"Time Window: {ir_data['time_window']}")
+
+            if "threshold" in ir_data:
+                elements.append(f"Threshold: {ir_data['threshold']}")
+
+            if "data_sources" in ir_data:
+                elements.append(f"Data Sources: {ir_data['data_sources']}")
+
+            return " | ".join(elements) if elements else "Detection logic not available"
+
+        except Exception as e:
+            self.logger.warning(f"Failed to extract detection logic: {e}")
+            return "Detection logic extraction failed"
+
+    def _extract_rule_from_response(self, response: str, rule_type: str) -> str:
+        """Extract rule content from LLM response."""
+        try:
+            # Try to extract from code blocks first
+            import re
+
+            # Look for code blocks with rule type
+            pattern = rf"```{rule_type.lower()}\s*([\s\S]*?)\s*```"
+            match = re.search(pattern, response, re.IGNORECASE)
+            if match:
+                return match.group(1).strip()
+
+            # Look for generic code blocks
+            pattern = r"```\s*([\s\S]*?)\s*```"
+            match = re.search(pattern, response)
+            if match:
+                return match.group(1).strip()
+
+            # Return the response as-is if no code blocks found
+            return response.strip()
+
+        except Exception as e:
+            self.logger.warning(f"Failed to extract rule from response: {e}")
+            return response.strip()
+
+    def _analyze_ir_differences(self, original_ir: dict, converted_ir: dict) -> list:
+        """
+        Analyze differences between original and converted IRs.
+
+        Args:
+            original_ir: Original rule IR
+            converted_ir: Converted rule IR
+
+        Returns:
+            List of IR-based suggestions
+        """
+        suggestions = []
+
+        try:
+            # Compare data sources
+            orig_ds = original_ir.get("data_source", "")
+            conv_ds = converted_ir.get("data_source", "")
+            if orig_ds != conv_ds:
+                suggestions.append(
+                    f"Data source changed from '{orig_ds}' to '{conv_ds}'. Verify this is correct."
+                )
+
+            # Compare event types
+            orig_et = original_ir.get("event_type", "")
+            conv_et = converted_ir.get("event_type", "")
+            if orig_et != conv_et:
+                suggestions.append(
+                    f"Event type changed from '{orig_et}' to '{conv_et}'. Verify this is correct."
+                )
+
+            # Compare step counts
+            orig_steps = len(original_ir.get("steps", []))
+            conv_steps = len(converted_ir.get("steps", []))
+            if orig_steps != conv_steps:
+                suggestions.append(
+                    f"Step count changed from {orig_steps} to {conv_steps}. Verify all logic is preserved."
+                )
+
+            # Compare individual steps
+            orig_steps_list = original_ir.get("steps", [])
+            conv_steps_list = converted_ir.get("steps", [])
+
+            for i, (orig_step, conv_step) in enumerate(
+                zip(orig_steps_list, conv_steps_list)
+            ):
+                if orig_step.get("action") != conv_step.get("action"):
+                    suggestions.append(
+                        f"Step {i+1} action changed from '{orig_step.get('action')}' to '{conv_step.get('action')}'."
+                    )
+
+                if orig_step.get("params") != conv_step.get("params"):
+                    suggestions.append(
+                        f"Step {i+1} parameters changed. Review parameter mapping."
+                    )
+
+        except Exception as e:
+            self.logger.warning(f"Failed to analyze IR differences: {e}")
+            suggestions.append("Could not analyze IR differences due to parsing error.")
+
+        return suggestions
+
+    def _call_openai_api(self, prompt: str) -> Optional[str]:
+        """Call OpenAI API with compatibility for both old and new versions."""
+        try:
+            # Try new version API first
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are an expert in security rule optimization and semantic analysis.",
+                    },
+                    {"role": "user", "content": prompt},
+                ],
+            )
+            return response.choices[0].message.content
+
+        except AttributeError:
+            # Fall back to old version API
+            try:
+                response = self.client.ChatCompletion.create(
+                    model=self.model,
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": "You are an expert in security rule optimization and semantic analysis.",
+                        },
+                        {"role": "user", "content": prompt},
+                    ],
+                )
+                return response.choices[0].message.content
+
+            except Exception as e:
+                self.logger.error(
+                    f"Failed to call OpenAI API with old version: {str(e)}"
+                )
+                return None
+
+        except Exception as e:
+            self.logger.error(f"Failed to call OpenAI API: {str(e)}")
+            return None
+
+    def _call_openai_api_with_messages(self, messages: list) -> Optional[str]:
+        """Call OpenAI API with a list of messages for multi-turn conversation."""
+        try:
+            # Try new version API first
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=messages,
+            )
+            return response.choices[0].message.content
+
+        except AttributeError:
+            # Fall back to old version API
+            try:
+                response = self.client.ChatCompletion.create(
+                    model=self.model,
+                    messages=messages,
+                )
+                return response.choices[0].message.content
+
+            except Exception as e:
+                self.logger.error(
+                    f"Failed to call OpenAI API with old version: {str(e)}"
+                )
+                return None
+
+        except Exception as e:
+            self.logger.error(f"Failed to call OpenAI API: {str(e)}")
+            return None

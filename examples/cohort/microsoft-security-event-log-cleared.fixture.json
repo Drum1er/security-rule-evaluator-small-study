@@ -1,0 +1,39 @@
+[
+  {
+    "RecordId": "r1",
+    "TimeGenerated": "2026-09-30T12:00:00Z",
+    "EventID": 1102,
+    "EventSourceName": "Microsoft-Windows-Eventlog",
+    "Computer": "ws01.example.test",
+    "Account": "LAB\\analyst",
+    "Activity": "Event recorded"
+  },
+  {
+    "RecordId": "r2",
+    "TimeGenerated": "2026-09-30T12:01:00Z",
+    "EventID": 4624,
+    "EventSourceName": "Microsoft-Windows-Eventlog",
+    "Computer": "ws02.example.test",
+    "Account": "LAB\\operator",
+    "Activity": "Event recorded"
+  },
+  {
+    "RecordId": "r3",
+    "TimeGenerated": "2026-09-30T12:02:00Z",
+    "EventID": 1102,
+    "EventSourceName": "AD FS Auditing",
+    "Computer": "ws03.example.test",
+    "Account": "LAB\\analyst",
+    "Activity": "Event recorded"
+  },
+  {
+    "RecordId": "r4",
+    "TimeGenerated": "2026-09-30T12:03:00Z",
+    "EventID": 1102,
+    "EventSourceName": "microsoft-windows-eventlog",
+    "Computer": "ws04.example.test",
+    "Account": "LAB\\operator",
+    "Activity": "Event recorded"
+  }
+]
+

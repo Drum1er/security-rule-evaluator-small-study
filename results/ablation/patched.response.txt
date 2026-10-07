@@ -1,0 +1,27 @@
+```python
+def step_1(input_list):
+    """
+    Filters log entries for sysmon events with EventCode 10 and lsass.exe involvement.
+    
+    Parameters:
+    input_list (list of dict): List of log entries to process
+    
+    Returns:
+    list of dict: Filtered log entries that match the criteria
+    """
+    # Initialize a list to store the filtered entries
+    filtered_entries = []
+    
+    # Process each log entry in the input list
+    for entry in input_list:
+        # Check if EventCode is 10 and either TargetImage or SourceImage contains 'lsass.exe'
+        if entry.get('EventCode') == 10 and \
+           (entry.get('TargetImage') and 'lsass.exe' in entry['TargetImage']) or \
+           (entry.get('SourceImage') and 'lsass.exe' in entry['SourceImage']):
+            
+            # If the entry matches the criteria, add it to the filtered list
+            filtered_entries.append(entry)
+    
+    # Return the filtered list of entries for the next step
+    return filtered_entries
+```

@@ -1,0 +1,702 @@
+[
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "alpha.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "beta.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  },
+  {
+    "computer": "host-a",
+    "index": "dns",
+    "query": "gamma.xyz",
+    "sourcetype": "dns:query",
+    "time_epoch": 1735689660
+  }
+]

@@ -1,0 +1,116 @@
+def generate_ir(
+    rule_content: str, model: str, rule_type: str = None, rule_analysis: str = None
+) -> dict:
+    """Generate Intermediate Representation (IR) from a rule"""
+    from src.llms.prompts import (
+        RULE_TO_IR_PROMPT,
+        SPLUNK_IR_GUIDE,
+        SENTINEL_IR_GUIDE,
+        QRADAR_AQL_IR_GUIDE,
+        CHRONICLE_YARAL_IR_GUIDE,
+        NETWITNESS_ESA_IR_GUIDE,
+    )
+
+    # 检查client是否可用
+    if not client:
+        return {
+            "rule_name": "error_rule",
+            "description": "Error: OpenAI client not available. Please check your API key configuration.",
+            "data_source": "unknown",
+            "event_type": "error",
+            "steps": [],
+        }
+
+    # 根据规则类型选择对应的指导prompt
+    rule_type_guide = ""
+    if rule_type:
+        rule_type_lower = rule_type.lower()
+        if "splunk" in rule_type_lower:
+            rule_type_guide = SPLUNK_IR_GUIDE
+        elif "sentinel" in rule_type_lower:
+            rule_type_guide = SENTINEL_IR_GUIDE
+        elif "qradar" in rule_type_lower or "aql" in rule_type_lower:
+            rule_type_guide = QRADAR_AQL_IR_GUIDE
+        elif "chronicle" in rule_type_lower or "yara" in rule_type_lower:
+            rule_type_guide = CHRONICLE_YARAL_IR_GUIDE
+        elif "netwitness" in rule_type_lower or "esa" in rule_type_lower:
+            rule_type_guide = NETWITNESS_ESA_IR_GUIDE
+
+    # 拼接system prompt，包含通用指导和特定规则类型指导
+    if rule_type_guide:
+        sys_prompt = RULE_TO_IR_PROMPT + "\n\n" + rule_type_guide
+    else:
+        sys_prompt = RULE_TO_IR_PROMPT
+
+    # 构建用户提示，可选择性地包含规则类型和规则分析
+    if rule_analysis:
+        user_prompt = f"""
+        ## Rule Type:
+        {rule_type or "Unknown"}
+        
+        ## Rule Analysis:
+        {rule_analysis}
+        
+        ## Original Rule:
+        {rule_content}
+        
+        Based on the above analysis and the original rule, generate the IR.
+        """
+    else:
+        user_prompt = f"""
+        ## Rule Type:
+        {rule_type or "Unknown"}
+        
+        Rule to convert:
+        {rule_content}
+        """
+
+    messages = [
+        {"role": "system", "content": sys_prompt},
+        {"role": "user", "content": user_prompt},
+    ]
+
+    try:
+        response = client.chat.completions.create(
+            model=model,
+            messages=messages,
+            response_format={"type": "json_object"},
+        )
+
+        # 解析JSON响应
+        ir_result = json.loads(response.choices[0].message.content)
+
+        # 验证IR格式
+        required_fields = [
+            "rule_name",
+            "description",
+            "data_source",
+            "event_type",
+            "steps",
+        ]
+        for field in required_fields:
+            if field not in ir_result:
+                raise ValueError(f"Missing required field: {field}")
+
+        # 验证steps格式
+        if not isinstance(ir_result["steps"], list):
+            raise ValueError("Steps must be a list")
+
+        for step in ir_result["steps"]:
+            if not isinstance(step, dict):
+                raise ValueError("Each step must be a dictionary")
+            step_fields = ["action", "params", "explanation"]
+            for field in step_fields:
+                if field not in step:
+                    raise ValueError(f"Missing required field in step: {field}")
+
+        return ir_result
+
+    except Exception as e:
+        return {
+            "rule_name": "error_rule",
+            "description": f"Error generating IR: {str(e)}",
+            "data_source": "unknown",
+            "event_type": "error",
+            "steps": [],
+        }

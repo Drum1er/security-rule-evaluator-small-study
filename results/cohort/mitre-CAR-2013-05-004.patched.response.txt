@@ -1,0 +1,32 @@
+```python
+def step_1(input_list):
+    """
+    Filters log entries for the at.exe process from the specified index.
+    
+    Parameters:
+    input_list (list of dict): List of log entries to process
+    
+    Returns:
+    list of dict: Filtered log entries that match the criteria
+    """
+    # Define the index value to filter on
+    target_index = "__your_sysmon_index__"
+    
+    # Define the pattern for the Image field
+    target_image_pattern = "C:\\Windows\\.*\\at.exe"
+    
+    # Initialize the list to store filtered entries
+    filtered_entries = []
+    
+    # Process each log entry in the input list
+    for entry in input_list:
+        # Check if the index matches the target index
+        if entry.get("index") == target_index:
+            # Check if the Image field matches the pattern
+            if re.match(target_image_pattern, entry.get("Image", "")):
+                # If both conditions are met, add the entry to the filtered list
+                filtered_entries.append(entry)
+    
+    # Return the filtered list of entries for the next step
+    return filtered_entries
+```

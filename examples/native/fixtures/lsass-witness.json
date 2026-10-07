@@ -1,0 +1,12 @@
+[
+  {
+    "call_trace": "C:\\Windows\\System32\\dbghelp.dll+0x10",
+    "computer": "host-a",
+    "event_code": 10,
+    "source_image": "C:\\Tools\\diagnostic.exe",
+    "source_pid": 100,
+    "target_image": "C:\\Windows\\System32\\lsass.exe.bak",
+    "target_pid": 500,
+    "time_epoch": 1735689660
+  }
+]

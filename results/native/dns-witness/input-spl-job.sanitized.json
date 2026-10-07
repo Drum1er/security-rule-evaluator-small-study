@@ -1,0 +1,21 @@
+{
+  "artifact_kind": "SANITIZED_DERIVATIVE",
+  "capture_type": "Selected fields from saved native Splunk job JSON",
+  "engine_version": "10.6.0.5",
+  "content": {
+    "dispatchState": "DONE",
+    "doneProgress": 1,
+    "dropCount": 0,
+    "eventCount": 0,
+    "eventIsTruncated": false,
+    "isDone": true,
+    "isFailed": false,
+    "isFinalized": false,
+    "isPaused": false,
+    "isPreviewEnabled": true,
+    "resultCount": 100,
+    "sampleRatio": "1",
+    "search": "| makeresults count=100\n| streamstats count as rownum\n| eval query=case(((rownum>=1 AND rownum<=34)), \"alpha.xyz\", ((rownum>=35 AND rownum<=67)), \"beta.xyz\", ((rownum>=68 AND rownum<=100)), \"gamma.xyz\"),\n    _time=1735689660,\n    host=\"host-a\",\n    index=\"dns\",\n    sourcetype=\"dns:query\"\n| fields query _time host index sourcetype\n| eval diagnostic_time_epoch=_time\n| sort 0 query _time host index sourcetype\n| table query _time host index sourcetype diagnostic_time_epoch\n",
+    "messages": []
+  }
+}

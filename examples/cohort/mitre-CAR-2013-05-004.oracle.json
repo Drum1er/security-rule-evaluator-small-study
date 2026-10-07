@@ -1,0 +1,29 @@
+{
+  "eligible": true,
+  "reason": "First step retains the bound source and Image wildcard. Four total IR steps, two matching and two nonmatching fixture records.",
+  "expected_first_step_indices": [
+    0,
+    1
+  ],
+  "source_full_filter_indices": [
+    0,
+    1
+  ],
+  "scope": "All records in explicit shared index binding; Image follows C:\\Windows\\*\\at.exe wildcard with fixture paths in canonical case",
+  "row_reasons": [
+    "Windows System32 at.exe path",
+    "Windows SysWOW64 at.exe path",
+    "Tools path fails Windows prefix",
+    "schtasks.exe fails at.exe filename"
+  ],
+  "reference_kind": "hand-reviewed synthetic expectation; not native execution",
+  "frozen_ir_sha256": "031370651d7f4f47e8ff61efd4844dd228d581c498d193e004ba782350727930",
+  "ir_fidelity": {
+    "first_step": "retains source predicate under stated wildcard interpretation",
+    "later_errors": [
+      "Adds CommandLine extraction from EventData absent from the published query and synthetic schema"
+    ],
+    "full_chain": "not executed or certified"
+  },
+  "analysis_stratum": "supplemental_first_step_with_later_invalid_IR"
+}

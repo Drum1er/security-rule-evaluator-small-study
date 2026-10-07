@@ -1,0 +1,29 @@
+{
+  "reason": "Check raw source numeric lexemes before JSON reserialization so 1.0 cannot silently become integer 1 in first-step record comparisons.",
+  "checks": [
+    {
+      "source": "level00/experiment/runs/microsoft-security-event-log-cleared/paired/baseline/terminal.json",
+      "projected_raw_records_contain_only_integer_number_tokens": true
+    },
+    {
+      "source": "level00/experiment/runs/microsoft-security-event-log-cleared/paired/patched/terminal.json",
+      "projected_raw_records_contain_only_integer_number_tokens": true
+    },
+    {
+      "source": "level00/experiment/runs/mitre-CAR-2013-05-004/paired/baseline/terminal.json",
+      "projected_raw_records_contain_only_integer_number_tokens": true
+    },
+    {
+      "source": "level00/experiment/runs/mitre-CAR-2013-05-004/paired/patched/terminal.json",
+      "projected_raw_records_contain_only_integer_number_tokens": true
+    },
+    {
+      "source": "level01/experiment/baseline-replay.json",
+      "projected_raw_records_contain_only_integer_number_tokens": true
+    },
+    {
+      "source": "level01/experiment/patched-terminal.json",
+      "projected_raw_records_contain_only_integer_number_tokens": true
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "status": "first_step_record_preservation_improved",
+  "baseline": {
+    "outcome": "records_not_preserved",
+    "checks": [
+      false,
+      false
+    ],
+    "raw_outputs": [
+      [
+        true,
+        true,
+        false,
+        true
+      ],
+      [
+        true,
+        true,
+        false,
+        true
+      ]
+    ]
+  },
+  "patched": {
+    "outcome": "records_preserved",
+    "checks": [
+      true,
+      true
+    ],
+    "raw_outputs": [
+      [
+        {
+          "EventCode": 10,
+          "_time": 1735689660,
+          "Computer": "host-a",
+          "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+          "TargetProcessId": 500,
+          "SourceImage": "C:\\Tools\\diagnostic.exe",
+          "SourceProcessId": 100,
+          "CallTrace": "C:\\Windows\\System32\\dbghelp.dll+0x10"
+        },
+        {
+          "EventCode": 10,
+          "_time": 1735689720,
+          "Computer": "host-a",
+          "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+          "TargetProcessId": 500,
+          "SourceImage": "C:\\Tools\\diagnostic.exe",
+          "SourceProcessId": 100,
+          "CallTrace": "C:\\Windows\\System32\\dbgcore.dll+0x20"
+        },
+        {
+          "EventCode": 10,
+          "_time": 1735689660,
+          "Computer": "host-a",
+          "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+          "TargetProcessId": 500,
+          "SourceImage": "C:\\Tools\\diagnostic.exe",
+          "SourceProcessId": 100,
+          "CallTrace": "C:\\Windows\\System32\\kernel32.dll+0x10"
+        }
+      ],
+      [
+        {
+          "EventCode": 10,
+          "_time": 1735689660,
+          "Computer": "host-a",
+          "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+          "TargetProcessId": 500,
+          "SourceImage": "C:\\Tools\\diagnostic.exe",
+          "SourceProcessId": 100,
+          "CallTrace": "C:\\Windows\\System32\\dbghelp.dll+0x10"
+        },
+        {
+          "EventCode": 10,
+          "_time": 1735689720,
+          "Computer": "host-a",
+          "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+          "TargetProcessId": 500,
+          "SourceImage": "C:\\Tools\\diagnostic.exe",
+          "SourceProcessId": 100,
+          "CallTrace": "C:\\Windows\\System32\\dbgcore.dll+0x20"
+        },
+        {
+          "EventCode": 10,
+          "_time": 1735689660,
+          "Computer": "host-a",
+          "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+          "TargetProcessId": 500,
+          "SourceImage": "C:\\Tools\\diagnostic.exe",
+          "SourceProcessId": 100,
+          "CallTrace": "C:\\Windows\\System32\\kernel32.dll+0x10"
+        }
+      ]
+    ]
+  },
+  "full_chain_run": false,
+  "native_semantic_correctness_claim": false,
+  "final_equivalence_verdict": null,
+  "frozen_ir_error_repaired": false
+}

@@ -1,0 +1,16 @@
+{
+  "recorded_utc": "2026-10-01T17:26:19.044985+00:00",
+  "code_arm_calls_so_far": 0,
+  "frozen_protocol_unchanged": true,
+  "ambiguity": "Protocol says invalid/missing-field IR is ineligible, without explicitly restricting this to first-step dependencies",
+  "decision": "Microsoft is the primary discriminating first-step case. MITRE has an assessable first filter but an invented missing EventData dependency in a later step; run its same bounded pair as a separately flagged supplemental diagnostic, not a wholly protocol-valid primary success. DNS is excluded for no match/nonmatch discrimination in the first step.",
+  "preserved": [
+    "all3 selected cases",
+    "all query bytes and fixtures",
+    "all frozen IRs",
+    "one baseline and patched call per executed rule",
+    "maximum7 actual scheduled calls including3IRs",
+    "no later-step execution"
+  ],
+  "classification_timing": "This qualification is recorded before either code arm is generated, after independent source/IR review; it is not represented as part of the original pre-IR protocol."
+}

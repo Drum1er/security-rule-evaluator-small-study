@@ -1,0 +1,28 @@
+{
+  "rule_name": "at_executions_on_windows",
+  "description": "Detect executions of the at.exe command on Windows systems",
+  "data_source": "your_sysmon_index",
+  "event_type": "process_execution",
+  "steps": [
+    {
+      "action": "filter",
+      "params": "index = __your_sysmon_index__ and Image = \"C:\\Windows\\*\\at.exe\"",
+      "explanation": "Filter events for the at.exe process from the specified index"
+    },
+    {
+      "action": "extract",
+      "params": "CommandLine from EventData",
+      "explanation": "Extract command line arguments from the event data"
+    },
+    {
+      "action": "aggregate",
+      "params": "values(CommandLine) as \"Command Lines\"",
+      "explanation": "Aggregate unique command lines associated with each computer name"
+    },
+    {
+      "action": "group_by",
+      "params": "ComputerName",
+      "explanation": "Group results by the computer name"
+    }
+  ]
+}

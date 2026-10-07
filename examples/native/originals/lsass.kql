@@ -1,0 +1,6 @@
+Sysmon
+| where EventID == 10
+| where TargetImage contains "lsass.exe"
+| where CallTrace contains "dbgcore.dll" or CallTrace contains "dbghelp.dll"
+| summarize count(), firstTime = min(TimeGenerated), lastTime = max(TimeGenerated) by Computer, TargetImage, TargetProcessId, SourceImage, SourceProcessId
+| project-rename dest = Computer

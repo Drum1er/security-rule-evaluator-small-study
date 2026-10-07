@@ -1,0 +1,15 @@
+{
+  "attempt": 5,
+  "stages": {
+    "ordinary-spl": {
+      "status": "completed",
+      "reused_saved_chain": true
+    },
+    "ordinary-kql": {
+      "status": "inference_failure",
+      "all_expected_steps_valid": false
+    }
+  },
+  "semantic_accuracy": null,
+  "status": "invalid_ordinary_execution"
+}

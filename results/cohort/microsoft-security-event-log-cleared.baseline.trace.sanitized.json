@@ -1,0 +1,128 @@
+{
+  "artifact_kind": "SANITIZED_DERIVATIVE",
+  "status": "completed",
+  "invalid": [],
+  "raw_events": [
+    {
+      "method": "step_1",
+      "caller": "_validate_code_block",
+      "event": "call",
+      "raw_function_event": true,
+      "arguments": {
+        "input_list": [
+          {
+            "RecordId": "r1",
+            "TimeGenerated": "2026-09-30T12:00:00Z",
+            "EventID": 1102,
+            "EventSourceName": "Microsoft-Windows-Eventlog",
+            "Computer": "ws01.example.test",
+            "Account": "LAB\\analyst",
+            "Activity": "Event recorded"
+          },
+          {
+            "RecordId": "r2",
+            "TimeGenerated": "2026-09-30T12:01:00Z",
+            "EventID": 4624,
+            "EventSourceName": "Microsoft-Windows-Eventlog",
+            "Computer": "ws02.example.test",
+            "Account": "LAB\\operator",
+            "Activity": "Event recorded"
+          },
+          {
+            "RecordId": "r3",
+            "TimeGenerated": "2026-09-30T12:02:00Z",
+            "EventID": 1102,
+            "EventSourceName": "AD FS Auditing",
+            "Computer": "ws03.example.test",
+            "Account": "LAB\\analyst",
+            "Activity": "Event recorded"
+          },
+          {
+            "RecordId": "r4",
+            "TimeGenerated": "2026-09-30T12:03:00Z",
+            "EventID": 1102,
+            "EventSourceName": "microsoft-windows-eventlog",
+            "Computer": "ws04.example.test",
+            "Account": "LAB\\operator",
+            "Activity": "Event recorded"
+          }
+        ]
+      }
+    },
+    {
+      "method": "step_1",
+      "caller": "_validate_code_block",
+      "event": "return",
+      "raw_function_event": true,
+      "value": [
+        true,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "method": "step_1",
+      "caller": "_execute_single_step_with_all_data",
+      "event": "call",
+      "raw_function_event": true,
+      "arguments": {
+        "input_list": [
+          {
+            "RecordId": "r1",
+            "TimeGenerated": "2026-09-30T12:00:00Z",
+            "EventID": 1102,
+            "EventSourceName": "Microsoft-Windows-Eventlog",
+            "Computer": "ws01.example.test",
+            "Account": "LAB\\analyst",
+            "Activity": "Event recorded"
+          },
+          {
+            "RecordId": "r2",
+            "TimeGenerated": "2026-09-30T12:01:00Z",
+            "EventID": 4624,
+            "EventSourceName": "Microsoft-Windows-Eventlog",
+            "Computer": "ws02.example.test",
+            "Account": "LAB\\operator",
+            "Activity": "Event recorded"
+          },
+          {
+            "RecordId": "r3",
+            "TimeGenerated": "2026-09-30T12:02:00Z",
+            "EventID": 1102,
+            "EventSourceName": "AD FS Auditing",
+            "Computer": "ws03.example.test",
+            "Account": "LAB\\analyst",
+            "Activity": "Event recorded"
+          },
+          {
+            "RecordId": "r4",
+            "TimeGenerated": "2026-09-30T12:03:00Z",
+            "EventID": 1102,
+            "EventSourceName": "microsoft-windows-eventlog",
+            "Computer": "ws04.example.test",
+            "Account": "LAB\\operator",
+            "Activity": "Event recorded"
+          }
+        ]
+      }
+    },
+    {
+      "method": "step_1",
+      "caller": "_execute_single_step_with_all_data",
+      "event": "return",
+      "raw_function_event": true,
+      "value": [
+        true,
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "execution": {
+    "exit_code": 0,
+    "stop_reason": null,
+    "output_observed_bytes": 5210
+  }
+}

@@ -1,0 +1,120 @@
+<|im_start|>system
+You are an expert in security rule optimization and code generation for Microsoft Sentinel rules.
+
+Your task is to generate a chain of Python functions that process security log data step by step.
+
+CRITICAL REQUIREMENTS:
+1. Each function processes data and passes output to the next function
+2. The first function takes raw log data list as input (list of dictionaries)
+3. Each subsequent function takes the output of the previous function as input
+4. The final function should return filtered/processed data for comparison
+5. All functions must work together as a complete processing pipeline
+6. Use consistent data structures and parameter names across all functions
+7. Each function should be named step_1, step_2, step_3, etc.
+8. Functions should handle errors gracefully and return appropriate data types
+
+Data Flow:
+- step_1(log_entries_list) -> processed_data_list (list of processed entries)
+- step_2(processed_data_list) -> processed_data_2 (list of processed entries)
+- step_3(processed_data_list) -> final_boolean_result_list (list of True/False)
+
+IMPORTANT: 
+1. The first step takes processed log data list as input (list of dictionaries)
+2. Each step processes the ENTIRE list and returns a list
+3. The final step must return a list of boolean (True/False) indicating the matching results for the log entries
+
+
+                
+Test Log Data Format:
+- Available keys: ['RecordId', 'TimeGenerated', 'EventID', 'EventSourceName', 'Computer', 'Account', 'Activity']
+- Sample log entry: {
+  "RecordId": "r1",
+  "TimeGenerated": "2026-09-30T12:00:00Z",
+  "EventID": 1102,
+  "EventSourceName": "Microsoft-Windows-Eventlog",
+  "Computer": "ws01.example.test",
+  "Account": "LAB\\analyst",
+  "Activity": "Event recorded"
+}
+- Your functions should work with log entries that have these exact key names and data types.
+
+
+Function Requirements:
+- Each function should be self-contained and focused on one specific processing step
+- Use descriptive variable names and add comments explaining the logic
+- Handle edge cases and potential errors
+- Return data in a consistent format that the next function can process
+- The final function should return a list of boolean indicating the matching results for the log entries
+
+Example structure:
+```python
+def step_1(log_entries_list):
+    # Process the entire list of raw log data
+    # Return list of processed entries for next step
+    # Process the complete list of log entries
+    processed_entries = []
+    for log_entry in log_entries_list:
+        # Process log entry as needed
+        processed_entries.append(processed_log)
+    return processed_entries
+
+def step_2(processed_entries_list):
+    # Process the list from step_1
+    # Return list of processed entries for next step
+    pass
+
+def step_3(processed_entries_list):
+    # Final processing and filtering
+    # Return list of boolean results for the processed entries
+    pass
+```
+
+Remember: Each function processes the ENTIRE list and returns a list for the next step.<|im_end|>
+<|im_start|>user
+Generate the code block for step 1 of the Microsoft Sentinel rule processing pipeline.
+
+Step Details:
+- Action: filter
+- Parameters: EventID == 1102 and EventSourceName == "Microsoft-Windows-Eventlog"
+- Explanation: Filter events for specific event ID and source name
+- Step Position: 1 of the processing chain
+
+Function Requirements:
+- Function name: step_1
+- Input: list of 4 log entries (dictionaries with keys: ['RecordId', 'TimeGenerated', 'EventID', 'EventSourceName', 'Computer']...)
+- Output: processed data in a format suitable for the next processing step
+- Purpose: Filter events for specific event ID and source name
+
+
+Input Format Analysis (Step 1):
+- Input type: LIST of 4 str items
+- Sample item: {"RecordId": "r1", "TimeGenerated": "2026-09-30T12:00:00Z", "EventID": 1102, "EventSourceName": "Microsoft-Windows-Eventlog", "Computer": "ws01.example.test", "Account": "LAB\\analyst", "Activity": "Event recorded"}
+- Your function should process the ENTIRE list
+- Function signature: def step_1(input_list):
+- Access items: for item in input_list: # process item
+
+
+
+
+
+
+Data Processing Chain Context:
+- This is step 1 in a multi-step processing pipeline
+- Each step builds upon the previous step's output
+- The final step should return a boolean indicating rule match
+- Maintain consistency with other steps in the pipeline
+
+Generate a Python function that:
+1. Takes the appropriate input based on its position in the chain
+2. Applies the specific processing logic for this step
+3. Returns data in the correct format for the next step
+4. Handles errors gracefully
+5. Uses the exact field names from the input data format
+6. Includes clear comments explaining the logic
+
+Focus on creating a function that integrates seamlessly with the overall processing pipeline.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

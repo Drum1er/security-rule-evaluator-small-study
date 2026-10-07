@@ -1,0 +1,206 @@
+{
+  "artifact_kind": "SANITIZED_DERIVATIVE",
+  "status": "BOUNDED_OBSERVATIONAL_GATE_COMPLETE",
+  "comparison": "Declared field mapping, exact strings, whole UTC instants, unordered row multisets; sld_set order ignored only",
+  "input_checks": [
+    {
+      "case": "lsass-ordinary",
+      "spl_input_rows": 4,
+      "kql_input_rows": 4,
+      "spl_matches_frozen_values": true,
+      "kql_matches_frozen_values_and_native_types": true,
+      "shared_input_multisets_equal": true,
+      "spl_only_fields": [],
+      "spl_native_runtime_types_claimed": false,
+      "spl_time_adapter": true,
+      "kql_export_sha256": "66659e93d976c91d97e2dee5660adc70d31a2509a6e50ee3b18b864566bdc85a"
+    },
+    {
+      "case": "lsass-witness",
+      "spl_input_rows": 1,
+      "kql_input_rows": 1,
+      "spl_matches_frozen_values": true,
+      "kql_matches_frozen_values_and_native_types": true,
+      "shared_input_multisets_equal": true,
+      "spl_only_fields": [],
+      "spl_native_runtime_types_claimed": false,
+      "spl_time_adapter": true,
+      "kql_export_sha256": "023eddc68b09be96621e44562402982792c3a41bbea6bee1cdb0401ae742e5a5"
+    },
+    {
+      "case": "dns-ordinary",
+      "spl_input_rows": 100,
+      "kql_input_rows": 100,
+      "spl_matches_frozen_values": true,
+      "kql_matches_frozen_values_and_native_types": true,
+      "shared_input_multisets_equal": true,
+      "spl_only_fields": [
+        "index",
+        "sourcetype"
+      ],
+      "spl_native_runtime_types_claimed": false,
+      "spl_time_adapter": true,
+      "kql_export_sha256": "a0d5aeb4b83b85344dbdbf68eb9ad7e722e72c64cc18f8fd03ec6c2aee744997"
+    },
+    {
+      "case": "dns-witness",
+      "spl_input_rows": 100,
+      "kql_input_rows": 100,
+      "spl_matches_frozen_values": true,
+      "kql_matches_frozen_values_and_native_types": true,
+      "shared_input_multisets_equal": true,
+      "spl_only_fields": [
+        "index",
+        "sourcetype"
+      ],
+      "spl_native_runtime_types_claimed": false,
+      "spl_time_adapter": true,
+      "kql_export_sha256": "72bc86c3e5b54716fa1f8b8f44af669a131e3e57e133a09b399c42e643263daf"
+    }
+  ],
+  "final_comparisons": [
+    {
+      "case": "lsass-ordinary",
+      "source_query_sha256": "03510e2e2106d1973506559d98869ed95aef2bec67caade238c2e55fba8906dc",
+      "target_query_sha256": "72ed2068a6261f573ce3ec99932fc0237b0f4aa5bf56cdcb1025b935a2810087",
+      "spl_rows": [
+        {
+          "dest": "host-a",
+          "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+          "TargetProcessId": 500,
+          "SourceImage": "C:\\Tools\\diagnostic.exe",
+          "SourceProcessId": 100,
+          "count": 2,
+          "firstTime": 1735689660,
+          "lastTime": 1735689720
+        }
+      ],
+      "kql_rows": [
+        {
+          "dest": "host-a",
+          "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+          "TargetProcessId": 500,
+          "SourceImage": "C:\\Tools\\diagnostic.exe",
+          "SourceProcessId": 100,
+          "count": 2,
+          "firstTime": 1735689660,
+          "lastTime": 1735689720
+        }
+      ],
+      "native_result_relation": "equivalent",
+      "candidate_id": "c_9188e6a1cbeca783fe86f9d0",
+      "prompt_sha256": "3d7bb1deee229867e5fff995a09c0b4df7f153aac38754450564951d50a546b7",
+      "model_verdict": "not_equivalent",
+      "fixture_level_finding": "false_rejection",
+      "model_reason": "The SPL query includes a row with EventCode=3 and CallTrace=\"C:\\\\Windows\\\\System32\\\\dbghelp.dll+0x10\" which is not included in the KQL query, and the KQL query excludes this row.",
+      "native_input_values_verified_in_both_engines": true
+    },
+    {
+      "case": "dns-witness",
+      "source_query_sha256": "a74c93c0a09de972aa30d91eb78c19e67a6c6f98de6601f23ff373cf7f005467",
+      "target_query_sha256": "5e241828ac6d1e4c8f1692fd371e635ad273f7c73c5161149bd2b6876f6d40c8",
+      "spl_rows": [
+        {
+          "computer": "host-a",
+          "window_start": 1735689600,
+          "qps": 100,
+          "sld_cnt": 3,
+          "sld_set": [
+            "alpha.xyz",
+            "beta.xyz",
+            "gamma.xyz"
+          ]
+        }
+      ],
+      "kql_rows": [],
+      "native_result_relation": "not_equivalent",
+      "candidate_id": "c_e02aebf2d38971e91d106710",
+      "prompt_sha256": "d917077fd9b2fea4300bb689543aa34b0f24e419d5baa9fd866b97bb9074d5aa",
+      "model_verdict": "not_equivalent",
+      "fixture_level_finding": "matching_verdict",
+      "model_reason": "The SPL query generates 100 rows with a fixed _time value and assigns 'alpha.xyz', 'beta.xyz', and 'gamma.xyz' to different ranges, while the KQL query defines a dataset with 50 rows (30 'alpha.xyz', 20 'beta.xyz', 0 'gamma.xyz') and a fixed TimeGenerated value. The KQL query does not generate 100 rows, and the distribution of query names is different, leading to different results in the final output.",
+      "native_input_values_verified_in_both_engines": true
+    },
+    {
+      "case": "lsass-witness",
+      "source_query_sha256": "e30dcff571c20b8b5fbd9dd292b70e23b11a44e703318495b09068c18d981e65",
+      "target_query_sha256": "8befccc397df033181e8487163dd80e0006a5dd6214c4f58c29e02af1c985c65",
+      "spl_rows": [],
+      "kql_rows": [
+        {
+          "dest": "host-a",
+          "TargetImage": "C:\\Windows\\System32\\lsass.exe.bak",
+          "TargetProcessId": 500,
+          "SourceImage": "C:\\Tools\\diagnostic.exe",
+          "SourceProcessId": 100,
+          "count": 1,
+          "firstTime": 1735689660,
+          "lastTime": 1735689660
+        }
+      ],
+      "native_result_relation": "not_equivalent",
+      "candidate_id": "c_0c90f94ee1b0fd6870aebc45",
+      "prompt_sha256": "68a38ef2c60f8d0d20ea81862fffbbe1431789d416af5664d9d7f2bdb93509bb",
+      "model_verdict": "equivalent",
+      "fixture_level_finding": "false_acceptance",
+      "model_reason": "Both queries produce the same typed multiset of rows under the declared output schema. The SPL query generates one row with the specified fields, and the KQL query also produces one row with the same fields and structure, including the renamed 'dest' field as 'Computer'.",
+      "native_input_values_verified_in_both_engines": true
+    },
+    {
+      "case": "dns-ordinary",
+      "source_query_sha256": "d541060191972f6c742d56e9eaa78ce59db3cff91e5de690e1519d53a481a09a",
+      "target_query_sha256": "e63fe3b61bf699e4a418ad95b024a9a9c67c3f66b9d7e44449542d9a9069f445",
+      "spl_rows": [
+        {
+          "computer": "host-a",
+          "window_start": 1735689600,
+          "qps": 100,
+          "sld_cnt": 3,
+          "sld_set": [
+            "alpha.xyz",
+            "beta.xyz",
+            "gamma.xyz"
+          ]
+        }
+      ],
+      "kql_rows": [
+        {
+          "computer": "host-a",
+          "window_start": 1735689600,
+          "qps": 100,
+          "sld_cnt": 3,
+          "sld_set": [
+            "alpha.xyz",
+            "beta.xyz",
+            "gamma.xyz"
+          ]
+        }
+      ],
+      "native_result_relation": "equivalent",
+      "candidate_id": "c_966a8e256ca73fb6da374b8a",
+      "prompt_sha256": "0a9b5b155529ff12c4eb55ff40e493df966c4da3299865310d2dfbea83f14f9d",
+      "model_verdict": "not_equivalent",
+      "fixture_level_finding": "false_rejection",
+      "model_reason": "The SPL query generates 100 rows with specific query values, while the KQL query defines a fixed set of 50 rows (with 10 entries for each of 'sub.alpha.xyz', 'sub.beta.xyz', and 'sub.gamma.xyz'). The number of rows and the distribution of query values differ between the two queries.",
+      "native_input_values_verified_in_both_engines": true
+    }
+  ],
+  "original_strict_protocol_pass_claimed": false,
+  "capture_adapter_deviations": [
+    "Kusto UI typed export / completed empty grid, not raw REST",
+    "SPL _time timezone-qualified .000 serialization decoded reversibly by predeclared adapter; raw strings preserved",
+    "Empty historical LSASS SPL schema declared by contract"
+  ],
+  "procedure_deviations": [
+    "Some final-query observations preceded the separate native input diagnostics; later checks close input-value gaps but do not retroactively satisfy the original wrapper-first execution order"
+  ],
+  "general_accuracy_estimate": null,
+  "paper_replication_claimed": false,
+  "limits": [
+    "Four crafted fixtures across two published pairs, no representative sampling",
+    "One retained final-result evidence set per language and fixture; no repeatability estimate",
+    "SPL artifacts are user-returned and internally consistent, not signed engine attestations",
+    "Kusto engine build not captured; hosted ADX is not Sentinel",
+    "Full macro/index/ingestion/alert behavior not tested"
+  ]
+}

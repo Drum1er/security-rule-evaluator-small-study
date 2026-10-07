@@ -1,0 +1,42 @@
+[
+  {
+    "id": "microsoft-security-event-log-cleared",
+    "name": "Security Event log cleared",
+    "language": "KQL",
+    "maintainer": "Microsoft / Azure",
+    "repository": "Azure/Azure-Sentinel",
+    "path": "Detections/SecurityEvent/SecurityEventLogCleared.yaml",
+    "commit": "d4af9625e0d390e5fdbcbdb3abce60e28fcb6c2d",
+    "commit_date": "2021-12-08T18:23:13Z",
+    "source_url": "https://github.com/Azure/Azure-Sentinel/blob/d4af9625e0d390e5fdbcbdb3abce60e28fcb6c2d/Detections/SecurityEvent/SecurityEventLogCleared.yaml",
+    "git_blob_sha": "49004b5bbdfaaa806bbf69006dd498c292824bac",
+    "license": "MIT",
+    "license_url": "https://github.com/Azure/Azure-Sentinel/blob/d4af9625e0d390e5fdbcbdb3abce60e28fcb6c2d/LICENSE",
+    "source_status": "Historical published analytic rule version 1.0.1; intentionally pinned, not asserted to be latest",
+    "query": "SecurityEvent\n| where EventID == 1102 and EventSourceName == \"Microsoft-Windows-Eventlog\" \n| summarize StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated), EventCount = count() by Computer, Account, EventID, Activity\n| extend timestamp = StartTimeUtc, AccountCustomEntity = Account, HostCustomEntity = Computer",
+    "fixture_file": "microsoft-security-event-log-cleared.fixture.json",
+    "source_binding": "All fixture records are synthetic rows of SecurityEvent",
+    "training_exclusion": "Not established. Parent must check overlap against available released data; independent source is not proof of training exclusion."
+  },
+  {
+    "id": "mitre-CAR-2013-05-004",
+    "name": "Execution with AT",
+    "language": "SPL",
+    "maintainer": "MITRE",
+    "repository": "mitre-attack/car",
+    "path": "analytics/CAR-2013-05-004.yaml",
+    "commit": "17c2e8633173a78d816df5dc84eebff908d7a51d",
+    "commit_date": "2023-02-21T06:54:56Z",
+    "source_url": "https://github.com/mitre-attack/car/blob/17c2e8633173a78d816df5dc84eebff908d7a51d/analytics/CAR-2013-05-004.yaml",
+    "git_blob_sha": "4c5b2b50b970ea763606ee3aa92fa9bb4ad4a557",
+    "license": "Apache-2.0",
+    "license_url": "https://github.com/mitre-attack/car/blob/17c2e8633173a78d816df5dc84eebff908d7a51d/LICENSE.txt",
+    "notice_url": "https://github.com/mitre-attack/car/blob/17c2e8633173a78d816df5dc84eebff908d7a51d/NOTICE.txt",
+    "source_status": "Published MITRE CAR analytic, Splunk implementation, Sysmon native data model",
+    "query": "index=__your_sysmon_index__ Image=\"C:\\\\Windows\\\\*\\\\at.exe\"|stats values(CommandLine) as \"Command Lines\" by ComputerName",
+    "fixture_file": "mitre-CAR-2013-05-004.fixture.json",
+    "source_binding": "The upstream index placeholder is preserved verbatim. All fixture records carry that same index value and are assumed already selected into this source for both arms. Index discrimination is not being tested.",
+    "training_exclusion": "Not established. Parent must check overlap against available released data; independent source is not proof of training exclusion."
+  }
+]
+

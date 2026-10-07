@@ -1,0 +1,136 @@
+{
+  "artifact_kind": "SANITIZED_DERIVATIVE",
+  "status": "completed",
+  "invalid": [],
+  "raw_events": [
+    {
+      "method": "step_1",
+      "caller": "_validate_code_block",
+      "event": "call",
+      "raw_function_event": true,
+      "arguments": {
+        "input_list": [
+          {
+            "EventCode": 10,
+            "_time": 1735689660,
+            "Computer": "host-a",
+            "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+            "TargetProcessId": 500,
+            "SourceImage": "C:\\Tools\\diagnostic.exe",
+            "SourceProcessId": 100,
+            "CallTrace": "C:\\Windows\\System32\\dbghelp.dll+0x10"
+          },
+          {
+            "EventCode": 10,
+            "_time": 1735689720,
+            "Computer": "host-a",
+            "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+            "TargetProcessId": 500,
+            "SourceImage": "C:\\Tools\\diagnostic.exe",
+            "SourceProcessId": 100,
+            "CallTrace": "C:\\Windows\\System32\\dbgcore.dll+0x20"
+          },
+          {
+            "EventCode": 3,
+            "_time": 1735689660,
+            "Computer": "host-a",
+            "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+            "TargetProcessId": 500,
+            "SourceImage": "C:\\Tools\\diagnostic.exe",
+            "SourceProcessId": 100,
+            "CallTrace": "C:\\Windows\\System32\\dbghelp.dll+0x10"
+          },
+          {
+            "EventCode": 10,
+            "_time": 1735689660,
+            "Computer": "host-a",
+            "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+            "TargetProcessId": 500,
+            "SourceImage": "C:\\Tools\\diagnostic.exe",
+            "SourceProcessId": 100,
+            "CallTrace": "C:\\Windows\\System32\\kernel32.dll+0x10"
+          }
+        ]
+      }
+    },
+    {
+      "method": "step_1",
+      "caller": "_validate_code_block",
+      "event": "return",
+      "raw_function_event": true,
+      "value": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "method": "step_1",
+      "caller": "_execute_single_step_with_all_data",
+      "event": "call",
+      "raw_function_event": true,
+      "arguments": {
+        "input_list": [
+          {
+            "EventCode": 10,
+            "_time": 1735689660,
+            "Computer": "host-a",
+            "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+            "TargetProcessId": 500,
+            "SourceImage": "C:\\Tools\\diagnostic.exe",
+            "SourceProcessId": 100,
+            "CallTrace": "C:\\Windows\\System32\\dbghelp.dll+0x10"
+          },
+          {
+            "EventCode": 10,
+            "_time": 1735689720,
+            "Computer": "host-a",
+            "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+            "TargetProcessId": 500,
+            "SourceImage": "C:\\Tools\\diagnostic.exe",
+            "SourceProcessId": 100,
+            "CallTrace": "C:\\Windows\\System32\\dbgcore.dll+0x20"
+          },
+          {
+            "EventCode": 3,
+            "_time": 1735689660,
+            "Computer": "host-a",
+            "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+            "TargetProcessId": 500,
+            "SourceImage": "C:\\Tools\\diagnostic.exe",
+            "SourceProcessId": 100,
+            "CallTrace": "C:\\Windows\\System32\\dbghelp.dll+0x10"
+          },
+          {
+            "EventCode": 10,
+            "_time": 1735689660,
+            "Computer": "host-a",
+            "TargetImage": "C:\\Windows\\System32\\lsass.exe",
+            "TargetProcessId": 500,
+            "SourceImage": "C:\\Tools\\diagnostic.exe",
+            "SourceProcessId": 100,
+            "CallTrace": "C:\\Windows\\System32\\kernel32.dll+0x10"
+          }
+        ]
+      }
+    },
+    {
+      "method": "step_1",
+      "caller": "_execute_single_step_with_all_data",
+      "event": "return",
+      "raw_function_event": true,
+      "value": [
+        true,
+        true,
+        false,
+        true
+      ]
+    }
+  ],
+  "execution": {
+    "exit_code": 0,
+    "stop_reason": null,
+    "output_observed_bytes": 5950
+  }
+}

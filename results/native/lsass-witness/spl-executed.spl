@@ -1,0 +1,14 @@
+| makeresults count=1
+| streamstats count as rownum
+| eval EventCode=10,
+    _time=1735689660,
+    Computer="host-a",
+    TargetImage="C:\\Windows\\System32\\lsass.exe.bak",
+    TargetProcessId=500,
+    SourceImage="C:\\Tools\\diagnostic.exe",
+    SourceProcessId=100,
+    CallTrace="C:\\Windows\\System32\\dbghelp.dll+0x10"
+| fields EventCode _time Computer TargetImage TargetProcessId SourceImage SourceProcessId CallTrace
+| search EventCode=10 TargetImage=*lsass.exe CallTrace=*dbgcore.dll* OR CallTrace=*dbghelp.dll*
+| stats count min(_time) as firstTime max(_time) as lastTime by Computer, TargetImage, TargetProcessId, SourceImage, SourceProcessId
+| rename Computer as dest

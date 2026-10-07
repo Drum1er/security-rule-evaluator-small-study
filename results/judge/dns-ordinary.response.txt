@@ -1,0 +1,1 @@
+{"verdict": "not_equivalent", "reason": "The SPL query generates 100 rows with specific query values, while the KQL query defines a fixed set of 50 rows (with 10 entries for each of 'sub.alpha.xyz', 'sub.beta.xyz', and 'sub.gamma.xyz'). The number of rows and the distribution of query values differ between the two queries."}

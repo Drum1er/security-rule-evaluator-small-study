@@ -1,0 +1,20 @@
+{
+  "status": "IDENTICAL_SETTINGS",
+  "checks": {
+    "context_tokens": true,
+    "output_token_limit": true,
+    "reserve_tokens": true,
+    "model_sha256": true,
+    "runtime": true,
+    "temperature": true,
+    "seed": true,
+    "thinking": true,
+    "json_object_mode": true,
+    "wall_limit_seconds": true,
+    "rss_limit_bytes": true,
+    "env": true
+  },
+  "baseline_rendered_tokens": 1177,
+  "patched_rendered_tokens": 1170,
+  "intended_difference": "Only the preregistered output-description line, hence token count"
+}

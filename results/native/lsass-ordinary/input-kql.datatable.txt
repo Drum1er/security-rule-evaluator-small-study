@@ -1,0 +1,6 @@
+datatable(EventID: long, TimeGenerated: datetime, Computer: string, TargetImage: string, TargetProcessId: long, SourceImage: string, SourceProcessId: long, CallTrace: string) [
+    3, datetime(2025-01-01T00:01:00.000Z), 'host-a', @'C:\Windows\System32\lsass.exe', 500, @'C:\Tools\diagnostic.exe', 100, @'C:\Windows\System32\dbghelp.dll+0x10',
+    10, datetime(2025-01-01T00:01:00.000Z), 'host-a', @'C:\Windows\System32\lsass.exe', 500, @'C:\Tools\diagnostic.exe', 100, @'C:\Windows\System32\dbghelp.dll+0x10',
+    10, datetime(2025-01-01T00:01:00.000Z), 'host-a', @'C:\Windows\System32\lsass.exe', 500, @'C:\Tools\diagnostic.exe', 100, @'C:\Windows\System32\kernel32.dll+0x10',
+    10, datetime(2025-01-01T00:02:00.000Z), 'host-a', @'C:\Windows\System32\lsass.exe', 500, @'C:\Tools\diagnostic.exe', 100, @'C:\Windows\System32\dbgcore.dll+0x20',
+]

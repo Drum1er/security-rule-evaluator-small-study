@@ -1,0 +1,19 @@
+{
+  "termination_reason": "wall_limit",
+  "exit_code": -9,
+  "wall_seconds": 300.3320056130033,
+  "wall_limit_seconds": 300,
+  "rendered_tokens": 2847,
+  "context_tokens": 8192,
+  "output_token_limit": 2048,
+  "peak_rss_bytes": 5542793216,
+  "rss_limit_bytes": 6442450944,
+  "raw_stdout_sha256": "a98cca121b76ac70b9c8ce1e51af0cf7fa2ad266c05f5415d0d8b16cf4b7f005",
+  "retained_output_bytes": 2201,
+  "retained_text_retokenized_tokens": 435,
+  "exact_engine_generated_token_count": null,
+  "token_count_limit": "Killed before final engine statistics; retained text retokenization is not an exact sampled-token count",
+  "partial_code_executed": false,
+  "output_response_file_exists": false,
+  "stopping_rule": "No further resource extension approved; preserve source 4/4 and target 4/6; witness and comparator unrun"
+}

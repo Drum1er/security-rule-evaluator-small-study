@@ -1,0 +1,17 @@
+{
+  "artifact_kind": "SANITIZED_DERIVATIVE",
+  "capture": "UI observation, not raw engine JSON",
+  "capturedAt": "2026-10-01T13:57:04.863Z",
+  "status": "Done",
+  "gridCells": 0,
+  "columnsFromUi": [
+    "    Computer            ",
+    "    TimeGenerated            ",
+    "    qps            ",
+    "    sld_cnt            ",
+    "    sld_set            "
+  ],
+  "columnTypesCaptured": false,
+  "rows": [],
+  "completeEmptyGridObserved": true
+}

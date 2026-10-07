@@ -1,0 +1,20 @@
+{
+  "time_utc": "2026-10-01T15:42:55.312106+00:00",
+  "reason": "Independent review found closed-stdio child lifetime edge case; block future upstream/generated calls until fixed launcher is loaded in a new host process",
+  "mechanism": "Temporarily move the required child driver; active model inference does not use it. Existing host controller will stop before any next sandbox invocation.",
+  "held_driver_sha256": "f9f736d5b6b2c71d1b82dad294d6ee8bba7e9d3034f851dfcc0b53a3c416255c",
+  "active_model_inference_unchanged": true,
+  "prior_completed_child_calls": "All observed completed with exit0 below10s; old profile not guaranteed against the newly found closed-stdio case",
+  "old_controller_terminal": true,
+  "old_controller_exit_code": 1,
+  "old_controller_final_error": "required held child driver missing before subsequent sandbox invocation",
+  "race_before_hold": {
+    "retry_completed_at_utc": "2026-10-01T15:42:02.897090Z",
+    "old_launcher_step2_call_at_utc": "2026-10-01T15:42:03.016990Z",
+    "child_exit_code": 0,
+    "child_wall_seconds": 0.11249327698897105,
+    "hold_applied_at_utc": "2026-10-01T15:42:55.313115Z"
+  },
+  "saved_unexecuted_step3_response": "runs/ordinary-spl-wallretry-v3/model-02/response.txt",
+  "new_launcher_regression": "lifecycle-regression.json"
+}

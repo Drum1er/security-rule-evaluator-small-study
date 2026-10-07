@@ -1,0 +1,1 @@
+{"verdict": "equivalent", "reason": "Both queries produce the same typed multiset of rows under the declared output schema. The SPL query generates one row with the specified fields, and the KQL query also produces one row with the same fields and structure, including the renamed 'dest' field as 'Computer'."}

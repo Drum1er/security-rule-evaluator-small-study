@@ -1,0 +1,1293 @@
+{
+  "note": "Source hashes describe private originals. Packaged hashes describe these specific copies, including explicit derivatives. Hashes establish byte identity, not engine attestation.",
+  "files": [
+    {
+      "path": "examples/native/contract.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/contract.json",
+      "source_sha256": "6cc6db1d4add62556c1845f5460eae97d8da209664133c6f55dfe5ba66b5de1c",
+      "packaged_sha256": "6cc6db1d4add62556c1845f5460eae97d8da209664133c6f55dfe5ba66b5de1c",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/frozen-runs.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/runs.json",
+      "source_sha256": "263769f14206ba6e71b138faa936b8c07e1fe88de7a11b9dab3b6d15ba94b183",
+      "packaged_sha256": "263769f14206ba6e71b138faa936b8c07e1fe88de7a11b9dab3b6d15ba94b183",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/source-records.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/provenance/source-records.json",
+      "source_sha256": "9bad3cf87c3bae31568a7badd8daa8433a2a1208ca951d704c12bf3c90914ebf",
+      "packaged_sha256": "3e38fa318c7560fa02866f32a90cc8f764cea158fc60253d2859afbbe4277f89",
+      "transformation": "Removed private full-source cache path; retained publication locators, hashes and historical license observations. These observations do not provide publication clearance."
+    },
+    {
+      "path": "examples/native/originals/lsass.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/originals/lsass.spl",
+      "source_sha256": "3cc930dc945fb67f28d085cc21901601b27fbbae7c517a4f18666421cd126d59",
+      "packaged_sha256": "3cc930dc945fb67f28d085cc21901601b27fbbae7c517a4f18666421cd126d59",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/originals/lsass.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/originals/lsass.kql",
+      "source_sha256": "ef4c49753a8fd420deba7e594c4db4e54de7a7a2974e09870e8837a8858e4844",
+      "packaged_sha256": "ef4c49753a8fd420deba7e594c4db4e54de7a7a2974e09870e8837a8858e4844",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/originals/dns.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/originals/dns.spl",
+      "source_sha256": "c5594fb45280205f14ed4cfa4c33247b6b8488d944c5711a3231faf8c2f4c3b9",
+      "packaged_sha256": "c5594fb45280205f14ed4cfa4c33247b6b8488d944c5711a3231faf8c2f4c3b9",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/originals/dns.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/originals/dns.kql",
+      "source_sha256": "49fba4feaf8f1483058413c4208a1615e75234ac11d6e6de17ba07d52ec80f4c",
+      "packaged_sha256": "49fba4feaf8f1483058413c4208a1615e75234ac11d6e6de17ba07d52ec80f4c",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/fixtures/lsass-ordinary.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/fixtures/lsass-ordinary.json",
+      "source_sha256": "2028122dcc3b42016b69daa06c14ae89b89c4d56751a446ac9b8ad9d62559c6f",
+      "packaged_sha256": "2028122dcc3b42016b69daa06c14ae89b89c4d56751a446ac9b8ad9d62559c6f",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/queries/lsass-ordinary.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/queries/lsass-ordinary.spl",
+      "source_sha256": "03510e2e2106d1973506559d98869ed95aef2bec67caade238c2e55fba8906dc",
+      "packaged_sha256": "03510e2e2106d1973506559d98869ed95aef2bec67caade238c2e55fba8906dc",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/input-queries/lsass-ordinary.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/input-diagnostics/queries/lsass-ordinary-input.spl",
+      "source_sha256": "8876cff5f29db16a802c4df65a0126ab7bf0e722de0105b6e6d047c638df9302",
+      "packaged_sha256": "8876cff5f29db16a802c4df65a0126ab7bf0e722de0105b6e6d047c638df9302",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/queries/lsass-ordinary.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/queries/lsass-ordinary.kql",
+      "source_sha256": "72ed2068a6261f573ce3ec99932fc0237b0f4aa5bf56cdcb1025b935a2810087",
+      "packaged_sha256": "72ed2068a6261f573ce3ec99932fc0237b0f4aa5bf56cdcb1025b935a2810087",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/input-queries/lsass-ordinary.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/input-diagnostics/queries/lsass-ordinary-input.kql",
+      "source_sha256": "597db0e8d47198eb7d2ad8a76c23f7236dfc8eb51ff35faadc50106131755060",
+      "packaged_sha256": "597db0e8d47198eb7d2ad8a76c23f7236dfc8eb51ff35faadc50106131755060",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-ordinary/spl-results.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/lsass-comparison/spl/lsass-ordinary-spl.results.native.json",
+      "source_sha256": "0302d27312b1b681b7625213f78d6e0dd5a6ed37e4bca245821e574be4f9457a",
+      "packaged_sha256": "0302d27312b1b681b7625213f78d6e0dd5a6ed37e4bca245821e574be4f9457a",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-ordinary/spl-job.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/lsass-comparison/spl/lsass-ordinary-spl.job.native.json",
+      "source_sha256": "94ada40645352fda8ebb3bd2568bade7330501fc6827ff49d41a7d21ff80d762",
+      "packaged_sha256": "738a95831a7e0a713d387b9a2aa712485c898c45497a55d601936a9e8db3a765",
+      "transformation": "Whitelist projection: retained engine version, submitted search, completion/count/sampling/error flags; removed user/host/URI/session/job IDs, process metadata and unrelated runtime details. Original retained privately."
+    },
+    {
+      "path": "results/native/lsass-ordinary/spl-executed.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/lsass-comparison/spl/lsass-ordinary-spl.executed.spl",
+      "source_sha256": "03510e2e2106d1973506559d98869ed95aef2bec67caade238c2e55fba8906dc",
+      "packaged_sha256": "03510e2e2106d1973506559d98869ed95aef2bec67caade238c2e55fba8906dc",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-ordinary/input-spl-results.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/lsass-ordinary-input-spl.results.native.json",
+      "source_sha256": "06852df0909794984347907b88fd48f4dab8266130f4f41482a400bfb020955d",
+      "packaged_sha256": "06852df0909794984347907b88fd48f4dab8266130f4f41482a400bfb020955d",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-ordinary/input-spl-job.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/lsass-ordinary-input-spl.job.native.json",
+      "source_sha256": "9a655b4c3febf25e78c4b009c247381d3c2b0fdfdd88aa1f2916f5f9155a89f4",
+      "packaged_sha256": "0e4b506708f685dad53907f0f172a3451cb1439be7d20a5609e8eb8bbc6ff8e3",
+      "transformation": "Whitelist projection: retained engine version, submitted search, completion/count/sampling/error flags; removed user/host/URI/session/job IDs, process metadata and unrelated runtime details. Original retained privately."
+    },
+    {
+      "path": "results/native/lsass-ordinary/input-spl-executed.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/lsass-ordinary-input-spl.executed.spl",
+      "source_sha256": "8876cff5f29db16a802c4df65a0126ab7bf0e722de0105b6e6d047c638df9302",
+      "packaged_sha256": "8876cff5f29db16a802c4df65a0126ab7bf0e722de0105b6e6d047c638df9302",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-ordinary/input-kql.datatable.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/input-diagnostics/native-kql/lsass-ordinary-input.result.datatable.txt",
+      "source_sha256": "66659e93d976c91d97e2dee5660adc70d31a2509a6e50ee3b18b864566bdc85a",
+      "packaged_sha256": "66659e93d976c91d97e2dee5660adc70d31a2509a6e50ee3b18b864566bdc85a",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-ordinary/kql-executed.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/lsass-comparison/kql/ordinary.executed.kql",
+      "source_sha256": "72ed2068a6261f573ce3ec99932fc0237b0f4aa5bf56cdcb1025b935a2810087",
+      "packaged_sha256": "72ed2068a6261f573ce3ec99932fc0237b0f4aa5bf56cdcb1025b935a2810087",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-ordinary/kql-results.datatable.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/lsass-comparison/kql/ordinary.result.datatable.txt",
+      "source_sha256": "f0300bc5b5276dc697a5290c3bebfeda9a8f75a7c1b04bc6c5ad5471631e8f1c",
+      "packaged_sha256": "f0300bc5b5276dc697a5290c3bebfeda9a8f75a7c1b04bc6c5ad5471631e8f1c",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/judge/lsass-ordinary.prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/c_9188e6a1cbeca783fe86f9d0/prompt.txt",
+      "source_sha256": "3d7bb1deee229867e5fff995a09c0b4df7f153aac38754450564951d50a546b7",
+      "packaged_sha256": "3d7bb1deee229867e5fff995a09c0b4df7f153aac38754450564951d50a546b7",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/judge/lsass-ordinary.response.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/c_9188e6a1cbeca783fe86f9d0/response.txt",
+      "source_sha256": "86a55e6477ec963290aa5e544104c279443ccdc4eab0a219021aa84cbb8a9e5d",
+      "packaged_sha256": "86a55e6477ec963290aa5e544104c279443ccdc4eab0a219021aa84cbb8a9e5d",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/judge/lsass-ordinary.rendered-prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/c_9188e6a1cbeca783fe86f9d0/rendered-prompt-preflight.txt",
+      "source_sha256": "7fb788e600336da0be3f1c7b39af300ac713751a53d1fb6186b9026228c678d7",
+      "packaged_sha256": "7fb788e600336da0be3f1c7b39af300ac713751a53d1fb6186b9026228c678d7",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/fixtures/lsass-witness.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/fixtures/lsass-witness.json",
+      "source_sha256": "15625738a96e6e6a932b260074b078f12593017bafda9513d76a79b1cea4cc73",
+      "packaged_sha256": "15625738a96e6e6a932b260074b078f12593017bafda9513d76a79b1cea4cc73",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/queries/lsass-witness.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/queries/lsass-witness.spl",
+      "source_sha256": "e30dcff571c20b8b5fbd9dd292b70e23b11a44e703318495b09068c18d981e65",
+      "packaged_sha256": "e30dcff571c20b8b5fbd9dd292b70e23b11a44e703318495b09068c18d981e65",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/input-queries/lsass-witness.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/input-diagnostics/queries/lsass-witness-input.spl",
+      "source_sha256": "b75ad4746b52ad5727e808eb0f67af9f63cf2a99c20c1ac78f3217042c836de9",
+      "packaged_sha256": "b75ad4746b52ad5727e808eb0f67af9f63cf2a99c20c1ac78f3217042c836de9",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/queries/lsass-witness.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/queries/lsass-witness.kql",
+      "source_sha256": "8befccc397df033181e8487163dd80e0006a5dd6214c4f58c29e02af1c985c65",
+      "packaged_sha256": "8befccc397df033181e8487163dd80e0006a5dd6214c4f58c29e02af1c985c65",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/input-queries/lsass-witness.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/input-diagnostics/queries/lsass-witness-input.kql",
+      "source_sha256": "ab185b534d1985569139d02536898aa42f3208183dc9fee2a7b02c2628b83398",
+      "packaged_sha256": "ab185b534d1985569139d02536898aa42f3208183dc9fee2a7b02c2628b83398",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-witness/spl-results.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/lsass-comparison/spl/lsass-witness-spl.results.native.json",
+      "source_sha256": "f0e5f1d48d048c43496416f5bf93d7f321a04d7dff9edb680ce448d933929647",
+      "packaged_sha256": "f0e5f1d48d048c43496416f5bf93d7f321a04d7dff9edb680ce448d933929647",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-witness/spl-job.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/lsass-comparison/spl/lsass-witness-spl.job.native.json",
+      "source_sha256": "ca942fc6ab0d1e94e0303a5998ffc27e899f326ed4148bd5100b6661c5199807",
+      "packaged_sha256": "ea6f0d9419161cf3dfcd22c14e271cf5be5426c062590825ad988d244fb22de6",
+      "transformation": "Whitelist projection: retained engine version, submitted search, completion/count/sampling/error flags; removed user/host/URI/session/job IDs, process metadata and unrelated runtime details. Original retained privately."
+    },
+    {
+      "path": "results/native/lsass-witness/spl-executed.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/lsass-comparison/spl/lsass-witness-spl.executed.spl",
+      "source_sha256": "e30dcff571c20b8b5fbd9dd292b70e23b11a44e703318495b09068c18d981e65",
+      "packaged_sha256": "e30dcff571c20b8b5fbd9dd292b70e23b11a44e703318495b09068c18d981e65",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-witness/input-spl-results.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/lsass-witness-input-spl.results.native.json",
+      "source_sha256": "8b0c08a6e643a4dd50dcdb020a7ea8af687bf12a958f8023fe433ec9e4d299c4",
+      "packaged_sha256": "8b0c08a6e643a4dd50dcdb020a7ea8af687bf12a958f8023fe433ec9e4d299c4",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-witness/input-spl-job.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/lsass-witness-input-spl.job.native.json",
+      "source_sha256": "da4da6acb2d4bef2adf9f454f5d9f587951cc329464301f06590dbdb17493e75",
+      "packaged_sha256": "d134f75535949e78d52087baa3f548fbfb8109f96046ec416d0ec09f4b192c31",
+      "transformation": "Whitelist projection: retained engine version, submitted search, completion/count/sampling/error flags; removed user/host/URI/session/job IDs, process metadata and unrelated runtime details. Original retained privately."
+    },
+    {
+      "path": "results/native/lsass-witness/input-spl-executed.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/lsass-witness-input-spl.executed.spl",
+      "source_sha256": "b75ad4746b52ad5727e808eb0f67af9f63cf2a99c20c1ac78f3217042c836de9",
+      "packaged_sha256": "b75ad4746b52ad5727e808eb0f67af9f63cf2a99c20c1ac78f3217042c836de9",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-witness/input-kql.datatable.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/input-diagnostics/native-kql/lsass-witness-input.result.datatable.txt",
+      "source_sha256": "023eddc68b09be96621e44562402982792c3a41bbea6bee1cdb0401ae742e5a5",
+      "packaged_sha256": "023eddc68b09be96621e44562402982792c3a41bbea6bee1cdb0401ae742e5a5",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-witness/kql-executed.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/lsass-comparison/kql/witness.executed.kql",
+      "source_sha256": "8befccc397df033181e8487163dd80e0006a5dd6214c4f58c29e02af1c985c65",
+      "packaged_sha256": "8befccc397df033181e8487163dd80e0006a5dd6214c4f58c29e02af1c985c65",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/lsass-witness/kql-results.datatable.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/lsass-comparison/kql/witness.result.datatable.txt",
+      "source_sha256": "5ea52952ad64fcab6bd09e6e2e98841b2ec83fbb5392ba601afb7effe67a6e21",
+      "packaged_sha256": "5ea52952ad64fcab6bd09e6e2e98841b2ec83fbb5392ba601afb7effe67a6e21",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/judge/lsass-witness.prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/c_0c90f94ee1b0fd6870aebc45/prompt.txt",
+      "source_sha256": "68a38ef2c60f8d0d20ea81862fffbbe1431789d416af5664d9d7f2bdb93509bb",
+      "packaged_sha256": "68a38ef2c60f8d0d20ea81862fffbbe1431789d416af5664d9d7f2bdb93509bb",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/judge/lsass-witness.response.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/c_0c90f94ee1b0fd6870aebc45/response.txt",
+      "source_sha256": "df47f80abd62f96068188a84c01761146360a17769943e51ea45563b51420dc6",
+      "packaged_sha256": "df47f80abd62f96068188a84c01761146360a17769943e51ea45563b51420dc6",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/judge/lsass-witness.rendered-prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/c_0c90f94ee1b0fd6870aebc45/rendered-prompt-preflight.txt",
+      "source_sha256": "9850337cf09755fc72604f32ba90cae093cb5608a35474d416c3007b5918a644",
+      "packaged_sha256": "9850337cf09755fc72604f32ba90cae093cb5608a35474d416c3007b5918a644",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/fixtures/dns-ordinary.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/fixtures/dns-ordinary.json",
+      "source_sha256": "8c57ac7e0e493e94a8d147d8104b2624790f1ac4aa3a01abb911f5deccff808a",
+      "packaged_sha256": "8c57ac7e0e493e94a8d147d8104b2624790f1ac4aa3a01abb911f5deccff808a",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/queries/dns-ordinary.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/queries/dns-ordinary.spl",
+      "source_sha256": "d541060191972f6c742d56e9eaa78ce59db3cff91e5de690e1519d53a481a09a",
+      "packaged_sha256": "d541060191972f6c742d56e9eaa78ce59db3cff91e5de690e1519d53a481a09a",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/input-queries/dns-ordinary.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/input-diagnostics/queries/dns-ordinary-input.spl",
+      "source_sha256": "8b6750537187711cf5ffba7d219ffc2efe0e65e48bf541b8f2a36532f6b7f944",
+      "packaged_sha256": "8b6750537187711cf5ffba7d219ffc2efe0e65e48bf541b8f2a36532f6b7f944",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/queries/dns-ordinary.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/queries/dns-ordinary.kql",
+      "source_sha256": "e63fe3b61bf699e4a418ad95b024a9a9c67c3f66b9d7e44449542d9a9069f445",
+      "packaged_sha256": "e63fe3b61bf699e4a418ad95b024a9a9c67c3f66b9d7e44449542d9a9069f445",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/input-queries/dns-ordinary.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/input-diagnostics/queries/dns-ordinary-input.kql",
+      "source_sha256": "0ba14d0f923ed467e2a707f9d21030061fc05ca78d883b11cf173d01dd4ce809",
+      "packaged_sha256": "0ba14d0f923ed467e2a707f9d21030061fc05ca78d883b11cf173d01dd4ce809",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-ordinary/spl-results.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/dns-ordinary-spl.results.native.json",
+      "source_sha256": "ece2fa44d7394a4de69cbc2d5957bfc5eaf97c466a64af4ef8a3e5299d635097",
+      "packaged_sha256": "ece2fa44d7394a4de69cbc2d5957bfc5eaf97c466a64af4ef8a3e5299d635097",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-ordinary/spl-job.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/dns-ordinary-spl.job.native.json",
+      "source_sha256": "1b7c0620592d9e3bc7a945effa675c504ebe7008d2728450b9520ff9c9f55a11",
+      "packaged_sha256": "75c812d342aed8671f5fd2996edab065836eb6d8d1146c5940f7d82a8e678a66",
+      "transformation": "Whitelist projection: retained engine version, submitted search, completion/count/sampling/error flags; removed user/host/URI/session/job IDs, process metadata and unrelated runtime details. Original retained privately."
+    },
+    {
+      "path": "results/native/dns-ordinary/spl-executed.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/dns-ordinary-spl.executed.spl",
+      "source_sha256": "d541060191972f6c742d56e9eaa78ce59db3cff91e5de690e1519d53a481a09a",
+      "packaged_sha256": "d541060191972f6c742d56e9eaa78ce59db3cff91e5de690e1519d53a481a09a",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-ordinary/input-spl-results.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/dns-ordinary-input-spl.results.native.json",
+      "source_sha256": "38d1116f953260fa716ee214b358e13e29777e29871fa02abc8a9b1f2760bd68",
+      "packaged_sha256": "38d1116f953260fa716ee214b358e13e29777e29871fa02abc8a9b1f2760bd68",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-ordinary/input-spl-job.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/dns-ordinary-input-spl.job.native.json",
+      "source_sha256": "f88790fe2c8152d945de7b6759b9fb97419af4887d06d700eaf4546b110ca285",
+      "packaged_sha256": "c05ad8054f1c4988a49075bc0faba0cfde8c831c95bbbaa6c8d0afb6162507e9",
+      "transformation": "Whitelist projection: retained engine version, submitted search, completion/count/sampling/error flags; removed user/host/URI/session/job IDs, process metadata and unrelated runtime details. Original retained privately."
+    },
+    {
+      "path": "results/native/dns-ordinary/input-spl-executed.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/dns-ordinary-input-spl.executed.spl",
+      "source_sha256": "8b6750537187711cf5ffba7d219ffc2efe0e65e48bf541b8f2a36532f6b7f944",
+      "packaged_sha256": "8b6750537187711cf5ffba7d219ffc2efe0e65e48bf541b8f2a36532f6b7f944",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-ordinary/input-kql.datatable.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/input-diagnostics/native-kql/dns-ordinary-input.result.datatable.txt",
+      "source_sha256": "a0d5aeb4b83b85344dbdbf68eb9ad7e722e72c64cc18f8fd03ec6c2aee744997",
+      "packaged_sha256": "a0d5aeb4b83b85344dbdbf68eb9ad7e722e72c64cc18f8fd03ec6c2aee744997",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-ordinary/kql-executed.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/dns-kql/dns-ordinary.executed.kql",
+      "source_sha256": "e63fe3b61bf699e4a418ad95b024a9a9c67c3f66b9d7e44449542d9a9069f445",
+      "packaged_sha256": "e63fe3b61bf699e4a418ad95b024a9a9c67c3f66b9d7e44449542d9a9069f445",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-ordinary/kql-results.datatable.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/dns-kql/dns-ordinary.result.datatable.txt",
+      "source_sha256": "81f6fc22766f59f64e4746a3bf73f34020186e5a265fdebbc1e0456cfadf8ba6",
+      "packaged_sha256": "81f6fc22766f59f64e4746a3bf73f34020186e5a265fdebbc1e0456cfadf8ba6",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/judge/dns-ordinary.prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/c_966a8e256ca73fb6da374b8a/prompt.txt",
+      "source_sha256": "0a9b5b155529ff12c4eb55ff40e493df966c4da3299865310d2dfbea83f14f9d",
+      "packaged_sha256": "0a9b5b155529ff12c4eb55ff40e493df966c4da3299865310d2dfbea83f14f9d",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/judge/dns-ordinary.response.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/c_966a8e256ca73fb6da374b8a/response.txt",
+      "source_sha256": "59b21a8f4a04a8758fcb5c026fff27a3a175f3965a93d339252f0c0cb4343f1c",
+      "packaged_sha256": "59b21a8f4a04a8758fcb5c026fff27a3a175f3965a93d339252f0c0cb4343f1c",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/judge/dns-ordinary.rendered-prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/c_966a8e256ca73fb6da374b8a/rendered-prompt-preflight.txt",
+      "source_sha256": "4557c457cf451aa8f33dd76f1fd0c69623faff21255d7b95de00a9ec2e728ea8",
+      "packaged_sha256": "4557c457cf451aa8f33dd76f1fd0c69623faff21255d7b95de00a9ec2e728ea8",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/fixtures/dns-witness.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/fixtures/dns-witness.json",
+      "source_sha256": "0257a4fd5703f82a93503106b8c4ce553ff86e2b0cdee0cc57eca77e6cf66172",
+      "packaged_sha256": "0257a4fd5703f82a93503106b8c4ce553ff86e2b0cdee0cc57eca77e6cf66172",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/queries/dns-witness.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/queries/dns-witness.spl",
+      "source_sha256": "a74c93c0a09de972aa30d91eb78c19e67a6c6f98de6601f23ff373cf7f005467",
+      "packaged_sha256": "a74c93c0a09de972aa30d91eb78c19e67a6c6f98de6601f23ff373cf7f005467",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/input-queries/dns-witness.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/input-diagnostics/queries/dns-witness-input.spl",
+      "source_sha256": "4814c6c224c83b980d3b73bea70f0c878786b89acb904f0215ec210173b11572",
+      "packaged_sha256": "4814c6c224c83b980d3b73bea70f0c878786b89acb904f0215ec210173b11572",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/queries/dns-witness.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/published-pair-next-experiment/queries/dns-witness.kql",
+      "source_sha256": "5e241828ac6d1e4c8f1692fd371e635ad273f7c73c5161149bd2b6876f6d40c8",
+      "packaged_sha256": "5e241828ac6d1e4c8f1692fd371e635ad273f7c73c5161149bd2b6876f6d40c8",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/native/input-queries/dns-witness.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/input-diagnostics/queries/dns-witness-input.kql",
+      "source_sha256": "d7f1dde85e483cb52641af0cb2fffdc2290b521556c6530d94dd37a84c007d02",
+      "packaged_sha256": "d7f1dde85e483cb52641af0cb2fffdc2290b521556c6530d94dd37a84c007d02",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-witness/spl-results.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/dns-witness-spl.results.native.json",
+      "source_sha256": "ece2fa44d7394a4de69cbc2d5957bfc5eaf97c466a64af4ef8a3e5299d635097",
+      "packaged_sha256": "ece2fa44d7394a4de69cbc2d5957bfc5eaf97c466a64af4ef8a3e5299d635097",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-witness/spl-job.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/dns-witness-spl.job.native.json",
+      "source_sha256": "8d62f2af66779f8cee17c1af610fa4b7d373b237ec24fc63f92d13536a55f652",
+      "packaged_sha256": "33f0b8993aca8db973daaf83647e1c30ca1545e16cf7be949f7172defe5326a9",
+      "transformation": "Whitelist projection: retained engine version, submitted search, completion/count/sampling/error flags; removed user/host/URI/session/job IDs, process metadata and unrelated runtime details. Original retained privately."
+    },
+    {
+      "path": "results/native/dns-witness/spl-executed.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/dns-witness-spl.executed.spl",
+      "source_sha256": "a74c93c0a09de972aa30d91eb78c19e67a6c6f98de6601f23ff373cf7f005467",
+      "packaged_sha256": "a74c93c0a09de972aa30d91eb78c19e67a6c6f98de6601f23ff373cf7f005467",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-witness/input-spl-results.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/dns-witness-input-spl.results.native.json",
+      "source_sha256": "fad4950750bd8a63fd8f8f843d63f0009ffd24ae00de6cf4697484125e58aae0",
+      "packaged_sha256": "fad4950750bd8a63fd8f8f843d63f0009ffd24ae00de6cf4697484125e58aae0",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-witness/input-spl-job.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/dns-witness-input-spl.job.native.json",
+      "source_sha256": "9a5c8a60bfd81c3f9d6bf466f0c193c74fe246ffc64f716f2fb76b65e58793ae",
+      "packaged_sha256": "fed4c7271a3d8fc889581121881c7cc9cad59fa5008a02d0951d015bc3820185",
+      "transformation": "Whitelist projection: retained engine version, submitted search, completion/count/sampling/error flags; removed user/host/URI/session/job IDs, process metadata and unrelated runtime details. Original retained privately."
+    },
+    {
+      "path": "results/native/dns-witness/input-spl-executed.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "returned-spl/evidence/dns-witness-input-spl.executed.spl",
+      "source_sha256": "4814c6c224c83b980d3b73bea70f0c878786b89acb904f0215ec210173b11572",
+      "packaged_sha256": "4814c6c224c83b980d3b73bea70f0c878786b89acb904f0215ec210173b11572",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-witness/input-kql.datatable.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/input-diagnostics/native-kql/dns-witness-input.result.datatable.txt",
+      "source_sha256": "72bc86c3e5b54716fa1f8b8f44af669a131e3e57e133a09b399c42e643263daf",
+      "packaged_sha256": "72bc86c3e5b54716fa1f8b8f44af669a131e3e57e133a09b399c42e643263daf",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-witness/kql-executed.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/dns-kql/dns-witness.executed.kql",
+      "source_sha256": "5e241828ac6d1e4c8f1692fd371e635ad273f7c73c5161149bd2b6876f6d40c8",
+      "packaged_sha256": "5e241828ac6d1e4c8f1692fd371e635ad273f7c73c5161149bd2b6876f6d40c8",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/dns-witness/kql-empty.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/dns-kql/dns-witness.empty-observation.json",
+      "source_sha256": "6d50aab5b75bf3522c3c96569dab783edda81ce91166610105cacc97ac740484",
+      "packaged_sha256": "468db1ae5515bf4e1247e060ef25b14f8299983ce7d5cdf222f7eeaef31d9a20",
+      "transformation": "Removed request/session identifier; preserved completion, observed empty grid, column names and missing-type caveat."
+    },
+    {
+      "path": "results/native/dns-witness/kql-grid.sanitized.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "checkpoint/dns-kql/dns-witness.result.dom.txt",
+      "source_sha256": "1e81bd9ac1a343822d0865c7916676d11928cbf987a14a19dde958183a20922f",
+      "packaged_sha256": "5bcf54b051eab21ea3c8beb1815d36eb796a52ab2cf99e7ddc8d6faaab257fb6",
+      "transformation": "Extracted only Query results DOM region; removed account email, cluster/database labels, editor, navigation, and surrounding interface. No screenshot redistributed."
+    },
+    {
+      "path": "results/judge/dns-witness.prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/c_e02aebf2d38971e91d106710/prompt.txt",
+      "source_sha256": "d917077fd9b2fea4300bb689543aa34b0f24e419d5baa9fd866b97bb9074d5aa",
+      "packaged_sha256": "d917077fd9b2fea4300bb689543aa34b0f24e419d5baa9fd866b97bb9074d5aa",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/judge/dns-witness.response.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/c_e02aebf2d38971e91d106710/response.txt",
+      "source_sha256": "795ccd13a8221116f6a07364af51b74a23f16f9a500a2f67405ac0d78d95320f",
+      "packaged_sha256": "795ccd13a8221116f6a07364af51b74a23f16f9a500a2f67405ac0d78d95320f",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/judge/dns-witness.rendered-prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/c_e02aebf2d38971e91d106710/rendered-prompt-preflight.txt",
+      "source_sha256": "5ab6de58af72658993f81dd9a331d9bcc56c95eb5d084cdb6eefde8949bfc1d6",
+      "packaged_sha256": "5ab6de58af72658993f81dd9a331d9bcc56c95eb5d084cdb6eefde8949bfc1d6",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/native/comparisons.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "review/complete-gate.json",
+      "source_sha256": "052b1b9eca79f45f08c4cd42f3a14419a1be1aca4584fabdfafda12daca4e004",
+      "packaged_sha256": "96e7f9ee6b5b5f7c5d33a4347529f5ac37c4762aefdd42c0b8f18db98c79cebb",
+      "transformation": "Removed Splunk job IDs and Kusto request/session IDs; kept findings, hashes, data, model bindings and all limitations. Historical aggregate; independently recalculated by the new verifier."
+    },
+    {
+      "path": "results/judge/receipts.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/results.jsonl",
+      "source_sha256": "13921f8b3b57ee88ba30f8dd7f3b78f7cdda98c728803dc196dc7d1c196aa665",
+      "packaged_sha256": "6cae10df67cc32da4c3c8dd1a98fedb06baa9e171dfcdde3125556aadf973f56",
+      "transformation": "Converted JSONL to JSON array; replaced executable/model/prompt paths with named placeholders. Responses, command flags, parameters, hashes and resource measurements retained."
+    },
+    {
+      "path": "results/judge/runtime-summary.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+      "source_path": "plain-judge/runtime-evidence/summary.json",
+      "source_sha256": "48329f83aaecf4c37a953a6e238f8fb83d831240ebaafc304a56aa3fc33bf3b2",
+      "packaged_sha256": "48329f83aaecf4c37a953a6e238f8fb83d831240ebaafc304a56aa3fc33bf3b2",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/runtime-hashes.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runtime-hashes.txt",
+      "source_sha256": "440a70f1a3882771e661030f8a7ea6dfe8963a24029c7c5a85448f8ff41a3d1d",
+      "packaged_sha256": "440a70f1a3882771e661030f8a7ea6dfe8963a24029c7c5a85448f8ff41a3d1d",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/cohort/source-selection.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/source-research/selection.json",
+      "source_sha256": "5e08799bb7cbc81ade9a16ba0fe3a48902b111ba6c9528af79fb9b1610721f7a",
+      "packaged_sha256": "5e08799bb7cbc81ade9a16ba0fe3a48902b111ba6c9528af79fb9b1610721f7a",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/assessment.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/assessment.json",
+      "source_sha256": "7ed8b475aeaa2e73b0e60ff85d17641f2218aabed08caf4ad83139001c4a9ffb",
+      "packaged_sha256": "7ed8b475aeaa2e73b0e60ff85d17641f2218aabed08caf4ad83139001c4a9ffb",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/FINAL-STATUS.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/FINAL-STATUS.json",
+      "source_sha256": "b28e85cef9e2d617ea10e9c9c2df359922bcf0e78962784b7a53a5982333512a",
+      "packaged_sha256": "b28e85cef9e2d617ea10e9c9c2df359922bcf0e78962784b7a53a5982333512a",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/PROTOCOL.md",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/PROTOCOL.md",
+      "source_sha256": "4751f9056ec822e209b2c98a76c40dfce41cdbf90080a2850b17191577525298",
+      "packaged_sha256": "4751f9056ec822e209b2c98a76c40dfce41cdbf90080a2850b17191577525298",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/pre-arm-interpretation.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/pre-arm-interpretation.json",
+      "source_sha256": "c2b80c1577aca02f269c57980028af41b3056bb42d53dfade2e18b598beaa00c",
+      "packaged_sha256": "c2b80c1577aca02f269c57980028af41b3056bb42d53dfade2e18b598beaa00c",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/call-ledger.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/call-ledger.json",
+      "source_sha256": "ee935f8c370f8a71f234391d30c0d9f27298bbb0ce4259d610d66a1858225d44",
+      "packaged_sha256": "ee935f8c370f8a71f234391d30c0d9f27298bbb0ce4259d610d66a1858225d44",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/registration-chronology.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/registration-chronology.json",
+      "source_sha256": "7446bba84dbf3e09e978e456a30f552e272bf6524d89c164b838766b836a93a2",
+      "packaged_sha256": "7446bba84dbf3e09e978e456a30f552e272bf6524d89c164b838766b836a93a2",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/cohort/dns.fixture.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/fixtures/dns.json",
+      "source_sha256": "e5be732d6a5bea7dcf2f0f71bef468fadb5228f957143fc21b0558774646fb12",
+      "packaged_sha256": "e5be732d6a5bea7dcf2f0f71bef468fadb5228f957143fc21b0558774646fb12",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/cohort/dns.oracle.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/oracles/dns.json",
+      "source_sha256": "b04073c231ffa2022c4385efbbedd8fb1e09d780f5c9028bea5773b5d40cbd23",
+      "packaged_sha256": "b04073c231ffa2022c4385efbbedd8fb1e09d780f5c9028bea5773b5d40cbd23",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/cohort/dns.ir.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/dns/ir/frozen-ir.json",
+      "source_sha256": "9146377c374372af8a377274c6b1cdd8fd0ea8a771d71d21bceb162b20fec964",
+      "packaged_sha256": "9146377c374372af8a377274c6b1cdd8fd0ea8a771d71d21bceb162b20fec964",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/cohort/dns.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/rules/dns.spl",
+      "source_sha256": "c5594fb45280205f14ed4cfa4c33247b6b8488d944c5711a3231faf8c2f4c3b9",
+      "packaged_sha256": "c5594fb45280205f14ed4cfa4c33247b6b8488d944c5711a3231faf8c2f4c3b9",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/dns.ir-request.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/dns/ir/model/request.json",
+      "source_sha256": "74d0eae94751687d51b955c768ae23b01ef470f4a1f82498f359aad3d9ec35f4",
+      "packaged_sha256": "74d0eae94751687d51b955c768ae23b01ef470f4a1f82498f359aad3d9ec35f4",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/dns.ir-rendered-prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/dns/ir/model/rendered-prompt.txt",
+      "source_sha256": "8d30ccaadc6033812495b95a9326b315fded9f9b5b030db9144a59efcd0881a3",
+      "packaged_sha256": "8d30ccaadc6033812495b95a9326b315fded9f9b5b030db9144a59efcd0881a3",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/dns.ir-receipt.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/dns/ir/model/result.json",
+      "source_sha256": "1b2f576e9306e9e65d90a147ea124aef83ba3448a15819fa1610cd9774918573",
+      "packaged_sha256": "14689ecc341881152ec55d14394fbc8057ad9ba7bc428a0155a2d6c53efe95c5",
+      "transformation": "Replaced local command paths with named placeholders; model settings, measurements and response retained."
+    },
+    {
+      "path": "examples/cohort/microsoft-security-event-log-cleared.fixture.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/fixtures/microsoft-security-event-log-cleared.json",
+      "source_sha256": "39545708885e38a79538413ac1bc9fc28b9bf8d963e89f152df52e6ad876f102",
+      "packaged_sha256": "39545708885e38a79538413ac1bc9fc28b9bf8d963e89f152df52e6ad876f102",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/cohort/microsoft-security-event-log-cleared.oracle.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/oracles/microsoft-security-event-log-cleared.json",
+      "source_sha256": "d773776ed1a19322bcf6a12ef7b0a94f0b5d4790fe8a95ce20e010fed8f43cd7",
+      "packaged_sha256": "d773776ed1a19322bcf6a12ef7b0a94f0b5d4790fe8a95ce20e010fed8f43cd7",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/cohort/microsoft-security-event-log-cleared.ir.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/ir/frozen-ir.json",
+      "source_sha256": "1cde3a844b5efc8746743a1fe0f0c4bd6d0619e5dd918ee614a2388f611a9a11",
+      "packaged_sha256": "1cde3a844b5efc8746743a1fe0f0c4bd6d0619e5dd918ee614a2388f611a9a11",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/cohort/microsoft-security-event-log-cleared.kql",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/rules/microsoft-security-event-log-cleared.kql",
+      "source_sha256": "5340fdb9144890f02924ffec50c2749dd80a1961c0bb7465dd8f3cbdce0114c9",
+      "packaged_sha256": "5340fdb9144890f02924ffec50c2749dd80a1961c0bb7465dd8f3cbdce0114c9",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/microsoft-security-event-log-cleared.ir-request.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/ir/model/request.json",
+      "source_sha256": "6ee7c86f5a60358cec57bd14573932aa2e4272eef70a12bf6a33ce0025c1c1d4",
+      "packaged_sha256": "6ee7c86f5a60358cec57bd14573932aa2e4272eef70a12bf6a33ce0025c1c1d4",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/microsoft-security-event-log-cleared.ir-rendered-prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/ir/model/rendered-prompt.txt",
+      "source_sha256": "6eea0ae807bfb01bb5396afd971814759855a79c35f19ca7815a19791ad1852f",
+      "packaged_sha256": "6eea0ae807bfb01bb5396afd971814759855a79c35f19ca7815a19791ad1852f",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/microsoft-security-event-log-cleared.ir-receipt.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/ir/model/result.json",
+      "source_sha256": "74e848437260919be6c1b22b84c77bdce925209f2984a97c2258f177b4f46ab2",
+      "packaged_sha256": "0c135b5b8b63a5e7ad6e91b353d203bfa716e3a77012d655358b1b51171926cc",
+      "transformation": "Replaced local command paths with named placeholders; model settings, measurements and response retained."
+    },
+    {
+      "path": "results/cohort/microsoft-security-event-log-cleared.baseline.trace.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/paired/baseline/terminal.json",
+      "source_sha256": "3ccc21ecd609b82ef1b9f14a37ed265806d04544f7b3836fe8aeacc41d058863",
+      "packaged_sha256": "479010da2e2f324ba084f57482f3eb9b02c9a5d6fa00379e8fe642c8552adcf1",
+      "transformation": "Selected unchanged raw function arguments/returns, status and execution flags; omitted duplicate serialized stdout, wrappers and request references. No model-generated code executed."
+    },
+    {
+      "path": "results/cohort/microsoft-security-event-log-cleared.baseline.request.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/paired/baseline/model/request.json",
+      "source_sha256": "9fa08ae2265db3fea2a42a490457ac2a26af41542bfc83847065b1c78f3f1029",
+      "packaged_sha256": "9fa08ae2265db3fea2a42a490457ac2a26af41542bfc83847065b1c78f3f1029",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/microsoft-security-event-log-cleared.baseline.response.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/paired/baseline/model/response.txt",
+      "source_sha256": "f445e8cd5a52a1075997785167378caf2824d01b9f6f966011aa794d76ef8332",
+      "packaged_sha256": "f445e8cd5a52a1075997785167378caf2824d01b9f6f966011aa794d76ef8332",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/microsoft-security-event-log-cleared.baseline.rendered-prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/paired/baseline/model/rendered-prompt.txt",
+      "source_sha256": "f2146e4442bef07f83976e3913db680cf6453c123cad158c5f63140bffff6912",
+      "packaged_sha256": "f2146e4442bef07f83976e3913db680cf6453c123cad158c5f63140bffff6912",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/microsoft-security-event-log-cleared.baseline.receipt.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/paired/baseline/model/result.json",
+      "source_sha256": "b5b86b0d17acda48d9420c2e2937becbd5a48c39b3b1f5edf079c28950dcbfb3",
+      "packaged_sha256": "b128c210d52b96a3c89cfdf820db7aadb6290a910fd8fa5a95f52cbf341a5b3c",
+      "transformation": "Replaced local command paths with named placeholders; model settings, measurements and response retained."
+    },
+    {
+      "path": "results/cohort/microsoft-security-event-log-cleared.patched.trace.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/paired/patched/terminal.json",
+      "source_sha256": "15dd1a175698b20ab23802b61d7ac8b6b1b1935d53bd4ad0feb8994bec1b8a62",
+      "packaged_sha256": "adf2fa719a72da8b39dd276f7c9a77c37e494792884ae7a10b4c14539d26633b",
+      "transformation": "Selected unchanged raw function arguments/returns, status and execution flags; omitted duplicate serialized stdout, wrappers and request references. No model-generated code executed."
+    },
+    {
+      "path": "results/cohort/microsoft-security-event-log-cleared.patched.request.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/paired/patched/model/request.json",
+      "source_sha256": "ec48d850ce42c1981975023efe8f80bed6dc1aaa174696fdd776e8f175b2b62c",
+      "packaged_sha256": "ec48d850ce42c1981975023efe8f80bed6dc1aaa174696fdd776e8f175b2b62c",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/microsoft-security-event-log-cleared.patched.response.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/paired/patched/model/response.txt",
+      "source_sha256": "f1c4b3bb74d33216d2b91dfa1aeb885ad3654cb28a41fe19b8ca78b53bd5e19f",
+      "packaged_sha256": "f1c4b3bb74d33216d2b91dfa1aeb885ad3654cb28a41fe19b8ca78b53bd5e19f",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/microsoft-security-event-log-cleared.patched.rendered-prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/paired/patched/model/rendered-prompt.txt",
+      "source_sha256": "d302af1261d91a8a9e2eef49b5b081dc7c7de4324a6445e53fad7b1e511dbbe4",
+      "packaged_sha256": "d302af1261d91a8a9e2eef49b5b081dc7c7de4324a6445e53fad7b1e511dbbe4",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/microsoft-security-event-log-cleared.patched.receipt.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/microsoft-security-event-log-cleared/paired/patched/model/result.json",
+      "source_sha256": "08b04be6350c3260ca2965ad7e563596905ca24cf7cc8fda79287d4f89c16e34",
+      "packaged_sha256": "26615e43abab5a723593df26c42665d9adbb3e18386b26c58d2647d4a0e47a34",
+      "transformation": "Replaced local command paths with named placeholders; model settings, measurements and response retained."
+    },
+    {
+      "path": "examples/cohort/mitre-CAR-2013-05-004.fixture.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/fixtures/mitre-CAR-2013-05-004.json",
+      "source_sha256": "939518179522e4b6d242b5a8a7774df68c5b67e1831adf0d39fa65821fd09f31",
+      "packaged_sha256": "939518179522e4b6d242b5a8a7774df68c5b67e1831adf0d39fa65821fd09f31",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/cohort/mitre-CAR-2013-05-004.oracle.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/oracles/mitre-CAR-2013-05-004.json",
+      "source_sha256": "a5de7ac57a4aea2cd61365971bf6d3be533947b78253218af9e3f363fbce0a9e",
+      "packaged_sha256": "a5de7ac57a4aea2cd61365971bf6d3be533947b78253218af9e3f363fbce0a9e",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/cohort/mitre-CAR-2013-05-004.ir.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/ir/frozen-ir.json",
+      "source_sha256": "031370651d7f4f47e8ff61efd4844dd228d581c498d193e004ba782350727930",
+      "packaged_sha256": "031370651d7f4f47e8ff61efd4844dd228d581c498d193e004ba782350727930",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/cohort/mitre-CAR-2013-05-004.spl",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/rules/mitre-CAR-2013-05-004.spl",
+      "source_sha256": "a69be8f6f7a18aed83bbc3c12884d5cc0bcc4a09388164f24a2d401d0cd0690c",
+      "packaged_sha256": "a69be8f6f7a18aed83bbc3c12884d5cc0bcc4a09388164f24a2d401d0cd0690c",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/mitre-CAR-2013-05-004.ir-request.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/ir/model/request.json",
+      "source_sha256": "f2b4521e29c85f5f458d5b46e5a0dafec045aa458069826db67350154b3daab6",
+      "packaged_sha256": "f2b4521e29c85f5f458d5b46e5a0dafec045aa458069826db67350154b3daab6",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/mitre-CAR-2013-05-004.ir-rendered-prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/ir/model/rendered-prompt.txt",
+      "source_sha256": "4c4a41991115c77cb9a137081f4126f7a01e36228b078b6ddc156e3edf430bbc",
+      "packaged_sha256": "4c4a41991115c77cb9a137081f4126f7a01e36228b078b6ddc156e3edf430bbc",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/mitre-CAR-2013-05-004.ir-receipt.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/ir/model/result.json",
+      "source_sha256": "fa2ebc731152bf6c2d5a31614179a5b5045c6fbd864b760d5d87db27ef09597e",
+      "packaged_sha256": "fe7e5bd932f0f640f9594677cd62a5baadd854d78880484fd6a0cbd942ff6db0",
+      "transformation": "Replaced local command paths with named placeholders; model settings, measurements and response retained."
+    },
+    {
+      "path": "results/cohort/mitre-CAR-2013-05-004.baseline.trace.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/paired/baseline/terminal.json",
+      "source_sha256": "713553e81af6c2cba3d7d13927754601de807a41791978f01cc6dbb49e219eb2",
+      "packaged_sha256": "986aaa2e5533a8adfb5106775d2ca01042a4c5ff7011fba848131fe1081ebb1a",
+      "transformation": "Selected unchanged raw function arguments/returns, status and execution flags; omitted duplicate serialized stdout, wrappers and request references. No model-generated code executed."
+    },
+    {
+      "path": "results/cohort/mitre-CAR-2013-05-004.baseline.request.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/paired/baseline/model/request.json",
+      "source_sha256": "d1fb87b496302114e635163a37014f43035463574f7d9319729be1892d9e0a8b",
+      "packaged_sha256": "d1fb87b496302114e635163a37014f43035463574f7d9319729be1892d9e0a8b",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/mitre-CAR-2013-05-004.baseline.response.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/paired/baseline/model/response.txt",
+      "source_sha256": "9d21860faf5229352adfdcc3b3e5a1ba1e81e1e9ddfe611c1347c9bea0f76cf6",
+      "packaged_sha256": "9d21860faf5229352adfdcc3b3e5a1ba1e81e1e9ddfe611c1347c9bea0f76cf6",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/mitre-CAR-2013-05-004.baseline.rendered-prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/paired/baseline/model/rendered-prompt.txt",
+      "source_sha256": "0f3c73d2d0551c998f7da9e57570f1f36ed80c3b4279218071b1ae80e68903cf",
+      "packaged_sha256": "0f3c73d2d0551c998f7da9e57570f1f36ed80c3b4279218071b1ae80e68903cf",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/mitre-CAR-2013-05-004.baseline.receipt.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/paired/baseline/model/result.json",
+      "source_sha256": "9f390dd3271488a77db6aa72ddd74cd2813090319bc5f37ef1ea6eca0f595356",
+      "packaged_sha256": "e05572668dcd1c3898f55e32aecdc2af519c06dd7988f22b47e45d993393eca8",
+      "transformation": "Replaced local command paths with named placeholders; model settings, measurements and response retained."
+    },
+    {
+      "path": "results/cohort/mitre-CAR-2013-05-004.patched.trace.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/paired/patched/terminal.json",
+      "source_sha256": "259e6a03568f859cda1a79a895ddd114319d4b85fa7ec42fe84e8c796c4c8ee9",
+      "packaged_sha256": "006348857b96a936d5a6b290d2690174d3e25e267b2b72ae3db3335be6c35c3a",
+      "transformation": "Selected unchanged raw function arguments/returns, status and execution flags; omitted duplicate serialized stdout, wrappers and request references. No model-generated code executed."
+    },
+    {
+      "path": "results/cohort/mitre-CAR-2013-05-004.patched.request.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/paired/patched/model/request.json",
+      "source_sha256": "8521b62622f63a05ff446963c89433a2ac2003c32284c015425bbd5510196a6c",
+      "packaged_sha256": "8521b62622f63a05ff446963c89433a2ac2003c32284c015425bbd5510196a6c",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/mitre-CAR-2013-05-004.patched.response.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/paired/patched/model/response.txt",
+      "source_sha256": "9991d35ce827971c3050236f41d6b6a5a9c3638fa0eefdbcfeba7ecbfb08d44d",
+      "packaged_sha256": "9991d35ce827971c3050236f41d6b6a5a9c3638fa0eefdbcfeba7ecbfb08d44d",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/mitre-CAR-2013-05-004.patched.rendered-prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/paired/patched/model/rendered-prompt.txt",
+      "source_sha256": "979a9a1ceb382ab02bc2c63398b4a5323d114c33c502abaecc7818b1137a84b4",
+      "packaged_sha256": "979a9a1ceb382ab02bc2c63398b4a5323d114c33c502abaecc7818b1137a84b4",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/cohort/mitre-CAR-2013-05-004.patched.receipt.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/runs/mitre-CAR-2013-05-004/paired/patched/model/result.json",
+      "source_sha256": "4e0bf2fdb28b0b9ff0c5fa24858e2a5d205d7f69c8dbd7b42f59009c1f302a3c",
+      "packaged_sha256": "0ce635e9038da5b7b5f33f19256f3519a2b213ca15a6d48351bccb9fdbf518d0",
+      "transformation": "Replaced local command paths with named placeholders; model settings, measurements and response retained."
+    },
+    {
+      "path": "results/ablation/input.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/input.json",
+      "source_sha256": "4af5e4da26c3657425845cc4a4ab1f5dff405b30aed0c362dd575cbb68c63093",
+      "packaged_sha256": "4af5e4da26c3657425845cc4a4ab1f5dff405b30aed0c362dd575cbb68c63093",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/ablation/frozen-independent-irs.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/frozen-independent-irs.json",
+      "source_sha256": "35aa7cde68c39a11b3c425a5f7ce800c1bc0eb0c05db2637c4eaa088d286486c",
+      "packaged_sha256": "35aa7cde68c39a11b3c425a5f7ce800c1bc0eb0c05db2637c4eaa088d286486c",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/ablation/outcome.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/outcome.json",
+      "source_sha256": "71624e4b910a41b1a3ff21b02369b92973ba7c4cc298514f929bc26f7c1dd342",
+      "packaged_sha256": "71624e4b910a41b1a3ff21b02369b92973ba7c4cc298514f929bc26f7c1dd342",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/ablation/PREREGISTRATION.md",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/PREREGISTRATION.md",
+      "source_sha256": "ae97ee00cffe65ae5cf0aea7457cbd91ff1597a49e9e57d9d9a535a90f7b7a8a",
+      "packaged_sha256": "ae97ee00cffe65ae5cf0aea7457cbd91ff1597a49e9e57d9d9a535a90f7b7a8a",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/ablation/prompt.diff",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/prompt.diff",
+      "source_sha256": "da541f2522da9fd213b63a35527d29f12494df0eaf820435ebe47230a57cf5ae",
+      "packaged_sha256": "da541f2522da9fd213b63a35527d29f12494df0eaf820435ebe47230a57cf5ae",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/ablation/intervention.diff",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/intervention.diff",
+      "source_sha256": "24733cb7e23ae47b748a287a39d2a07c56347e6c0f5b65ddec17926f6cdfa85b",
+      "packaged_sha256": "24733cb7e23ae47b748a287a39d2a07c56347e6c0f5b65ddec17926f6cdfa85b",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/ablation/predicate-static-analysis.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/predicate-static-analysis.json",
+      "source_sha256": "05af054a615003473433d1d30c76e5ec7305aa68f2d3723c47016c7a829149e0",
+      "packaged_sha256": "05af054a615003473433d1d30c76e5ec7305aa68f2d3723c47016c7a829149e0",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/ablation/actual-model-settings-comparison.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/actual-model-settings-comparison.json",
+      "source_sha256": "77eb25eb3469fa70ccc3c659e69afa3de3e96462fef0e2c6ac28a0b5fd9e1bef",
+      "packaged_sha256": "77eb25eb3469fa70ccc3c659e69afa3de3e96462fef0e2c6ac28a0b5fd9e1bef",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/ablation/baseline.trace.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/baseline-replay.json",
+      "source_sha256": "50b71d18a6c1d771fdbc0f92edf864bc075388f92bb1fd44abdb68e62c7e8528",
+      "packaged_sha256": "5c9f55a7d084f326d95c4b302b5bfa8a8265edad817ea3edc02271ff822422bc",
+      "transformation": "Selected unchanged raw function arguments/returns and execution flags; removed duplicate stdout and wrapper metadata."
+    },
+    {
+      "path": "results/ablation/patched.trace.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/patched-terminal.json",
+      "source_sha256": "c0529f82cf7f498647d05dfcf56c6cb7498cce9c9d8f833b2cd56b3cf0bea149",
+      "packaged_sha256": "0a3cf806c023536495579b930f4df3e062d23288390674fe1cc9bcdb3eaace5c",
+      "transformation": "Selected unchanged raw function arguments/returns and execution flags; removed duplicate stdout and wrapper metadata."
+    },
+    {
+      "path": "results/ablation/baseline.request.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/baseline-captured/request.json",
+      "source_sha256": "3ace7518284f46eef8a9c268c8286c5183a4a2e344515ec959b3095fe03ca647",
+      "packaged_sha256": "3ace7518284f46eef8a9c268c8286c5183a4a2e344515ec959b3095fe03ca647",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/ablation/patched.request.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/runs/model-00/request.json",
+      "source_sha256": "c463827f4e858b9c59b4e6ba5985a919de82433259f21e2e54f8dbf6c700b96c",
+      "packaged_sha256": "c463827f4e858b9c59b4e6ba5985a919de82433259f21e2e54f8dbf6c700b96c",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/ablation/patched.response.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/runs/model-00/response.txt",
+      "source_sha256": "adafa9d90d8a23d338b38acae4c6eeda7b06b875147a5be61b7fdf06baad6b29",
+      "packaged_sha256": "adafa9d90d8a23d338b38acae4c6eeda7b06b875147a5be61b7fdf06baad6b29",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/ablation/patched.rendered-prompt.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/runs/model-00/rendered-prompt.txt",
+      "source_sha256": "427c67e85e600a1003be1d9bb6d53103837f3f5a4fa38d06c823f4b4e53db218",
+      "packaged_sha256": "427c67e85e600a1003be1d9bb6d53103837f3f5a4fa38d06c823f4b4e53db218",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/ablation/patched.receipt.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+      "source_path": "experiment/runs/model-00/result.json",
+      "source_sha256": "5e409e511286b18861d45dce729b8ecd205c228a45d63e96551d82123ba08387",
+      "packaged_sha256": "92a46c48c8850c840770d1235a4e9fed293bf2bbcd5421c3ec5bbbcdd2e717dd",
+      "transformation": "Replaced local command paths with named placeholders; retained model settings, response and runtime measurements."
+    },
+    {
+      "path": "results/partial/PARTIAL-STATUS.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip",
+      "source_path": "component/PARTIAL-STATUS.json",
+      "source_sha256": "87142d81ab2cf163aa0c41f84c9bcc62fa422bd97737277015d07cd858de6156",
+      "packaged_sha256": "87142d81ab2cf163aa0c41f84c9bcc62fa422bd97737277015d07cd858de6156",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/partial/frozen-independent-irs.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip",
+      "source_path": "component/frozen-independent-irs.json",
+      "source_sha256": "35aa7cde68c39a11b3c425a5f7ce800c1bc0eb0c05db2637c4eaa088d286486c",
+      "packaged_sha256": "35aa7cde68c39a11b3c425a5f7ce800c1bc0eb0c05db2637c4eaa088d286486c",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/partial/total-steps-finding.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip",
+      "source_path": "component/total-steps-finding.json",
+      "source_sha256": "db0e54e294049b3c195fade5e24837622037ce56afc931383b0347d4c62cbd5e",
+      "packaged_sha256": "db0e54e294049b3c195fade5e24837622037ce56afc931383b0347d4c62cbd5e",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/partial/terminal-timeout-analysis.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip",
+      "source_path": "component/terminal-timeout-analysis.json",
+      "source_sha256": "1c8957e4e9daa8b35cbf119aecd94901203dbb1d4f4aa3d60347edb38d4f1883",
+      "packaged_sha256": "1c8957e4e9daa8b35cbf119aecd94901203dbb1d4f4aa3d60347edb38d4f1883",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/partial/summary-v5.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip",
+      "source_path": "component/summary-v5.json",
+      "source_sha256": "adba85aea3d57ad4a318fdd413d3cade571a513b5f2631ad537c15aeee461d55",
+      "packaged_sha256": "adba85aea3d57ad4a318fdd413d3cade571a513b5f2631ad537c15aeee461d55",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/partial/LIFECYCLE-HOLD.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip",
+      "source_path": "component/LIFECYCLE-HOLD.json",
+      "source_sha256": "30f12bcbf2f53092a6c7ac02a0ca2f2d26aa279d9bb729b2ea2ccec54af3b55c",
+      "packaged_sha256": "30f12bcbf2f53092a6c7ac02a0ca2f2d26aa279d9bb729b2ea2ccec54af3b55c",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "results/partial/spl.trace.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip",
+      "source_path": "component/runs/ordinary-spl-lifecycle-v4/stage-result.json",
+      "source_sha256": "44f873287523d5944cabb8e83c52121887fdccb553669526921988f9ad2a11fa",
+      "packaged_sha256": "015040c15a3fed684b716bdb909208ce7b2f5dd8ab2573e327879e6b2eef9d70",
+      "transformation": "Selected complete raw function argument/return events, validation returns, fallback events and returned value. Omitted duplicate stdout and repeated prompt metadata; retained privately in original."
+    },
+    {
+      "path": "results/partial/kql.trace.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip",
+      "source_path": "component/runs/ordinary-kql-dedup-v5/iteration-04.json",
+      "source_sha256": "0210378f31cc1f3623330b82ed530f7d40f1f883b9c56a78140a06686ef43a19",
+      "packaged_sha256": "f0bd0d4be11cb518051f8c5067255a72229343b0b24f910254b7a9f3f55025dd",
+      "transformation": "Selected complete raw function argument/return events, validation returns, fallback events and returned value. Omitted duplicate stdout and repeated prompt metadata; retained privately in original."
+    },
+    {
+      "path": "results/partial/timeout.receipt.sanitized.json",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip",
+      "source_path": "component/runs/ordinary-kql-dedup-v5/model-04/result.json",
+      "source_sha256": "fd0805342ee2b6ecf0ad2f1c2b042c0374dd0b9a7ccf6471d6c0a205debcde87",
+      "packaged_sha256": "b6cdea9fb36d150a649b59a3d398eff2c03c5e53081069765d6ea2b509318d8c",
+      "transformation": "Replaced environment command paths with placeholders; retained actual failed generation, partial text and its original hash."
+    },
+    {
+      "path": "examples/upstream/SemanticRuleOptimizer.py.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/source/SemanticRuleOptimizer.py.txt",
+      "source_sha256": "31528ac841461762cd6da11148b313895117738a7509494635f156320a1029d2",
+      "packaged_sha256": "31528ac841461762cd6da11148b313895117738a7509494635f156320a1029d2",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/upstream/generate_ir.py.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/source/generate_ir.py.txt",
+      "source_sha256": "16417644d9cf509c4bb98ff367540dce67e391f88eb5714aaf212c2a84894923",
+      "packaged_sha256": "16417644d9cf509c4bb98ff367540dce67e391f88eb5714aaf212c2a84894923",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/upstream/prompts.py.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/source/prompts.py.txt",
+      "source_sha256": "b1ad217e66f6a4b49b8c9c7cbc4f91bc16641fb2648a6d8f45f74f111ed16dfa",
+      "packaged_sha256": "b1ad217e66f6a4b49b8c9c7cbc4f91bc16641fb2648a6d8f45f74f111ed16dfa",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "licenses/ARuleCon-MIT.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/source/LICENSE",
+      "source_sha256": "06dcddbb6908a0c6dd4a9e8ec822eea41d5a460a53089fecccc8a68049e99241",
+      "packaged_sha256": "06dcddbb6908a0c6dd4a9e8ec822eea41d5a460a53089fecccc8a68049e99241",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "licenses/Microsoft-MIT.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/source-research/microsoft-LICENSE",
+      "source_sha256": "003a977409acb12d7ab74c134888af7aa78213d169ed2f0ecda6d0464887aaa2",
+      "packaged_sha256": "003a977409acb12d7ab74c134888af7aa78213d169ed2f0ecda6d0464887aaa2",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "licenses/MITRE-Apache-2.0.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/source-research/mitre-LICENSE.txt",
+      "source_sha256": "610c08766a46c8763ee0d918db22f85762991e3b112efca8354859cdb91a8193",
+      "packaged_sha256": "610c08766a46c8763ee0d918db22f85762991e3b112efca8354859cdb91a8193",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "licenses/MITRE-NOTICE.txt",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/source-research/mitre-NOTICE.txt",
+      "source_sha256": "c00b13dc0feafa3d1b14d155920fbbc7a3782877a6a8fb2f21dc3ea414c535f1",
+      "packaged_sha256": "c00b13dc0feafa3d1b14d155920fbbc7a3782877a6a8fb2f21dc3ea414c535f1",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/cohort/microsoft-security-event-log-cleared.source.yaml",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/source-research/microsoft-security-event-log-cleared.source.yaml",
+      "source_sha256": "daa36307ce4f4595af258069d21b991241e76ce2e2501b5bfbf00366eebe0c0e",
+      "packaged_sha256": "daa36307ce4f4595af258069d21b991241e76ce2e2501b5bfbf00366eebe0c0e",
+      "transformation": "Byte-for-byte copy; unchanged"
+    },
+    {
+      "path": "examples/cohort/mitre-CAR-2013-05-004.source.yaml",
+      "source_archive": "rule-evaluator-small-study-final-2026-10-01.zip",
+      "source_path": "experiment/source-research/mitre-CAR-2013-05-004.source.yaml",
+      "source_sha256": "87f5725cd01a191b978e671d02c15a58e71523db0fdd32c2570e882684d0ef97",
+      "packaged_sha256": "87f5725cd01a191b978e671d02c15a58e71523db0fdd32c2570e882684d0ef97",
+      "transformation": "Byte-for-byte copy; unchanged"
+    }
+  ]
+}

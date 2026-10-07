@@ -1,0 +1,45 @@
+{
+  "finding": "All generated step prompts default to final-step output description because total_steps is absent from execution_context",
+  "pinned_commit": "5a8bb658c09e4cad32bc53e6cc5c1ccc73955d3a",
+  "source_sha256": "8bcdcb3348fb17eee7b8bd44f1eb886a90e19e492354a4084702a93c02532351",
+  "total_steps_references": [
+    {
+      "line": 563,
+      "text": "total_steps = execution_context.get(\"total_steps\", step_index + 1)"
+    },
+    {
+      "line": 565,
+      "text": "function_input, step_index, total_steps"
+    },
+    {
+      "line": 605,
+      "text": "self, function_input: any, step_index: int, total_steps: int"
+    },
+    {
+      "line": 613,
+      "text": "total_steps: Total number of steps in the pipeline"
+    },
+    {
+      "line": 650,
+      "text": "if step_index == total_steps - 1:"
+    },
+    {
+      "line": 955,
+      "text": "total_steps: int = 1,"
+    },
+    {
+      "line": 970,
+      "text": "if step_index < total_steps - 1"
+    }
+  ],
+  "ordinary_source_ir_step_count": 4,
+  "observed_first_prompt_output_line": "- Output: final evaluation result (boolean, list of booleans, or filtered data matching the rule criteria)",
+  "captured_prompt_sha256": "3ace7518284f46eef8a9c268c8286c5183a4a2e344515ec959b3095fe03ca647",
+  "first_generated_return": [
+    true,
+    true,
+    false,
+    true
+  ],
+  "interpretation_limit": "Static prompt-construction defect plus observed accepted Boolean mask. No claim yet that this alone causes the eventual comparison verdict. Evaluated component was not patched."
+}

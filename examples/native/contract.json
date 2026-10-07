@@ -1,0 +1,190 @@
+{
+  "input_schemas": {
+    "dns": [
+      {
+        "canonical": "query",
+        "kql": "QueryName",
+        "kql_type": "string",
+        "spl": "query",
+        "type": "string"
+      },
+      {
+        "canonical": "time_epoch",
+        "kql": "TimeGenerated",
+        "kql_type": "datetime",
+        "spl": "_time",
+        "type": "epoch_seconds"
+      },
+      {
+        "canonical": "computer",
+        "kql": "Computer",
+        "kql_type": "string",
+        "spl": "host",
+        "type": "string"
+      },
+      {
+        "canonical": "index",
+        "kql": null,
+        "kql_type": null,
+        "spl": "index",
+        "type": "string"
+      },
+      {
+        "canonical": "sourcetype",
+        "kql": null,
+        "kql_type": null,
+        "spl": "sourcetype",
+        "type": "string"
+      }
+    ],
+    "lsass": [
+      {
+        "canonical": "event_code",
+        "kql": "EventID",
+        "kql_type": "long",
+        "spl": "EventCode",
+        "type": "integer"
+      },
+      {
+        "canonical": "time_epoch",
+        "kql": "TimeGenerated",
+        "kql_type": "datetime",
+        "spl": "_time",
+        "type": "epoch_seconds"
+      },
+      {
+        "canonical": "computer",
+        "kql": "Computer",
+        "kql_type": "string",
+        "spl": "Computer",
+        "type": "string"
+      },
+      {
+        "canonical": "target_image",
+        "kql": "TargetImage",
+        "kql_type": "string",
+        "spl": "TargetImage",
+        "type": "string"
+      },
+      {
+        "canonical": "target_pid",
+        "kql": "TargetProcessId",
+        "kql_type": "long",
+        "spl": "TargetProcessId",
+        "type": "integer"
+      },
+      {
+        "canonical": "source_image",
+        "kql": "SourceImage",
+        "kql_type": "string",
+        "spl": "SourceImage",
+        "type": "string"
+      },
+      {
+        "canonical": "source_pid",
+        "kql": "SourceProcessId",
+        "kql_type": "long",
+        "spl": "SourceProcessId",
+        "type": "integer"
+      },
+      {
+        "canonical": "call_trace",
+        "kql": "CallTrace",
+        "kql_type": "string",
+        "spl": "CallTrace",
+        "type": "string"
+      }
+    ]
+  },
+  "input_scope": "Synthetic source bindings only. Not a test of the original sysmon macro, production index selection, ingestion, scheduled alerts or Sentinel deployment.",
+  "null_policy": "Inputs forbid null, missing and multivalued fields. Outputs forbid missing/extra fields and null. No inferred null-to-empty conversion.",
+  "number_policy": "Integer JSON values or canonical integer strings only; booleans and floats rejected. No magnitude or sign coercion.",
+  "output_schemas": {
+    "dns": [
+      {
+        "canonical": "computer",
+        "kql": "Computer",
+        "spl": "host",
+        "type": "string"
+      },
+      {
+        "canonical": "window_start",
+        "kql": "TimeGenerated",
+        "spl": "_time",
+        "type": "epoch_seconds"
+      },
+      {
+        "canonical": "qps",
+        "kql": "qps",
+        "spl": "qps",
+        "type": "integer"
+      },
+      {
+        "canonical": "sld_cnt",
+        "kql": "sld_cnt",
+        "spl": "sld_cnt",
+        "type": "integer"
+      },
+      {
+        "canonical": "sld_set",
+        "kql": "sld_set",
+        "spl": "sld_set",
+        "type": "string_set"
+      }
+    ],
+    "lsass": [
+      {
+        "canonical": "dest",
+        "kql": "dest",
+        "spl": "dest",
+        "type": "string"
+      },
+      {
+        "canonical": "TargetImage",
+        "kql": "TargetImage",
+        "spl": "TargetImage",
+        "type": "string"
+      },
+      {
+        "canonical": "TargetProcessId",
+        "kql": "TargetProcessId",
+        "spl": "TargetProcessId",
+        "type": "integer"
+      },
+      {
+        "canonical": "SourceImage",
+        "kql": "SourceImage",
+        "spl": "SourceImage",
+        "type": "string"
+      },
+      {
+        "canonical": "SourceProcessId",
+        "kql": "SourceProcessId",
+        "spl": "SourceProcessId",
+        "type": "integer"
+      },
+      {
+        "canonical": "count",
+        "kql": "count_",
+        "spl": "count",
+        "type": "integer"
+      },
+      {
+        "canonical": "firstTime",
+        "kql": "firstTime",
+        "spl": "firstTime",
+        "type": "epoch_seconds"
+      },
+      {
+        "canonical": "lastTime",
+        "kql": "lastTime",
+        "spl": "lastTime",
+        "type": "epoch_seconds"
+      }
+    ]
+  },
+  "row_semantics": "unordered multiset; multiplicity is preserved",
+  "set_semantics": "sld_set only: order ignored; duplicate elements rejected, never silently deduplicated",
+  "time_policy": "Canonical whole UTC epoch seconds. Native KQL UTC datetime converted losslessly to seconds; SPL numeric epoch seconds. No local display strings or fractional truncation.",
+  "version": 1
+}

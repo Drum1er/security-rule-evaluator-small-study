@@ -1,0 +1,44 @@
+[
+  {
+    "category": "ir",
+    "rule_id": "dns",
+    "arm": null,
+    "directory": "runs/dns/ir/model"
+  },
+  {
+    "category": "ir",
+    "rule_id": "microsoft-security-event-log-cleared",
+    "arm": null,
+    "directory": "runs/microsoft-security-event-log-cleared/ir/model"
+  },
+  {
+    "category": "ir",
+    "rule_id": "mitre-CAR-2013-05-004",
+    "arm": null,
+    "directory": "runs/mitre-CAR-2013-05-004/ir/model"
+  },
+  {
+    "category": "first_step",
+    "rule_id": "microsoft-security-event-log-cleared",
+    "arm": "baseline",
+    "directory": "runs/microsoft-security-event-log-cleared/paired/baseline/model"
+  },
+  {
+    "category": "first_step",
+    "rule_id": "microsoft-security-event-log-cleared",
+    "arm": "patched",
+    "directory": "runs/microsoft-security-event-log-cleared/paired/patched/model"
+  },
+  {
+    "category": "first_step",
+    "rule_id": "mitre-CAR-2013-05-004",
+    "arm": "baseline",
+    "directory": "runs/mitre-CAR-2013-05-004/paired/baseline/model"
+  },
+  {
+    "category": "first_step",
+    "rule_id": "mitre-CAR-2013-05-004",
+    "arm": "patched",
+    "directory": "runs/mitre-CAR-2013-05-004/paired/patched/model"
+  }
+]

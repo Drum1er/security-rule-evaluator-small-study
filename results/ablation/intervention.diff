@@ -1,0 +1,11 @@
+--- baseline
++++ patched
+@@ -90,7 +90,7 @@
+         optimizer=SemanticRuleOptimizer('Qwen3-4B-local')
+         sys.setprofile(profile)
+         if mode=='first_step':
+-            context = {}
++            context = {"total_steps": len(PAYLOAD["ir"]["steps"])}
+             messages=[{'role':'system','content':optimizer._get_code_generation_system_prompt(PAYLOAD['rule_type'],PAYLOAD['rows'])}]
+             value=optimizer._generate_and_validate_step(PAYLOAD['ir']['steps'][0],0,PAYLOAD['rule_type'],PAYLOAD['rows'],messages,context)
+             result={'status':'completed' if value else 'invalid_execution','value':snap({'code':value,'context':context})}

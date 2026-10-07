@@ -1,0 +1,93 @@
+{
+  "status": "BOUNDED_FOLLOWUP_COMPLETE",
+  "completed_utc": "2026-10-01T17:39:22.403733+00:00",
+  "selected_sources": 3,
+  "primary_cases": 1,
+  "supplemental_cases": 1,
+  "excluded_cases": 1,
+  "model_calls": 7,
+  "max_authorized_model_calls": 9,
+  "unused_calls": 2,
+  "retries": 0,
+  "budget_extensions": 0,
+  "calls": [
+    {
+      "category": "ir",
+      "rule_id": "dns",
+      "arm": null,
+      "status": "completed",
+      "wall_seconds": 121.11110185699363,
+      "peak_rss_bytes": 4956831744,
+      "response_tokens_retokenized": 454,
+      "rendered_prompt_sha256": "8d30ccaadc6033812495b95a9326b315fded9f9b5b030db9144a59efcd0881a3"
+    },
+    {
+      "category": "ir",
+      "rule_id": "microsoft-security-event-log-cleared",
+      "arm": null,
+      "status": "completed",
+      "wall_seconds": 82.01303556399944,
+      "peak_rss_bytes": 4956467200,
+      "response_tokens_retokenized": 260,
+      "rendered_prompt_sha256": "6eea0ae807bfb01bb5396afd971814759855a79c35f19ca7815a19791ad1852f"
+    },
+    {
+      "category": "ir",
+      "rule_id": "mitre-CAR-2013-05-004",
+      "arm": null,
+      "status": "completed",
+      "wall_seconds": 78.37522864399944,
+      "peak_rss_bytes": 4956610560,
+      "response_tokens_retokenized": 222,
+      "rendered_prompt_sha256": "4c4a41991115c77cb9a137081f4126f7a01e36228b078b6ddc156e3edf430bbc"
+    },
+    {
+      "category": "first_step",
+      "rule_id": "microsoft-security-event-log-cleared",
+      "arm": "baseline",
+      "status": "completed",
+      "wall_seconds": 92.06178483700205,
+      "peak_rss_bytes": 4937502720,
+      "response_tokens_retokenized": 261,
+      "rendered_prompt_sha256": "f2146e4442bef07f83976e3913db680cf6453c123cad158c5f63140bffff6912"
+    },
+    {
+      "category": "first_step",
+      "rule_id": "microsoft-security-event-log-cleared",
+      "arm": "patched",
+      "status": "completed",
+      "wall_seconds": 74.31296646999544,
+      "peak_rss_bytes": 4937359360,
+      "response_tokens_retokenized": 185,
+      "rendered_prompt_sha256": "d302af1261d91a8a9e2eef49b5b081dc7c7de4324a6445e53fad7b1e511dbbe4"
+    },
+    {
+      "category": "first_step",
+      "rule_id": "mitre-CAR-2013-05-004",
+      "arm": "baseline",
+      "status": "completed",
+      "wall_seconds": 142.49491076999402,
+      "peak_rss_bytes": 4937105408,
+      "response_tokens_retokenized": 229,
+      "rendered_prompt_sha256": "0f3c73d2d0551c998f7da9e57570f1f36ed80c3b4279218071b1ae80e68903cf"
+    },
+    {
+      "category": "first_step",
+      "rule_id": "mitre-CAR-2013-05-004",
+      "arm": "patched",
+      "status": "completed",
+      "wall_seconds": 100.63362965099805,
+      "peak_rss_bytes": 4937125888,
+      "response_tokens_retokenized": 236,
+      "rendered_prompt_sha256": "979a9a1ceb382ab02bc2c63398b4a5323d114c33c502abaecc7818b1137a84b4"
+    }
+  ],
+  "total_model_wall_seconds": 691.0026577929821,
+  "maximum_rss_bytes": 4956831744,
+  "paid_api_cost_usd": 0,
+  "cost_limit": "Does not meter cloud-host costs",
+  "native_queries_this_followup": 0,
+  "full_chain_run": false,
+  "final_equivalence_verdict": null,
+  "six_month_recommendation": "NO_GO_FOR_CURRENT_FORMULATION"
+}

@@ -1,0 +1,39 @@
+{
+    "source_zip":  "rule-evaluator-small-study-final-2026-10-01.zip",
+    "source_sha256":  "cf7699907bb879f9169c52dac8e61ffa9fe71dd736d7ffddaac63ec44012fbeb",
+    "backup_sha256":  "cf7699907bb879f9169c52dac8e61ffa9fe71dd736d7ffddaac63ec44012fbeb",
+    "backup_readonly":  true,
+    "entries":  834,
+    "expanded_bytes_with_nested_copies":  18656207,
+    "limits":  {
+                   "large_file_ratio":  300,
+                   "entries":  10000,
+                   "single_bytes":  67108864,
+                   "depth":  8,
+                   "aggregate_bytes":  268435456
+               },
+    "archive_code_executed":  false,
+    "path_link_size_checks":  "PASS",
+    "archives":  [
+                     {
+                         "label":  "rule-evaluator-small-study-final-2026-10-01.zip",
+                         "directory":  "level00",
+                         "sha256":  "cf7699907bb879f9169c52dac8e61ffa9fe71dd736d7ffddaac63ec44012fbeb"
+                     },
+                     {
+                         "label":  "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip",
+                         "directory":  "level01",
+                         "sha256":  "41d3510d691919ffa972967e66f99ec5cc5d2f5f1600f9c0be0aa6050b727bdb"
+                     },
+                     {
+                         "label":  "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip",
+                         "directory":  "level02",
+                         "sha256":  "fea1997d6df8e7260e29e8bdb35d77536c443aa2838ea884886e9e0dbeaef77a"
+                     },
+                     {
+                         "label":  "rule-evaluator-small-study-final-2026-10-01.zip!/previous/surrogate-firststep-ablation-2026-10-01.zip!/baseline/surrogate-lsass-component-evidence-2026-10-01.zip!/native/published-pair-gate-results-2026-10-01.zip",
+                         "directory":  "level03",
+                         "sha256":  "2c96bb1564f8fa1156c6fb383932a76e35f51e2265aa7283bc8d503600131034"
+                     }
+                 ]
+}

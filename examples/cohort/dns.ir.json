@@ -1,0 +1,48 @@
+{
+  "rule_name": "suspected_dns_brute_force",
+  "description": "Detect suspicious DNS queries with high query rates and multiple subdomains",
+  "data_source": "dns",
+  "event_type": "dns_query",
+  "steps": [
+    {
+      "action": "filter",
+      "params": "index = dns AND sourcetype = dns:query",
+      "explanation": "Filter events from the DNS index with the correct sourcetype"
+    },
+    {
+      "action": "eval",
+      "params": "tld=lower(replace(query, \".*\\.([A-Za-z0-z-]+)$\", \"\\1\"))",
+      "explanation": "Extract the top-level domain (TLD) from the query"
+    },
+    {
+      "action": "filter",
+      "params": "tld IN (\"xyz\",\"pw\",\"top\")",
+      "explanation": "Focus on queries with known suspicious TLDs"
+    },
+    {
+      "action": "eval",
+      "params": "sld=lower(replace(query, \".*\\.([A-Za-z0-z-]+\\.[A-Za-z0-z-]+)$\", \"\\1\"))",
+      "explanation": "Extract the subdomain (SLD) from the query"
+    },
+    {
+      "action": "sort",
+      "params": "_time",
+      "explanation": "Sort events by time to ensure temporal order"
+    },
+    {
+      "action": "aggregate",
+      "params": "count as qps, dc(sld) as sld_cnt, values(sld) as sld_set",
+      "explanation": "Calculate query rate and analyze subdomain patterns"
+    },
+    {
+      "action": "group_by",
+      "params": "host, _time",
+      "explanation": "Group results by host and time period"
+    },
+    {
+      "action": "filter",
+      "params": "qps >= 100 AND sld_cnt >= 3",
+      "explanation": "Identify hosts with high query rates and multiple subdomains"
+    }
+  ]
+}

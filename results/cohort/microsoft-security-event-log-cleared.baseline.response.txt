@@ -1,0 +1,27 @@
+```python
+def step_1(input_list):
+    """
+    Filters log entries based on specific EventID and EventSourceName criteria.
+    
+    Parameters:
+    input_list (list of dict): List of log entries to process
+    
+    Returns:
+    list of bool: Boolean list indicating whether each entry matches the criteria
+    """
+    # Initialize a list to store boolean results
+    results = []
+    
+    # Process each log entry in the input list
+    for entry in input_list:
+        # Check if the entry meets the filtering criteria
+        # EventID must be 1102 and EventSourceName must be "Microsoft-Windows-Eventlog"
+        if entry.get('EventID') == 1102 and entry.get('EventSourceName') == "Microsoft-Windows-Eventlog":
+            results.append(True)
+        else:
+            results.append(False)
+    
+    return results
+```
+
+This function processes the input list of log entries and returns a list of boolean values indicating whether each entry matches the specified criteria (EventID 1102 and EventSourceName "Microsoft-Windows-Eventlog"). The function is designed to integrate seamlessly with the overall processing pipeline, maintaining consistent data structures and handling errors gracefully by simply returning False for non-matching entries.

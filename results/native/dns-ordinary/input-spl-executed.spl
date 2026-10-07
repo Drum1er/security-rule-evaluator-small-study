@@ -1,0 +1,11 @@
+| makeresults count=100
+| streamstats count as rownum
+| eval query=case(((rownum>=1 AND rownum<=34)), "sub.alpha.xyz", ((rownum>=35 AND rownum<=67)), "sub.beta.xyz", ((rownum>=68 AND rownum<=100)), "sub.gamma.xyz"),
+    _time=1735689660,
+    host="host-a",
+    index="dns",
+    sourcetype="dns:query"
+| fields query _time host index sourcetype
+| eval diagnostic_time_epoch=_time
+| sort 0 query _time host index sourcetype
+| table query _time host index sourcetype diagnostic_time_epoch

@@ -1,0 +1,25 @@
+```python
+def step_1(input_list):
+    """
+    Filters log entries based on specific EventID and EventSourceName.
+    
+    Parameters:
+    input_list (list of dict): List of log entries to process
+    
+    Returns:
+    list of dict: Filtered log entries that match the criteria
+    """
+    # Initialize an empty list to store the filtered entries
+    filtered_entries = []
+    
+    # Process each entry in the input list
+    for entry in input_list:
+        # Check if the entry meets the filtering criteria
+        if (entry.get('EventID') == 1102 and 
+            entry.get('EventSourceName') == "Microsoft-Windows-Eventlog"):
+            # If criteria are met, add the entry to the filtered list
+            filtered_entries.append(entry)
+    
+    # Return the filtered list of entries for the next step
+    return filtered_entries
+```

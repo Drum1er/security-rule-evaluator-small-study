@@ -1,0 +1,102 @@
+{
+  "artifact_kind": "SANITIZED_DERIVATIVE",
+  "status": "completed",
+  "invalid": [],
+  "raw_events": [
+    {
+      "method": "step_1",
+      "caller": "_validate_code_block",
+      "event": "call",
+      "raw_function_event": true,
+      "arguments": {
+        "input_list": [
+          {
+            "RecordId": "r1",
+            "index": "__your_sysmon_index__",
+            "Image": "C:\\Windows\\System32\\at.exe",
+            "CommandLine": "at.exe 10:00 calc.exe",
+            "ComputerName": "ws01.example.test"
+          },
+          {
+            "RecordId": "r2",
+            "index": "__your_sysmon_index__",
+            "Image": "C:\\Windows\\SysWOW64\\at.exe",
+            "CommandLine": "at.exe",
+            "ComputerName": "ws02.example.test"
+          },
+          {
+            "RecordId": "r3",
+            "index": "__your_sysmon_index__",
+            "Image": "C:\\Tools\\at.exe",
+            "CommandLine": "at.exe",
+            "ComputerName": "ws03.example.test"
+          },
+          {
+            "RecordId": "r4",
+            "index": "__your_sysmon_index__",
+            "Image": "C:\\Windows\\System32\\schtasks.exe",
+            "CommandLine": "schtasks.exe /query",
+            "ComputerName": "ws04.example.test"
+          }
+        ]
+      }
+    },
+    {
+      "method": "step_1",
+      "caller": "_validate_code_block",
+      "event": "return",
+      "raw_function_event": true,
+      "value": []
+    },
+    {
+      "method": "step_1",
+      "caller": "_execute_single_step_with_all_data",
+      "event": "call",
+      "raw_function_event": true,
+      "arguments": {
+        "input_list": [
+          {
+            "RecordId": "r1",
+            "index": "__your_sysmon_index__",
+            "Image": "C:\\Windows\\System32\\at.exe",
+            "CommandLine": "at.exe 10:00 calc.exe",
+            "ComputerName": "ws01.example.test"
+          },
+          {
+            "RecordId": "r2",
+            "index": "__your_sysmon_index__",
+            "Image": "C:\\Windows\\SysWOW64\\at.exe",
+            "CommandLine": "at.exe",
+            "ComputerName": "ws02.example.test"
+          },
+          {
+            "RecordId": "r3",
+            "index": "__your_sysmon_index__",
+            "Image": "C:\\Tools\\at.exe",
+            "CommandLine": "at.exe",
+            "ComputerName": "ws03.example.test"
+          },
+          {
+            "RecordId": "r4",
+            "index": "__your_sysmon_index__",
+            "Image": "C:\\Windows\\System32\\schtasks.exe",
+            "CommandLine": "schtasks.exe /query",
+            "ComputerName": "ws04.example.test"
+          }
+        ]
+      }
+    },
+    {
+      "method": "step_1",
+      "caller": "_execute_single_step_with_all_data",
+      "event": "return",
+      "raw_function_event": true,
+      "value": []
+    }
+  ],
+  "execution": {
+    "exit_code": 0,
+    "stop_reason": null,
+    "output_observed_bytes": 5218
+  }
+}

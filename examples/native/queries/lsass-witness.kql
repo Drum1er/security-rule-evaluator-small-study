@@ -1,0 +1,10 @@
+let Sysmon = datatable(EventID:long, TimeGenerated:datetime, Computer:string, TargetImage:string, TargetProcessId:long, SourceImage:string, SourceProcessId:long, CallTrace:string)
+[
+    10, datetime(2025-01-01T00:01:00Z), "host-a", "C:\\Windows\\System32\\lsass.exe.bak", 500, "C:\\Tools\\diagnostic.exe", 100, "C:\\Windows\\System32\\dbghelp.dll+0x10"
+];
+Sysmon
+| where EventID == 10
+| where TargetImage contains "lsass.exe"
+| where CallTrace contains "dbgcore.dll" or CallTrace contains "dbghelp.dll"
+| summarize count(), firstTime = min(TimeGenerated), lastTime = max(TimeGenerated) by Computer, TargetImage, TargetProcessId, SourceImage, SourceProcessId
+| project-rename dest = Computer

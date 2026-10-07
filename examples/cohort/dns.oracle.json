@@ -1,0 +1,21 @@
+{
+  "eligible": false,
+  "reason": "First IR step is source binding only; all4 frozen inputs match, so no discriminating first-filter test. Apply match/nonmatch requirement, skip both code arms without replacement.",
+  "first_step_indices_if_evaluated": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "source_full_filter_indices": null,
+  "ir_fidelity": {
+    "first_step": "valid source binding only",
+    "later_errors": [
+      "Character classes broadened from A-Za-z0-9- to A-Za-z0-z- in three occurrences",
+      "10minute bucket replaced by time sort; no time binning preserved"
+    ]
+  },
+  "reference_kind": "hand-reviewed synthetic expectation; not native execution",
+  "frozen_ir_sha256": "9146377c374372af8a377274c6b1cdd8fd0ea8a771d71d21bceb162b20fec964",
+  "analysis_stratum": "excluded_nondiscriminating_source_binding"
+}

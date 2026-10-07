@@ -1,0 +1,3 @@
+datatable(Computer: string, TimeGenerated: datetime, qps: long, sld_cnt: long, sld_set: dynamic) [
+    'host-a', datetime(2025-01-01T00:00:00.000Z), 100, 3, dynamic(["alpha.xyz","beta.xyz","gamma.xyz"]),
+]

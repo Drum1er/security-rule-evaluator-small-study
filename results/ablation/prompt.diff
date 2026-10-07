@@ -1,0 +1,11 @@
+--- baseline-user
++++ patched-user
+@@ -9,7 +9,7 @@
+ Function Requirements:
+ - Function name: step_1
+ - Input: list of 4 log entries (dictionaries with keys: ['EventCode', '_time', 'Computer', 'TargetImage', 'TargetProcessId']...)
+-- Output: final evaluation result (boolean, list of booleans, or filtered data matching the rule criteria)
++- Output: processed data in a format suitable for the next processing step
+ - Purpose: Filter for sysmon events with EventCode 10 and lsass.exe involvement
+ 
+ 

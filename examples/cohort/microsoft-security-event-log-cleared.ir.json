@@ -1,0 +1,28 @@
+{
+  "rule_name": "eventlog_activity_analysis",
+  "description": "Detect unusual activity patterns in event log events",
+  "data_source": "SecurityEvent",
+  "event_type": "event_log_analysis",
+  "steps": [
+    {
+      "action": "filter",
+      "params": "EventID == 1102 and EventSourceName == \"Microsoft-Windows-Eventlog\"",
+      "explanation": "Filter events for specific event ID and source name"
+    },
+    {
+      "action": "aggregate",
+      "params": "StartTimeUtc = min(TimeGenerated), EndTimeUtc = max(TimeGenerated), EventCount = count()",
+      "explanation": "Calculate start and end times, and count events for each group"
+    },
+    {
+      "action": "group_by",
+      "params": "Computer, Account, EventID, Activity",
+      "explanation": "Group results by computer, account, event ID, and activity type"
+    },
+    {
+      "action": "eval",
+      "params": "timestamp = StartTimeUtc, AccountCustomEntity = Account, HostCustomEntity = Computer",
+      "explanation": "Create calculated fields for timestamp, account entity, and host entity"
+    }
+  ]
+}

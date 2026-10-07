@@ -1,0 +1,30 @@
+[
+  {
+    "query": "a.alpha.xyz",
+    "_time": 1735689600,
+    "host": "node-a",
+    "index": "dns",
+    "sourcetype": "dns:query"
+  },
+  {
+    "query": "b.beta.top",
+    "_time": 1735689601,
+    "host": "node-b",
+    "index": "dns",
+    "sourcetype": "dns:query"
+  },
+  {
+    "query": "c.gamma.com",
+    "_time": 1735689602,
+    "host": "node-c",
+    "index": "dns",
+    "sourcetype": "dns:query"
+  },
+  {
+    "query": "host.pw",
+    "_time": 1735689603,
+    "host": "node-d",
+    "index": "dns",
+    "sourcetype": "dns:query"
+  }
+]

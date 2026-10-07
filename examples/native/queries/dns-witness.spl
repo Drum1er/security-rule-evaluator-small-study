@@ -1,0 +1,15 @@
+| makeresults count=100
+| streamstats count as rownum
+| eval query=case(((rownum>=1 AND rownum<=34)), "alpha.xyz", ((rownum>=35 AND rownum<=67)), "beta.xyz", ((rownum>=68 AND rownum<=100)), "gamma.xyz"),
+    _time=1735689660,
+    host="host-a",
+    index="dns",
+    sourcetype="dns:query"
+| fields query _time host index sourcetype
+| search index=dns sourcetype=dns:query
+| eval tld=lower(replace(query, ".*\\.([A-Za-z0-9-]+)$", "\1"))
+| where tld IN ("xyz","pw","top")
+| eval sld=lower(replace(query, ".*\\.([A-Za-z0-9-]+\\.[A-Za-z0-9-]+)$", "\1"))
+| bucket _time span=10m
+| stats count as qps, dc(sld) as sld_cnt, values(sld) as sld_set by host, _time
+| where qps >= 100 AND sld_cnt >= 3

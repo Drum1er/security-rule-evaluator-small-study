@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "version": "2026-10-07-r4",
+  "purpose": "Public-release package; approved concise and detailed attribution and updated publication status; evidence, code, tests and research claims unchanged",
+  "publication": "PUBLIC RELEASE AUTHORIZED; r4 upload pending remote verification at sealing; ADX supplemental-terms uncertainty remains disclosed",
+  "previous_release": "2026-10-06-r3",
+  "previous_zip_sha256": "f338437688dc593d2bc9ed2db22c69654e470a4d3d6e1a44e82eb262a6ef44c4",
+  "validation_report": "portfolio-project-2026-10-07-r4.validation.json (outside the ZIP)",
+  "zip_checksum": "portfolio-project-2026-10-07-r4.zip.sha256 (outside the ZIP)"
+}

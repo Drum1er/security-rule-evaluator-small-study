@@ -1,0 +1,8 @@
+{
+  "method": "Static AST inspection only; no new input or function execution",
+  "predicate": "entry.get('EventCode') == 10 and (entry.get('TargetImage') and 'lsass.exe' in entry['TargetImage']) or (entry.get('SourceImage') and 'lsass.exe' in entry['SourceImage'])",
+  "ast": "BoolOp(op=Or(), values=[BoolOp(op=And(), values=[Compare(left=Call(func=Attribute(value=Name(id='entry', ctx=Load()), attr='get', ctx=Load()), args=[Constant(value='EventCode')], keywords=[]), ops=[Eq()], comparators=[Constant(value=10)]), BoolOp(op=And(), values=[Call(func=Attribute(value=Name(id='entry', ctx=Load()), attr='get', ctx=Load()), args=[Constant(value='TargetImage')], keywords=[]), Compare(left=Constant(value='lsass.exe'), ops=[In()], comparators=[Subscript(value=Name(id='entry', ctx=Load()), slice=Constant(value='TargetImage'), ctx=Load())])])]), BoolOp(op=And(), values=[Call(func=Attribute(value=Name(id='entry', ctx=Load()), attr='get', ctx=Load()), args=[Constant(value='SourceImage')], keywords=[]), Compare(left=Constant(value='lsass.exe'), ops=[In()], comparators=[Subscript(value=Name(id='entry', ctx=Load()), slice=Constant(value='SourceImage'), ctx=Load())])])])",
+  "shape": "top-level OR with EventCode condition only in first AND branch",
+  "implication": "A matching SourceImage branch may pass without EventCode10; not exercised by the frozen ordinary input",
+  "native_semantic_fix_claim": false
+}

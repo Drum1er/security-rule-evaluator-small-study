@@ -1,0 +1,128 @@
+<|im_start|>system
+
+You are a security analyst working for a cybersecurity company.
+Your task is to convert a security rule into an Intermediate Representation (IR) format.
+
+## IR Format Definition:
+<Rule> ::= {
+    rule_name: String,
+    description: String,
+    data_source: String,
+    event_type: String,
+    steps: List<Step>
+}
+
+<Step> ::= {
+    action: ActionKeyword,
+    params: String,
+    explanation: String
+}
+
+## Action Keywords:
+- "filter": Filtering events based on conditions
+- "extract": Extracting fields or information
+- "group_by": Grouping events by specific fields
+- "aggregate": Performing calculations or aggregations
+- "sort": Sorting results
+- "limit": Limiting the number of results
+- "join": Joining with other data sources
+- "eval": Creating calculated fields
+- "rename": Renaming fields
+- "dedup": Removing duplicates
+
+## Guidelines:
+1. **rule_name**: Create a descriptive, snake_case name based on the rule's purpose
+2. **description**: Explain what the rule detects in one sentence
+3. **data_source**: Identify the primary data source (index, source, etc.)
+4. **event_type**: Identify the type of security event being monitored
+5. **steps**: Break down each pipe/operation into individual steps
+6. **action**: Use the most appropriate action keyword for each step
+7. **params**: Include the specific parameters/conditions for each step
+8. **explanation**: Explain what each step accomplishes
+
+## Example:
+**Input (Splunk):**
+```
+index=auth_logs action=failure
+| stats count by user, src_ip
+| where count > 5
+```
+
+**Output (IR):**
+```json
+{
+  "rule_name": "multiple_failed_logins",
+  "description": "Detect brute-force login attempts from the same IP",
+  "data_source": "auth_logs",
+  "event_type": "login_failure",
+  "steps": [
+    {
+      "action": "filter",
+      "params": "action = failure",
+      "explanation": "Only select failed login attempts"
+    },
+    {
+      "action": "group_by",
+      "params": "user, src_ip",
+      "explanation": "Group events by user and source IP address"
+    },
+    {
+      "action": "aggregate",
+      "params": "count > 5",
+      "explanation": "Detect users with more than 5 failures"
+    }
+  ]
+}
+```
+
+Now convert the following rule to IR format:
+
+
+
+## Splunk-Specific IR Generation Guidelines:
+
+**Splunk Rule Characteristics:**
+- Uses pipe-based syntax (|) for chaining operations
+- Common commands: search, stats, eval, rex, where, rename, sort, dedup
+- Index and sourcetype are primary data sources
+- Time-based filtering with earliest/latest parameters
+- Field extraction with rex and eval commands
+
+**Splunk to IR Mapping:**
+- `index=...` → data_source
+- `source=...` → data_source (additional context)
+- `search ...` → filter action
+- `stats ... by ...` → aggregate + group_by actions
+- `eval ...` → eval action
+- `rex field=...` → extract action
+- `where ...` → filter action
+- `rename ... as ...` → rename action
+- `sort ...` → sort action
+- `dedup ...` → dedup action
+- `earliest=-1h` → time context in explanation
+
+**Special Considerations:**
+- Splunk macros (backtick syntax) should be noted in explanation
+- Subsearches should be broken down into separate steps
+- Time modifiers affect the overall rule context
+<|im_end|>
+<|im_start|>user
+
+        ## Rule Type:
+        Splunk
+        
+        Rule to convert:
+        index=dns sourcetype=dns:query
+| eval tld=lower(replace(query, ".*\\.([A-Za-z0-9-]+)$", "\1"))
+| where tld IN ("xyz","pw","top")
+| eval sld=lower(replace(query, ".*\\.([A-Za-z0-9-]+\\.[A-Za-z0-9-]+)$", "\1"))
+| bucket _time span=10m
+| stats count as qps, dc(sld) as sld_cnt, values(sld) as sld_set by host, _time
+| where qps >= 100 AND sld_cnt >= 3
+
+        <|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

@@ -1,0 +1,94 @@
+{
+  "status": "PARTIAL_COMPONENT_TRACE_FINAL_FOR_CURRENT_BUDGET",
+  "sealed_after_terminal_time_utc": "2026-10-01T16:28:46.827280+00:00",
+  "source_steps_completed": 4,
+  "source_steps_expected": 4,
+  "target_steps_completed": 4,
+  "target_steps_expected": 6,
+  "witness_run": false,
+  "released_comparator_run": false,
+  "final_semantic_verdict": null,
+  "reason": "Target step5 model generation hit unchanged300second wall limit; no further budget expansion",
+  "native_gate_status": "Complete and unchanged; independently archived",
+  "native_gate_archive_sha256": "2c96bb1564f8fa1156c6fb383932a76e35f51e2265aa7283bc8d503600131034",
+  "model_attempts": [
+    {
+      "path": "runs/ir-kql/model-00/result.json",
+      "status": "completed",
+      "seconds": 162.19660529401153,
+      "peak_rss_bytes": 4956491776
+    },
+    {
+      "path": "runs/ir-spl/model-00/result.json",
+      "status": "completed",
+      "seconds": 117.81935377999616,
+      "peak_rss_bytes": 4956540928
+    },
+    {
+      "path": "runs/ordinary-kql-dedup-v5/model-04/result.json",
+      "status": "inference_failure",
+      "seconds": 300.3320056130033,
+      "peak_rss_bytes": 5542793216
+    },
+    {
+      "path": "runs/ordinary-kql-lifecycle-v4/model-00/result.json",
+      "status": "completed",
+      "seconds": 153.27565865500947,
+      "peak_rss_bytes": 4937445376
+    },
+    {
+      "path": "runs/ordinary-kql-lifecycle-v4/model-01/result.json",
+      "status": "completed",
+      "seconds": 165.83184962299129,
+      "peak_rss_bytes": 4937572352
+    },
+    {
+      "path": "runs/ordinary-kql-lifecycle-v4/model-02/result.json",
+      "status": "completed",
+      "seconds": 231.25949050499185,
+      "peak_rss_bytes": 5542916096
+    },
+    {
+      "path": "runs/ordinary-kql-lifecycle-v4/model-03/result.json",
+      "status": "completed",
+      "seconds": 277.67722952199983,
+      "peak_rss_bytes": 5543018496
+    },
+    {
+      "path": "runs/ordinary-spl-jsonwire-v2/model-00/result.json",
+      "status": "completed",
+      "seconds": 135.15419244000805,
+      "peak_rss_bytes": 4937297920
+    },
+    {
+      "path": "runs/ordinary-spl-jsonwire-v2/model-01/result.json",
+      "status": "inference_failure",
+      "seconds": 300.521222202995,
+      "peak_rss_bytes": 4937486336
+    },
+    {
+      "path": "runs/ordinary-spl-lifecycle-v4/model-03/result.json",
+      "status": "completed",
+      "seconds": 206.98592282099708,
+      "peak_rss_bytes": 5542764544
+    },
+    {
+      "path": "runs/ordinary-spl-wallretry-v3/model-01-retry/result.json",
+      "status": "completed",
+      "seconds": 222.925814274,
+      "peak_rss_bytes": 4937424896
+    },
+    {
+      "path": "runs/ordinary-spl-wallretry-v3/model-02/result.json",
+      "status": "completed",
+      "seconds": 210.94557635299861,
+      "peak_rss_bytes": 5542719488
+    }
+  ],
+  "model_wall_seconds_total_including_failures": 2484.924921083002,
+  "paid_api_cost_usd": 0,
+  "cost_scope": "No paid API calls or purchases; cloud compute not metered by this experiment",
+  "upstream_commit": "5a8bb658c09e4cad32bc53e6cc5c1ccc73955d3a",
+  "claim_scope": "Adapted released component, independent local-model IRs, synthetic native-validated ordinary data; not full framework replication",
+  "historical_partial_status": "history/pre-retry-partial/PARTIAL-STATUS.json"
+}

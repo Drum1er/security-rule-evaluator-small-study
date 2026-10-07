@@ -1,0 +1,21 @@
+{
+  "artifact_kind": "SANITIZED_DERIVATIVE",
+  "capture_type": "Selected fields from saved native Splunk job JSON",
+  "engine_version": "10.6.0.5",
+  "content": {
+    "dispatchState": "DONE",
+    "doneProgress": 1,
+    "dropCount": 0,
+    "eventCount": 0,
+    "eventIsTruncated": false,
+    "isDone": true,
+    "isFailed": false,
+    "isFinalized": false,
+    "isPaused": false,
+    "isPreviewEnabled": true,
+    "resultCount": 1,
+    "sampleRatio": "1",
+    "search": "| makeresults count=1\n| streamstats count as rownum\n| eval EventCode=10,\n    _time=1735689660,\n    Computer=\"host-a\",\n    TargetImage=\"C:\\\\Windows\\\\System32\\\\lsass.exe.bak\",\n    TargetProcessId=500,\n    SourceImage=\"C:\\\\Tools\\\\diagnostic.exe\",\n    SourceProcessId=100,\n    CallTrace=\"C:\\\\Windows\\\\System32\\\\dbghelp.dll+0x10\"\n| fields EventCode _time Computer TargetImage TargetProcessId SourceImage SourceProcessId CallTrace\n| eval diagnostic_time_epoch=_time\n| sort 0 EventCode _time Computer TargetImage TargetProcessId SourceImage SourceProcessId CallTrace\n| table EventCode _time Computer TargetImage TargetProcessId SourceImage SourceProcessId CallTrace diagnostic_time_epoch\n",
+    "messages": []
+  }
+}

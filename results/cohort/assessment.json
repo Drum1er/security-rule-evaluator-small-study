@@ -1,0 +1,239 @@
+{
+  "status": "BOUNDED_COHORT_ASSESSED",
+  "cases": [
+    {
+      "rule_id": "dns",
+      "eligible": false,
+      "analysis_stratum": "excluded_nondiscriminating_source_binding",
+      "eligibility_reason": "First IR step is source binding only; all4 frozen inputs match, so no discriminating first-filter test. Apply match/nonmatch requirement, skip both code arms without replacement.",
+      "oracle_kind": "own_hand_reviewed_reference_NOT_NATIVE",
+      "ir_fidelity": {
+        "first_step": "valid source binding only",
+        "later_errors": [
+          "Character classes broadened from A-Za-z0-9- to A-Za-z0-z- in three occurrences",
+          "10minute bucket replaced by time sort; no time binning preserved"
+        ]
+      }
+    },
+    {
+      "rule_id": "microsoft-security-event-log-cleared",
+      "eligible": true,
+      "analysis_stratum": "primary_discriminating_first_step",
+      "eligibility_reason": "First IR step exactly preserves the source compound filter; four steps total and matching/nonmatching rows available.",
+      "oracle_kind": "own_hand_reviewed_reference_NOT_NATIVE",
+      "ir_fidelity": {
+        "first_step": "matches source predicate",
+        "later_steps": "not executed or certified; aggregate/group_by splitting is outside this test"
+      },
+      "expected_first_step_indices": [
+        0
+      ],
+      "source_full_filter_indices": [
+        0
+      ],
+      "arms": {
+        "baseline": {
+          "structural": "fail",
+          "selection": "correct",
+          "raw_calls": [
+            {
+              "caller": "_validate_code_block",
+              "structural": "fail",
+              "selection": "correct",
+              "representation": "ordered_boolean_mask",
+              "selected_indices": [
+                0
+              ],
+              "raw_output": [
+                true,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "caller": "_execute_single_step_with_all_data",
+              "structural": "fail",
+              "selection": "correct",
+              "representation": "ordered_boolean_mask",
+              "selected_indices": [
+                0
+              ],
+              "raw_output": [
+                true,
+                false,
+                false,
+                false
+              ]
+            }
+          ],
+          "execution_status": "completed"
+        },
+        "patched": {
+          "structural": "pass",
+          "selection": "correct",
+          "raw_calls": [
+            {
+              "caller": "_validate_code_block",
+              "structural": "pass",
+              "selection": "correct",
+              "representation": "unchanged_records",
+              "selected_indices": [
+                0
+              ],
+              "raw_output": [
+                {
+                  "RecordId": "r1",
+                  "TimeGenerated": "2026-09-30T12:00:00Z",
+                  "EventID": 1102,
+                  "EventSourceName": "Microsoft-Windows-Eventlog",
+                  "Computer": "ws01.example.test",
+                  "Account": "LAB\\analyst",
+                  "Activity": "Event recorded"
+                }
+              ]
+            },
+            {
+              "caller": "_execute_single_step_with_all_data",
+              "structural": "pass",
+              "selection": "correct",
+              "representation": "unchanged_records",
+              "selected_indices": [
+                0
+              ],
+              "raw_output": [
+                {
+                  "RecordId": "r1",
+                  "TimeGenerated": "2026-09-30T12:00:00Z",
+                  "EventID": 1102,
+                  "EventSourceName": "Microsoft-Windows-Eventlog",
+                  "Computer": "ws01.example.test",
+                  "Account": "LAB\\analyst",
+                  "Activity": "Event recorded"
+                }
+              ]
+            }
+          ],
+          "execution_status": "completed"
+        }
+      }
+    },
+    {
+      "rule_id": "mitre-CAR-2013-05-004",
+      "eligible": true,
+      "analysis_stratum": "supplemental_first_step_with_later_invalid_IR",
+      "eligibility_reason": "First step retains the bound source and Image wildcard. Four total IR steps, two matching and two nonmatching fixture records.",
+      "oracle_kind": "own_hand_reviewed_reference_NOT_NATIVE",
+      "ir_fidelity": {
+        "first_step": "retains source predicate under stated wildcard interpretation",
+        "later_errors": [
+          "Adds CommandLine extraction from EventData absent from the published query and synthetic schema"
+        ],
+        "full_chain": "not executed or certified"
+      },
+      "expected_first_step_indices": [
+        0,
+        1
+      ],
+      "source_full_filter_indices": [
+        0,
+        1
+      ],
+      "arms": {
+        "baseline": {
+          "structural": "inconclusive",
+          "selection": "incorrect",
+          "raw_calls": [
+            {
+              "caller": "_validate_code_block",
+              "structural": "inconclusive",
+              "selection": "incorrect",
+              "representation": "empty_list",
+              "selected_indices": [],
+              "raw_output": []
+            },
+            {
+              "caller": "_execute_single_step_with_all_data",
+              "structural": "inconclusive",
+              "selection": "incorrect",
+              "representation": "empty_list",
+              "selected_indices": [],
+              "raw_output": []
+            }
+          ],
+          "execution_status": "completed"
+        },
+        "patched": {
+          "structural": "inconclusive",
+          "selection": "incorrect",
+          "raw_calls": [
+            {
+              "caller": "_validate_code_block",
+              "structural": "inconclusive",
+              "selection": "incorrect",
+              "representation": "empty_list",
+              "selected_indices": [],
+              "raw_output": []
+            },
+            {
+              "caller": "_execute_single_step_with_all_data",
+              "structural": "inconclusive",
+              "selection": "incorrect",
+              "representation": "empty_list",
+              "selected_indices": [],
+              "raw_output": []
+            }
+          ],
+          "execution_status": "completed"
+        }
+      }
+    }
+  ],
+  "model_calls": [
+    {
+      "category": "ir",
+      "rule_id": "dns",
+      "arm": null,
+      "directory": "runs/dns/ir/model"
+    },
+    {
+      "category": "ir",
+      "rule_id": "microsoft-security-event-log-cleared",
+      "arm": null,
+      "directory": "runs/microsoft-security-event-log-cleared/ir/model"
+    },
+    {
+      "category": "ir",
+      "rule_id": "mitre-CAR-2013-05-004",
+      "arm": null,
+      "directory": "runs/mitre-CAR-2013-05-004/ir/model"
+    },
+    {
+      "category": "first_step",
+      "rule_id": "microsoft-security-event-log-cleared",
+      "arm": "baseline",
+      "directory": "runs/microsoft-security-event-log-cleared/paired/baseline/model"
+    },
+    {
+      "category": "first_step",
+      "rule_id": "microsoft-security-event-log-cleared",
+      "arm": "patched",
+      "directory": "runs/microsoft-security-event-log-cleared/paired/patched/model"
+    },
+    {
+      "category": "first_step",
+      "rule_id": "mitre-CAR-2013-05-004",
+      "arm": "baseline",
+      "directory": "runs/mitre-CAR-2013-05-004/paired/baseline/model"
+    },
+    {
+      "category": "first_step",
+      "rule_id": "mitre-CAR-2013-05-004",
+      "arm": "patched",
+      "directory": "runs/mitre-CAR-2013-05-004/paired/patched/model"
+    }
+  ],
+  "native_results_for_new_fixtures": false,
+  "full_chain_run": false,
+  "final_equivalence_verdict": null
+}

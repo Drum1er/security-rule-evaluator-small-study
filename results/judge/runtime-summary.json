@@ -1,0 +1,80 @@
+{
+  "status": "published_pair_plain_text_judge_complete_unscored",
+  "cohort": "published-pair-judge-20261001",
+  "direction": "SPL_to_KQL",
+  "is_ARuleCon_run": false,
+  "input_file_sha256": "a642f8bfa5f64f8b634b58c35972655e68f52cbd202c94f0a26af7a15d77d42f",
+  "results_file_sha256": "13921f8b3b57ee88ba30f8dd7f3b78f7cdda98c728803dc196dc7d1c196aa665",
+  "runner_sha256": "e7394956a3f33c22682b4e99bc98ed6f661d6cbde456f3d619ec9e0081cd14dc",
+  "runtime_executable_sha256": "e307ffc61e310365a518918e15c170b86c3b921f50f182b9fd4f4532d6015342",
+  "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+  "runtime_build": "b11146-7fe450e19",
+  "model": "Qwen/Qwen3-4B-GGUF Q4_K_M",
+  "cases_total": 4,
+  "execution_status_counts": {
+    "ok": 4
+  },
+  "verdict_counts_not_accuracy": {
+    "not_equivalent": 3,
+    "equivalent": 1
+  },
+  "valid_json_cases": 4,
+  "malformed_output_cases": 0,
+  "truncated_output_cases": 0,
+  "timeout_cases": 0,
+  "resource_blocked_cases": 0,
+  "context_blocked_cases": 0,
+  "full_unedited_prompt_export_verified_for_all_executed_cases": true,
+  "executed_context_counts": {
+    "4096": 2,
+    "8192": 2
+  },
+  "raw_prompt_token_counts": [
+    1434,
+    4253,
+    1048,
+    4355
+  ],
+  "complete_template_prompt_token_counts": [
+    1446,
+    4265,
+    1060,
+    4367
+  ],
+  "template_preflight": "Official model-embedded template; exact single-user/no-system/no-tools/enable_thinking=false branch, plus the previous conservative 256-token template reserve",
+  "temperature": 0,
+  "seed": 42,
+  "thinking": false,
+  "output_token_limit": 512,
+  "threads": 6,
+  "json_mode": "strict JSON requested in prompt, validated after generation; no schema sampler",
+  "wall_time_limit_seconds": 300,
+  "rss_limit_bytes": 6442450944,
+  "case_wall_seconds": {
+    "min": 51.59496983500139,
+    "max": 195.53940161200444,
+    "mean": 124.06491879250098,
+    "sum": 496.2596751700039
+  },
+  "max_sampled_peak_RSS_bytes": 5550522368,
+  "prompt_tokens_per_second_reported_range": [
+    28.3,
+    31.9
+  ],
+  "generation_tokens_per_second_reported_range": [
+    3.1,
+    5.9
+  ],
+  "response_token_count_range": [
+    67,
+    119
+  ],
+  "blinding": "Only the designated frozen blinded input payload and the worker-owned model/runtime/execution artifacts were read; no private mapping, hypotheses, oracle, or native output files read",
+  "limitations": [
+    "Plain text judging only; no ARuleCon execution or reproduction",
+    "One quantized small model and fixed seed; source-to-target direction differs from prior cohort",
+    "No native query results supplied or read; no correctness or false-acceptance rates computed",
+    "Model responses are unverified judgments, including any numerical claims in their reasons"
+  ],
+  "provenance_manifest": "../manifest.json"
+}

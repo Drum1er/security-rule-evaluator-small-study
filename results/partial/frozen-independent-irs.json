@@ -1,0 +1,68 @@
+{
+  "spl": {
+    "rule_name": "lsass_call_trace_detection",
+    "description": "Detect suspicious call traces involving lsass.exe in sysmon events",
+    "data_source": "sysmon",
+    "event_type": "process_call_trace",
+    "steps": [
+      {
+        "action": "filter",
+        "params": "EventCode=10 AND (TargetImage=lsass.exe OR SourceImage=lsass.exe)",
+        "explanation": "Filter for sysmon events with EventCode 10 and lsass.exe involvement"
+      },
+      {
+        "action": "aggregate",
+        "params": "count, min(_time) as firstTime, max(_time) as lastTime",
+        "explanation": "Calculate count and time ranges for each event group"
+      },
+      {
+        "action": "group_by",
+        "params": "Computer, TargetImage, TargetProcessId, SourceImage, SourceProcessId",
+        "explanation": "Group results by relevant process and system information"
+      },
+      {
+        "action": "rename",
+        "params": "Computer as dest",
+        "explanation": "Rename the Computer field to 'dest' as specified"
+      }
+    ]
+  },
+  "kql": {
+    "rule_name": "lsass_debugging_attempts",
+    "description": "Detect suspicious debugging attempts targeting the lsass service",
+    "data_source": "Sysmon",
+    "event_type": "process_creation",
+    "steps": [
+      {
+        "action": "filter",
+        "params": "EventID == 10",
+        "explanation": "Only consider event type 10 (process creation) from Sysmon"
+      },
+      {
+        "action": "filter",
+        "params": "TargetImage contains \"lsass.exe\"",
+        "explanation": "Focus on events targeting the lsass service"
+      },
+      {
+        "action": "filter",
+        "params": "CallTrace contains \"dbgcore.dll\" or CallTrace contains \"dbghelp.dll\"",
+        "explanation": "Identify events with debugging DLLs in the call trace"
+      },
+      {
+        "action": "aggregate",
+        "params": "count(), firstTime = min(TimeGenerated), lastTime = max(TimeGenerated)",
+        "explanation": "Aggregate events by computer and process details to find suspicious patterns"
+      },
+      {
+        "action": "group_by",
+        "params": "Computer, TargetImage, TargetProcessId, SourceImage, SourceProcessId",
+        "explanation": "Group events by relevant process and system information"
+      },
+      {
+        "action": "extract",
+        "params": "dest = Computer",
+        "explanation": "Rename the 'Computer' field to 'dest' for clarity in the output"
+      }
+    ]
+  }
+}
